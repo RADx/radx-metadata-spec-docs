@@ -10,6 +10,3 @@ nav:
     - About: about.md
 
 theme: readthedocs
-
-extra_javascript:
-    - myscript.js
