@@ -10,9 +10,9 @@ We provide a simple introduction to the specification below. For detailed techni
 
 While at this time the RADx Data Hub does not *require* a metadata file describing each data set, it does allow and encourage users to provide such a document. To make the provided information interoperable, the RADx Data Hub requires that provided metadata follow the specification described in this document. Only two fields are required to be provided, but many others are recommended to maximize the ability for others to find, use, and properly credit your data. (As the specification and the Data Hub mature, we expect to require a metadata description for each submitted data file, and to require additional fields be provided in the metadata.) 
 
-The formal specification is a JSON-LD document that serves as a schema, against which provided metadata descriptions can be validated. This document can be viewed in the CEDAR Workbench (see the [About](about.md] section), but this automatically generated document provides detailed information about all the attributes in an easy-to-read format. 
+The formal specification is a JSON-LD document that serves as a schema, against which provided metadata descriptions can be validated. This document can be viewed in the CEDAR Workbench (see the [About](about.md)) section, but this automatically generated document provides detailed information about all the attributes in an easy-to-read format. 
 
-You can visit the source material from which this document is built, and see how we build the specification and the document, in the [About](about.md] section).
+You can visit the source material from which this document is built, and see how we build the specification and the document, in the [About](about.md) section.
 
 ## Navigation
 
