@@ -4,9 +4,9 @@ site_url: https://example.com/
 nav:
     - Home: index.md
     - Preliminaries: preliminaries.md
-    - Language Codes: language-codes.md
     - Specification: specification.md
     - Creating Metadata: creating-metadata.md
+    - Language Codes: language-codes.md
     - About: about.md
 
 theme: readthedocs
