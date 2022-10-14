@@ -18,9 +18,9 @@ The following fields are recommended fields.  These fields SHOULD be filled out 
 
 [Data File Identity](#data-file-identity)  >>  [File Name ](#file-name-)
 
-[Data File Identity](#data-file-identity)  >>  [SHA256 digest](#sha256-digest)
+[Data File Identity](#data-file-identity)  >>  [Version](#version)
 
-[Data File Version](#data-file-version)  >>  [Version](#version)
+[Data File Identity](#data-file-identity)  >>  [SHA256 digest](#sha256-digest)
 
 [Data File Subjects](#data-file-subjects)  >>  [Subject Identifier](#subject-identifier)
 
@@ -109,7 +109,7 @@ http://doi.org/10.1000/182
 
 The identifier type used to identify the resource being described.
 
-This need not be provided if the identifier is either a DOI that begins with "doi:" or "http://doi.org/", or it is an IRI that begins with either "http://" or "https://" 
+This need not be provided if the identifier is either a DOI that begins with "doi:" or "https://doi.org/", or it is an IRI that begins with either "http://" or "https://" 
 
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
@@ -129,6 +129,18 @@ The local name of the resource (for example, in a file-based operating system or
 COVID-19_Booster_Shot_June_2022_Responses.csv
 </div>
 
+### Version
+<span class="badge badge--recommended">Recommended</span>
+
+The string identifying the version of the data file or other resource being described.
+
+This field accepts any version string, but we suggest that you use semantic versioning of the form `major.minor.patch`. for example, `2.1.4`.
+
+<div class="example">
+<div class="example-heading">Example</div>
+1.0.1
+</div>
+
 ### SHA256 digest
 <span class="badge badge--recommended">Recommended</span>
 
@@ -136,7 +148,7 @@ A SHA256 digest of the Data File contents. This is a 64 characters long hexadeci
 
 For example, the SHA256 digest of the string, "RADx Data Hub" is `ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011`.
 
-On macOS the following command may be used to generate the SHA256 digest of a file
+On macOS the following command may be used to generate the SHA256 digest of a file.
 
 ```
 shasum -a 256 /path/to/file
@@ -148,28 +160,6 @@ ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011
 </div>
 
 
-## Data File Content
-
-
-
-
-## Data File Version
-
-Version of the resource being described.
-
-### Version
-<span class="badge badge--recommended">Recommended</span>
-
-The string identifying the version of the data file or other resource being described.
-
-We recommend that provides use semantic versioning of the form, `major.minor.patch` for example, `2.1.4`.
-
-<div class="example">
-<div class="example-heading">Example</div>
-1.0.1
-</div>
-
-
 ## Data File Language
 
 Language in which the data file being described is provided.
@@ -177,7 +167,7 @@ Language in which the data file being described is provided.
 ### Primary Language
 <span class="badge badge--optional">Optional</span>
 
-Primary language used to present the data file (if multiple languages are present).
+Primary language used to present the data file (if multiple languages are present, the Other Language field may be used to add additional languages).
 
 The value of this field is a language code.  See the [language code table](language-codes.md) for a list of possible language codes.
 
@@ -277,11 +267,8 @@ en
 
 This value is always the same.  This field should not be manually specified or edited.
 
-This is the type of digital object being described, which for RADx Data Files is always Dataset. 
+This is the type of digital object being described, which for RADx Data Files is always [Dataset](http://vocab.fairdatacollective.org/gdmt/Dataset). 
 
-Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/ResourceTypeCategory).
-
-[Audiovisual](http://vocab.fairdatacollective.org/gdmt/Audiovisual)  |  [Collection](http://vocab.fairdatacollective.org/gdmt/Collection)  |  [Data Catalog](http://vocab.fairdatacollective.org/gdmt/DataCatalog)  |  [Data Paper](http://vocab.fairdatacollective.org/gdmt/DataPaper)  |  [Data Stream](http://vocab.fairdatacollective.org/gdmt/DataStream)  |  [Dataset](http://vocab.fairdatacollective.org/gdmt/Dataset)  |  [Event](http://vocab.fairdatacollective.org/gdmt/Event)  |  [Image](http://vocab.fairdatacollective.org/gdmt/Image)  |  [Interactive Resource](http://vocab.fairdatacollective.org/gdmt/InteractiveResource)  |  [Model](http://vocab.fairdatacollective.org/gdmt/Model)  |  [Other Resource](http://vocab.fairdatacollective.org/gdmt/OtherResource)  |  [Physical Object](http://vocab.fairdatacollective.org/gdmt/PhysicalObject)  |  [Service](http://vocab.fairdatacollective.org/gdmt/Service)  |  [Software](http://vocab.fairdatacollective.org/gdmt/Software)  |  [Sound](http://vocab.fairdatacollective.org/gdmt/Sound)  |  [Text](http://vocab.fairdatacollective.org/gdmt/Text)  |  [Workflow](http://vocab.fairdatacollective.org/gdmt/Workflow)
 <div class="example">
 <div class="example-heading">Example</div>
 http://vocab.fairdatacollective.org/gdmt/Dataset
@@ -297,7 +284,7 @@ Information about the Data Dictionary associated with the Data File
 
 The file name of the Data Dictionary file that defines the Data File's data elements.
 
-Each file submitted should have its own data dictionary. For example, survery_results_origcopy.csv and survery_results_transformcopy.csv should both have data dictionary files (survery_results_origcopy_DICT.csv and survery_results_transformcopy_DICT.csv) associated with them. 
+Each Data File submitted should have its own data dictionary. For example, survery_results_origcopy.csv and survery_results_transformcopy.csv should both have data dictionary files (survery_results_origcopy_DICT.csv and survery_results_transformcopy_DICT.csv) associated with them. 
 
 <div class="example">
 <div class="example-heading">Example</div>
@@ -356,11 +343,15 @@ Carberry
 ### Creator Identifier
 <span class="badge badge--recommended">Recommended</span>
 
-Globally unique string that identifies the creator (an individual or legal entity). This is typically an ORCID. 
+Globally unique string that identifies the creator (an individual or legal entity). For individuals, this is typically an ORCID; for research organizations, it is typically an ROR.
 
 The ORCID iD is an https IRI with a 16-digit number that is compatible with the ISO Standard (ISO 27729), also known as the International Standard Name Identifier (ISNI), e.g. https://orcid.org/0000-0001-2345-6789 
 
 _[ORCID](https://orcid.org) provides a persistent digital identifier (an ORCID iD) that distinguishes each researcher from every other researcher. You can connect your iD with your professional information—affiliations, grants, publications, peer review, and more. You can use your iD to share your information with other systems, ensuring you get recognition for all your contributions, saving you time and hassle, and reducing the risk of errors._
+
+The ROR is an https IRI that uniquely identifies most research organizatiions. 
+
+_The [Research Organization Registry (ROR)](https://ror.org) is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world._
 
 <div class="example">
 <div class="example-heading">Example</div>
@@ -370,7 +361,7 @@ https://orcid.org/0000-0002-1825-0097
 ### Creator Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
-The name of the scheme or authority used for the Creator Identifier. If the Creator Identiifier is an ORCID that starts with `https://orcid.org` then there is no need to fill out this field.
+
 
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme).
 
@@ -386,7 +377,7 @@ https://orcid.org/
 
 The value of this field is derived from the value of the _Creator Identifier Scheme_ field.  This field should not be manually specified or edited.
 
-The unique identifier (IRI) of the scheme or authority used for the Creator Identifier. If the Creator Identiifier is an ORCID that starts with https://orcid.org then there is no need to fill out this field.
+_The [Research Organization Registry (ROR)](https://ror.org) is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world._
 
 ### Creator Email
 <span class="badge badge--recommended">Recommended</span>
@@ -411,7 +402,9 @@ Brown University
 ### Creator Affiliation Identifier
 <span class="badge badge--optional">Optional</span>
 
-Globally unique string that identifies the organizational affiliation of the creator.
+Globally unique string that identifies the organizational affiliation of the contributor.  
+
+We suggest that you an identifier from the [Research Organization Registry (ROR)](https://ror.org), a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.
 
 <div class="example">
 <div class="example-heading">Example</div>
@@ -551,7 +544,15 @@ Carberry
 ### Contributor Identifier
 <span class="badge badge--optional">Optional</span>
 
-Globally unique string that identifies the contributor (an individual or legal entity).
+Globally unique string that identifies the contributor (an individual or legal entity). For individuals, this is typically an ORCID; for research organizations, it is typically an ROR.
+
+The ORCID iD is an https IRI with a 16-digit number that is compatible with the ISO Standard (ISO 27729), also known as the International Standard Name Identifier (ISNI), e.g. https://orcid.org/0000-0001-2345-6789 
+
+_[ORCID](https://orcid.org) provides a persistent digital identifier (an ORCID iD) that distinguishes each researcher from every other researcher. You can connect your iD with your professional information—affiliations, grants, publications, peer review, and more. You can use your iD to share your information with other systems, ensuring you get recognition for all your contributions, saving you time and hassle, and reducing the risk of errors._
+
+The ROR is an https IRI that uniquely identifies most research organizatiions. 
+
+_The [Research Organization Registry (ROR)](https://ror.org) is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world._
 
 <div class="example">
 <div class="example-heading">Example</div>
@@ -592,7 +593,9 @@ Brown University
 ### Contributor Affiliation Identifier
 <span class="badge badge--optional">Optional</span>
 
-Globally unique string that identifies the organizational affiliation of the contributor.
+Globally unique string that identifies the organizational affiliation of the contributor.  
+
+We suggest that you an identifier from the [Research Organization Registry (ROR)](https://ror.org), a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.
 
 <div class="example">
 <div class="example-heading">Example</div>
@@ -681,11 +684,6 @@ https://creativecommons.org/licenses/by-sa/4.0/
 Text string describing any rights information for the data file being described.
 
 If a uniquely identiable license is named above, it is not necessary to repeat the text of the license in this field. This field allows additional rights information to be provided, either to expand licensing terms, clarify the license holder, or provide unique license terms that are not available in a standardized license.
-
-<div class="example">
-<div class="example-heading">Example</div>
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-</div>
 
 
 ## Data File Date
@@ -1010,10 +1008,7 @@ Date on which this distribution of the data file was published
 
 The value of this field is a fixed type and is automatically inserted.  This field should not be manually specified or edited.
 
-Type of the date ('Published') with respect to the data file.
-
-Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/DataType).
-
+Type of the date ('Published') with respect to the data file.  The value of this field is always [Published](http://vocab.fairdatacollective.org/gdmt/Published).
 
 
 
