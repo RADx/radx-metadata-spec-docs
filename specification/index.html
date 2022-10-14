@@ -67,21 +67,9 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#file-name">File Name</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#sha256-digest">SHA256 digest</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#data-file-content">Data File Content</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#type-of-content">Type Of Content</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#type-of-content-description">Type of Content Description</a>
-    </li>
-        </ul>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#data-file-version">Data File Version</a>
-        <ul>
     <li class="toctree-l3"><a class="reference internal" href="#version">Version</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#sha256-digest">SHA256 digest</a>
     </li>
         </ul>
     </li>
@@ -110,6 +98,8 @@
     <li class="toctree-l3"><a class="reference internal" href="#description">Description</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#description-language">Description Language</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#type-of-content">Type Of Content</a>
     </li>
         </ul>
     </li>
@@ -159,7 +149,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#resource-type-category">Resource Type Category</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#relation-of-data-file-to-resource">Relation of Data File to Resource</a>
+    <li class="toctree-l3"><a class="reference internal" href="#relation-of-resource-to-data-file">Relation of Resource to Data File</a>
     </li>
         </ul>
     </li>
@@ -391,7 +381,7 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#auxiliary-metadata">Auxiliary Metadata</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#data-file-descriptive-attribute">Data File Descriptive Attribute</a>
+    <li class="toctree-l3"><a class="reference internal" href="#data-file-descriptive-key-value-pair">Data File Descriptive Key-Value Pair</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#additional-commentary">Additional Commentary</a>
     </li>
@@ -447,10 +437,11 @@
 <p>The following fields are recommended fields.  These fields SHOULD be filled out in a metadata instance to greatly increase the likelihood of the associated data file being found by interested parties and to provide proper accreditation for the creators of the file.</p>
 <p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#identifier">Identifier</a></p>
 <p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#file-name-">File Name </a></p>
-<p><a href="#data-file-content">Data File Content</a>  &gt;&gt;  <a href="#type-of-content">Type Of Content</a></p>
-<p><a href="#data-file-version">Data File Version</a>  &gt;&gt;  <a href="#version">Version</a></p>
+<p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#version">Version</a></p>
+<p><a href="#data-file-identity">Data File Identity</a>  &gt;&gt;  <a href="#sha256-digest">SHA256 digest</a></p>
 <p><a href="#data-file-subjects">Data File Subjects</a>  &gt;&gt;  <a href="#subject-identifier">Subject Identifier</a></p>
 <p><a href="#data-file-description">Data File Description</a>  &gt;&gt;  <a href="#description">Description</a></p>
+<p><a href="#data-file-description">Data File Description</a>  &gt;&gt;  <a href="#type-of-content">Type Of Content</a></p>
 <p><a href="#data-file-creator">Data File Creator</a>  &gt;&gt;  <a href="#creator-type">Creator Type</a></p>
 <p><a href="#data-file-creator">Data File Creator</a>  &gt;&gt;  <a href="#creator-name">Creator Name</a></p>
 <p><a href="#data-file-creator">Data File Creator</a>  &gt;&gt;  <a href="#creator-given-name">Creator Given Name</a></p>
@@ -466,10 +457,11 @@
 <p><a href="#data-file-funding-source">Data File Funding Source</a>  &gt;&gt;  <a href="#funder-identifier">Funder Identifier</a></p>
 <h2 id="data-file-title">Data File Title</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>The name or title of the Data File being described.  Mutliple titles may be specified in different languages.  At least one Data File Title element is required.</p>
+<p>The name or title of the Data File being described. Mutliple titles may be specified in different languages. At least one Data File Title element is required.</p>
 <h3 id="title">Title</h3>
 <p><span class="badge badge--required">Required</span></p>
-<p>A title or descriptive name by which the Data File being described is known.  This is a presentation name (i.e. title case with appropriate spacing) and is typically different from the actual file name of the data file.</p>
+<p>A title or descriptive name by which the Data File being described is known. This is a presentation name (i.e. title case with appropriate spacing) and is typically different from the actual file name of the data file.</p>
+<p>Multiple titles and different languages may be specified by repeating this element. The language for a given title is specified with the Language field.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 COVID-19 Booster Shot Side Effects Survey Responses
@@ -477,8 +469,8 @@ COVID-19 Booster Shot Side Effects Survey Responses
 
 <h3 id="language">Language</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>The language tag that identifies the language in which the Data File Title is provided.  Languages are identified using codes that are structured in accordance with <a href="https://www.rfc-editor.org/rfc/rfc5646">RFC 5646</a>.  If no value is specified then the default code of <code>en</code> for English is assumed.</p>
-<p>A comprehensive list of language codes is provided here.  If you cannot find an appropriate language code please contact the Data Hub administrators.</p>
+<p>The language tag that identifies the language in which the Data File Title is provided. Languages are identified using codes that are structured in accordance with <a href="https://www.rfc-editor.org/rfc/rfc5646">RFC 5646</a>. If no value is specified then the default code of <code>en</code> for English is assumed.</p>
+<p>A comprehensive list of language codes is provided here. If you cannot find an appropriate language code please contact the Data Hub administrators.</p>
 <p>The value of this field is a language code.  See the <a href="../language-codes/">language code table</a> for a list of possible language codes.</p>
 <div class="example">
 <div class="example-heading">Example</div>
@@ -486,21 +478,23 @@ en
 </div>
 
 <h2 id="data-file-identity">Data File Identity</h2>
-<p>Information about the globally unique and persistent identifier used to identify and optionally access (meta)data of the data file being described.</p>
+<p>Information used to identify the Data File being described.</p>
 <h3 id="identifier">Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>A globally unique string that identifies the Data File being described. It is typically a DOI (Digital Object Identifier) or URL (Uniform Resource Locator, that is, Web address). The identifier is typically generated by data providers or data publishers who wish to have a citable and Web-accessible resource.</p>
-<p>Example DOIs are <code>doi:10.1000/182</code> or <code>http://doi.org/10.1000/182</code>, both of which identify the DOI Handbook, which has a DOI of 10.1000/182</p>
+<p>A globally unique string that identifies the Data File being described. It is typically a DOI (Digital Object Identifier) or IRI (International Resource Identifier, or Web address). The identifier is typically generated by data providers or data publishers who wish to have a citable and Web-accessible resource.</p>
+<p>Example DOIs are <code>doi:10.1000/182</code> or <code>https://doi.org/10.1000/182</code>, both of which identify the DOI Handbook, which has a DOI of 10.1000/182</p>
 <p>See also:  <a href="https://en.wikipedia.org/wiki/Digital_object_identifier">https://en.wikipedia.org/wiki/Digital_object_identifier</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-doi:10.1000/182
+http://doi.org/10.1000/182
 </div>
 
 <h3 id="identifier-type">Identifier Type</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The identifier type used to identify the resource being described.</p>
-<p>This need not be provided if the identifier is either a DOI that begins with "doi:" or "http://doi.org/", or it is a URL that begins with either "http://" or "https://" </p>
+<p>This need not be provided if the identifier is either a DOI that begins with "doi:" or "https://doi.org/", or it is an IRI that begins with either "http://" or "https://" </p>
+<p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType">use BioPortal to search for values for this field</a>.</p>
+<p><a href="http://vocab.fairdatacollective.org/gdmt/ARK">ARK</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/arXiv">arXiv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/bibcode">bibcode</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DOI">DOI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EAN13">EAN13</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EISSN">EISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Handle">Handle</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IGSN">IGSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IRI">IRI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISBN">ISBN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISSN">ISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISTC">ISTC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LISSN">LISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LSID">LSID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PMID">PMID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PURL">PURL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/UPC">UPC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URI">URI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URL">URL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URN">URN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/w3id">w3id</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
 DOI
@@ -514,11 +508,20 @@ DOI
 COVID-19_Booster_Shot_June_2022_Responses.csv
 </div>
 
+<h3 id="version">Version</h3>
+<p><span class="badge badge--recommended">Recommended</span></p>
+<p>The string identifying the version of the data file or other resource being described.</p>
+<p>This field accepts any version string, but we suggest that you use semantic versioning of the form <code>major.minor.patch</code>. for example, <code>2.1.4</code>.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+1.0.1
+</div>
+
 <h3 id="sha256-digest">SHA256 digest</h3>
-<p><span class="badge badge--optional">Optional</span></p>
-<p>A SHA256 digest of the Data File contents.  This is a 64 characters long hexadecimal string.  </p>
-<p>As an example, the SHA256 digest of the string, "RADx Data Hub" is <code>ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011</code>.</p>
-<p>On macOS the following command may be used to generate the SHA256 digest of a file</p>
+<p><span class="badge badge--recommended">Recommended</span></p>
+<p>A SHA256 digest of the Data File contents. This is a 64 characters long hexadecimal string. </p>
+<p>For example, the SHA256 digest of the string, "RADx Data Hub" is <code>ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011</code>.</p>
+<p>On macOS the following command may be used to generate the SHA256 digest of a file.</p>
 <pre><code>shasum -a 256 /path/to/file
 </code></pre>
 <div class="example">
@@ -526,36 +529,11 @@ COVID-19_Booster_Shot_June_2022_Responses.csv
 ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011
 </div>
 
-<h2 id="data-file-content">Data File Content</h2>
-<h3 id="type-of-content">Type Of Content</h3>
-<p><span class="badge badge--recommended">Recommended</span></p>
-<p>The kind of content that the data file contains. Data files are either text or non-text (binary) representations of datasets, images etc. This field describes the conceptual type of the thing that is represented by the data file. In most cases the value of this field will "Data Set" but other common types include "Audiovisual", "Data Stream", "Image""</p>
-<p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/ResourceTypeCategory">use BioPortal to search for values for this field</a>.</p>
-<p><a href="http://vocab.fairdatacollective.org/gdmt/Audiovisual">Audiovisual</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Collection">Collection</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCatalog">Data Catalog</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataPaper">Data Paper</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataStream">Data Stream</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Dataset">Dataset</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Event">Event</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Image">Image</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/InteractiveResource">Interactive Resource</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Model">Model</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/OtherResource">Other Resource</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PhysicalObject">Physical Object</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Service">Service</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Software">Software</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Sound">Sound</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Text">Text</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Workflow">Workflow</a></p>
-<div class="example">
-<div class="example-heading">Example</div>
-Data Set
-</div>
-
-<h3 id="type-of-content-description">Type of Content Description</h3>
-<p><span class="badge badge--optional">Optional</span></p>
-<p>If no suitable value can be specified for the Type Of Content field then this field may contain a brief free-text description of the conceptual type of content</p>
-<h2 id="data-file-version">Data File Version</h2>
-<p>Version of the resource being described.</p>
-<h3 id="version">Version</h3>
-<p><span class="badge badge--recommended">Recommended</span></p>
-<p>The string identifying the version of the data file or other resource being described.</p>
-<p>We recommend that provides use semantic versioning of the form, <code>major.minor.patch</code> for example, <code>2.1.4</code>.</p>
-<div class="example">
-<div class="example-heading">Example</div>
-1.0.1
-</div>
-
 <h2 id="data-file-language">Data File Language</h2>
 <p>Language in which the data file being described is provided.</p>
 <h3 id="primary-language">Primary Language</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Primary language used to present the data file (if multiple languages are present).</p>
+<p>Primary language used to present the data file (if multiple languages are present, the Other Language field may be used to add additional languages).</p>
 <p>The value of this field is a language code.  See the <a href="../language-codes/">language code table</a> for a list of possible language codes.</p>
 <div class="example">
 <div class="example-heading">Example</div>
@@ -567,6 +545,11 @@ en
 <span class="badge badge--multi">Multi-valued</span></p>
 <p>A language in which the data file being described is provided.</p>
 <p>The value of this field is a language code.  See the <a href="../language-codes/">language code table</a> for a list of possible language codes.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+de,es
+</div>
+
 <h2 id="data-file-subjects">Data File Subjects</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>Concepts (keywords, classification, or free text terms) that define the data file or purpose (subjects which can be addressed) using the data file.</p>
@@ -591,7 +574,7 @@ http://purl.bioontology.org/ontology/MESH/C000719227
 <p>The unique identifier (IRI) of the scheme or authority used for the Subject Identifier.</p>
 <h3 id="keyword">Keyword</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Free text subject, keyword, classification code, or key phrase describing the data file or purpose for which the data file can be used.  While MeSH codes are the preferred form of specifying subjects this free text field may be used for codes or subject keywords that do not have a corresponding MeSH terms.</p>
+<p>Free text subject, keyword, classification code, or key phrase describing the data file or purpose for which the data file can be used. While MeSH codes are the preferred form of specifying subjects this free text field may be used for codes or subject keywords that do not have a corresponding MeSH terms.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 COVID-19 vaccine booster shot
@@ -610,11 +593,21 @@ This dataset provides responses from a survey carried out in June 2022 whose pur
 
 <h3 id="description-language">Description Language</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Language in which the Data File description is provided.  The default value is <code>en</code> for English.</p>
+<p>Language in which the Data File description is provided. The default value is <code>en</code> for English.</p>
 <p>The value of this field is a language code.  See the <a href="../language-codes/">language code table</a> for a list of possible language codes.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 en
+</div>
+
+<h3 id="type-of-content">Type Of Content</h3>
+<p><span class="badge badge--derived">Derived</span>
+<span class="badge badge--recommended">Recommended</span></p>
+<p>This value is always the same.  This field should not be manually specified or edited.</p>
+<p>This is the type of digital object being described, which for RADx Data Files is always <a href="http://vocab.fairdatacollective.org/gdmt/Dataset">Dataset</a>. </p>
+<div class="example">
+<div class="example-heading">Example</div>
+http://vocab.fairdatacollective.org/gdmt/Dataset
 </div>
 
 <h2 id="data-file-dictionary">Data File Dictionary</h2>
@@ -622,9 +615,10 @@ en
 <h3 id="data-dictionary-file-name">Data Dictionary File Name</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The file name of the Data Dictionary file that defines the Data File's data elements.</p>
+<p>Each Data File submitted should have its own data dictionary. For example, survery_results_origcopy.csv and survery_results_transformcopy.csv should both have data dictionary files (survery_results_origcopy_DICT.csv and survery_results_transformcopy_DICT.csv) associated with them. </p>
 <div class="example">
 <div class="example-heading">Example</div>
-COVID-19_Booster_Shot_June_2022_Responses--DataDictionary.csv
+COVID-19_Booster_Shot_June_2022_Responses--DICT.csv
 </div>
 
 <h2 id="data-file-creator">Data File Creator</h2>
@@ -632,17 +626,17 @@ COVID-19_Booster_Shot_June_2022_Responses--DataDictionary.csv
 <p>Information about the person or organization that created the data file.</p>
 <h3 id="creator-type">Creator Type</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>The type of the creator.  This is either a Person or an Organization.</p>
+<p>The type of the creator. This is either a Person or an Organization.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/ResourceCreatorType">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/Organization">Organization</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Person">Person</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-Person
+http://vocab.fairdatacollective.org/gdmt/Person
 </div>
 
 <h3 id="creator-name">Creator Name</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>The full name of the creator.  For a person this is the combination of the given name and family name, in the appropriate order.</p>
+<p>The full name of the creator. For a person this is the combination of the given name and family name, in the appropriate order.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 Josiah Carberry
@@ -666,10 +660,11 @@ Carberry
 
 <h3 id="creator-identifier">Creator Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>Globally unique string that identifies the creator (an individual or legal entity).  This is typically an ORCID. </p>
-<p>The ORCID iD is an https URI with a 16-digit number that is compatible with the ISO Standard (ISO 27729), also known as the International Standard Name Identifier (ISNI), e.g. https://orcid.org/0000-0001-2345-6789 </p>
-<p><em><a href="https://orgid.org">ORCID</a> provides a persistent digital identifier (an ORCID iD) that you own and control, and that distinguishes you from every other researcher. You can connect your iD with your professional information — affiliations, grants, publications, peer review, and more. You can use your iD to share your information with other systems, ensuring you get recognition for all your contributions, saving you time and hassle, and reducing the risk of errors.</em></p>
-<p>For more details on ORCiDs see <a href="https://orgid.org">https://orgid.org</a></p>
+<p>Globally unique string that identifies the creator (an individual or legal entity). For individuals, this is typically an ORCID; for research organizations, it is typically an ROR.</p>
+<p>The ORCID iD is an https IRI with a 16-digit number that is compatible with the ISO Standard (ISO 27729), also known as the International Standard Name Identifier (ISNI), e.g. https://orcid.org/0000-0001-2345-6789 </p>
+<p><em><a href="https://orcid.org">ORCID</a> provides a persistent digital identifier (an ORCID iD) that distinguishes each researcher from every other researcher. You can connect your iD with your professional information—affiliations, grants, publications, peer review, and more. You can use your iD to share your information with other systems, ensuring you get recognition for all your contributions, saving you time and hassle, and reducing the risk of errors.</em></p>
+<p>The ROR is an https IRI that uniquely identifies most research organizatiions. </p>
+<p><em>The <a href="https://ror.org">Research Organization Registry (ROR)</a> is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.</em></p>
 <div class="example">
 <div class="example-heading">Example</div>
 https://orcid.org/0000-0002-1825-0097
@@ -677,19 +672,18 @@ https://orcid.org/0000-0002-1825-0097
 
 <h3 id="creator-identifier-scheme">Creator Identifier Scheme</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>The name of the scheme or authority used for the Creator Identifier.  If the Creator Identiifier is an ORCID that starts with <code>https://orcid.org</code> then there is no need to fill out this field.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme">use BioPortal to search for values for this field</a>.</p>
 <p><a href="https://www.grid.ac/">GRID</a>  |  <a href="https://isni.org/">ISNI</a>  |  <a href="https://www.linkedin.com/">LinkedIn ID</a>  |  <a href="https://orcid.org/">ORCiD</a>  |  <a href="http://www.researcherid.com/">ResearcherID</a>  |  <a href="https://ror.org/">ROR</a>  |  <a href="https://www.scopus.com/">Scopus</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-ORCID
+https://orcid.org/
 </div>
 
 <h3 id="creator-identifier-scheme-identifier">Creator Identifier Scheme Identifier</h3>
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
 <p>The value of this field is derived from the value of the <em>Creator Identifier Scheme</em> field.  This field should not be manually specified or edited.</p>
-<p>The unique identifier (IRI) of the scheme or authority used for the Creator Identifier.  If the Creator Identiifier is an ORCID that starts with https://orcid.org then there is no need to fill out this field.</p>
+<p><em>The <a href="https://ror.org">Research Organization Registry (ROR)</a> is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.</em></p>
 <h3 id="creator-email">Creator Email</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
 <p>The email address of the creator.</p>
@@ -708,7 +702,8 @@ Brown University
 
 <h3 id="creator-affiliation-identifier">Creator Affiliation Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Globally unique string that identifies the organizational affiliation of the creator.</p>
+<p>Globally unique string that identifies the organizational affiliation of the contributor.  </p>
+<p>We suggest that you an identifier from the <a href="https://ror.org">Research Organization Registry (ROR)</a>, a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 https://ror.org/05gq02987
@@ -734,13 +729,17 @@ ROR
 <p>The role of the Person or the Organization in relation to the data file creation.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/ContributorRole">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/ContactPerson">Contact Person</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCollector">Data Collector</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCurator">Data Curator</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataManager">Data Manager</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Distributor">Distributor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Editor">Editor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/HostingInstitution">Hosting Institution</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/OtherRole">Other Role</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Producer">Producer</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectLeader">Project Leader</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectManager">Project Manager</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectMember">Project Member</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RegistrationAgency">Registration Agency</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RegistrationAuthority">Registration Authority</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RelatedPerson">Related Person</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ResearchGroup">Research Group</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Researcher">Researcher</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RightsHolder">Rights Holder</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Sponsor">Sponsor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Supervisor">Supervisor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/WorkPackageLeader">Work Package Leader</a></p>
+<div class="example">
+<div class="example-heading">Example</div>
+http://vocab.fairdatacollective.org/gdmt/DataManager
+</div>
+
 <h2 id="data-file-related-resource">Data File Related Resource</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>Information about resource related to the data file or other entity being described.</p>
-<p><span color="red">TODO: INSERT MORE EXPLANATION HERE</span></p>
+<p>Information about a resource related to the data file being described. Resources may be publications, manuals, depositories, web pages, or other entities that related to this data set and its creation and use.</p>
 <h3 id="related-resource-identifier">Related Resource Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A globally unique string that identifies a resource that is related to the data file being described.</p>
+<p>A globally unique string that identifies a resource that is related to the data file being described. Typically this is an IRI representing a Web page, but it can be some other type of unique identifier that identifies any digital or non-digital resource.</p>
 <h3 id="related-resource-identifier-type">Related Resource Identifier Type</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The identifier type used to identify the related resource.</p>
@@ -748,18 +747,28 @@ ROR
 <p><a href="http://vocab.fairdatacollective.org/gdmt/ARK">ARK</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/arXiv">arXiv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/bibcode">bibcode</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DOI">DOI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EAN13">EAN13</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EISSN">EISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Handle">Handle</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IGSN">IGSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IRI">IRI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISBN">ISBN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISSN">ISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISTC">ISTC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LISSN">LISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LSID">LSID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PMID">PMID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PURL">PURL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/UPC">UPC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URI">URI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URL">URL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URN">URN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/w3id">w3id</a></p>
 <h3 id="related-resource-file-name">Related Resource File Name</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>The local name of the related resource file (given by the operating system or web service).</p>
+<p>The local name of the related resource file (given by the operating system or web service), or for non-digital resources, the local name used to refer to it.</p>
 <h3 id="resource-type-category">Resource Type Category</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Categorical type of the resource being described. (Corresponds to DataCite's resourceTypeGeneral.)</p>
+<p>Categorical type of the resource being described. (Corresponds to DataCite's resourceTypeGeneral.) For publications about the Data File, choose Text; for any other related publications, choose Text. For the Data Dictionary, choose Other Resource. </p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/ResourceTypeCategory">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/Audiovisual">Audiovisual</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Collection">Collection</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCatalog">Data Catalog</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataPaper">Data Paper</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataStream">Data Stream</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Dataset">Dataset</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Event">Event</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Image">Image</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/InteractiveResource">Interactive Resource</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Model">Model</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/OtherResource">Other Resource</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PhysicalObject">Physical Object</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Service">Service</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Software">Software</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Sound">Sound</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Text">Text</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Workflow">Workflow</a></p>
-<h3 id="relation-of-data-file-to-resource">Relation of Data File to Resource</h3>
+<div class="example">
+<div class="example-heading">Example</div>
+http://vocab.fairdatacollective.org/gdmt/Text
+</div>
+
+<h3 id="relation-of-resource-to-data-file">Relation of Resource to Data File</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Description of the relationship of the object being described (A) to the related resource (B).</p>
+<p>Description of the relationship of the related resource to the Data File being described.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+The publication describes how the data file is constructed and can be used.
+</div>
+
 <h2 id="data-file-contributor">Data File Contributor</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>An entity that contributed in bringing into existence the data file being described. Contributors can be people or organizations.  While data file creators are also contributors, data file creators should be provided in the Data File Creator section instead of here</p>
+<p>An entity that contributed in bringing into existence the data file being described. Contributors can be people or organizations. While data file creators are also contributors, data file creators should be provided in the Data File Creator section instead of here</p>
 <h3 id="contributor-type">Contributor Type</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The type of the contributor of the described data file (person or organization).</p>
@@ -767,7 +776,7 @@ ROR
 <p><a href="http://vocab.fairdatacollective.org/gdmt/Organization">Organization</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Person">Person</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-Person
+http://vocab.fairdatacollective.org/gdmt/Person
 </div>
 
 <h3 id="contributor-name">Contributor Name</h3>
@@ -796,7 +805,11 @@ Carberry
 
 <h3 id="contributor-identifier">Contributor Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Globally unique string that identifies the contributor (an individual or legal entity).</p>
+<p>Globally unique string that identifies the contributor (an individual or legal entity). For individuals, this is typically an ORCID; for research organizations, it is typically an ROR.</p>
+<p>The ORCID iD is an https IRI with a 16-digit number that is compatible with the ISO Standard (ISO 27729), also known as the International Standard Name Identifier (ISNI), e.g. https://orcid.org/0000-0001-2345-6789 </p>
+<p><em><a href="https://orcid.org">ORCID</a> provides a persistent digital identifier (an ORCID iD) that distinguishes each researcher from every other researcher. You can connect your iD with your professional information—affiliations, grants, publications, peer review, and more. You can use your iD to share your information with other systems, ensuring you get recognition for all your contributions, saving you time and hassle, and reducing the risk of errors.</em></p>
+<p>The ROR is an https IRI that uniquely identifies most research organizatiions. </p>
+<p><em>The <a href="https://ror.org">Research Organization Registry (ROR)</a> is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.</em></p>
 <div class="example">
 <div class="example-heading">Example</div>
 https://orcid.org/0000-0002-1825-0097
@@ -827,7 +840,8 @@ Brown University
 
 <h3 id="contributor-affiliation-identifier">Contributor Affiliation Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Globally unique string that identifies the organizational affiliation of the contributor.</p>
+<p>Globally unique string that identifies the organizational affiliation of the contributor.  </p>
+<p>We suggest that you an identifier from the <a href="https://ror.org">Research Organization Registry (ROR)</a>, a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 https://ror.org/05gq02987
@@ -863,7 +877,7 @@ josiah.carberry@example.com
 <p><a href="http://vocab.fairdatacollective.org/gdmt/ContactPerson">Contact Person</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCollector">Data Collector</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataCurator">Data Curator</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DataManager">Data Manager</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Distributor">Distributor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Editor">Editor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/HostingInstitution">Hosting Institution</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/OtherRole">Other Role</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Producer">Producer</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectLeader">Project Leader</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectManager">Project Manager</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ProjectMember">Project Member</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RegistrationAgency">Registration Agency</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RegistrationAuthority">Registration Authority</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RelatedPerson">Related Person</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ResearchGroup">Research Group</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Researcher">Researcher</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/RightsHolder">Rights Holder</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Sponsor">Sponsor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Supervisor">Supervisor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/WorkPackageLeader">Work Package Leader</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-Data Collector
+http://vocab.fairdatacollective.org/gdmt/DataCollector
 </div>
 
 <h2 id="data-file-rights">Data File Rights</h2>
@@ -892,34 +906,30 @@ https://creativecommons.org/licenses/by-sa/4.0/
 <h3 id="license-text">License Text</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Text string describing any rights information for the data file being described.</p>
-<div class="example">
-<div class="example-heading">Example</div>
-Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
-</div>
-
+<p>If a uniquely identiable license is named above, it is not necessary to repeat the text of the license in this field. This field allows additional rights information to be provided, either to expand licensing terms, clarify the license holder, or provide unique license terms that are not available in a standardized license.</p>
 <h2 id="data-file-date">Data File Date</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>Relevant date related to the data file being described.  These dates pertain to some data file related event, for example "creation date", "submission date" etc.  Dates are specified as a pair containing the actual date (in ISO-8601 format) and the event that the date relates to.  See individual fields for specific examples.</p>
+<p>A relevant date related to the data file being described. Such dates pertain to some data-file-related event, for example "creation date", "submission date" etc. Dates are specified as a pair containing the actual date (in ISO-8601 format) and the event that the date relates to. See individual fields for specific examples.</p>
 <p>The dates of some types of events can be captured by the RADx Data Hub, for example the "Submitted" date/time.</p>
 <h3 id="event-type">Event Type</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Type of data file event that the date is associated with.</p>
+<p>Type of Data File event that the date is associated with. The Event Type is usually considered with respect to the corresponding actor; for example, Created is typically the initial creation of the Data File by its originator, Accepted is when an ingested Data File is approved (e.g., by the Data Hub), and Updated is the time of the most recent change to the Data File.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/DateType">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/Accepted">Accepted</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Available">Available</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Collected">Collected</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Copyrighted">Copyrighted</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Created">Created</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Issued">Issued</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Published">Published</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Submitted">Submitted</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Updated">Updated</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Valid">Valid</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Withdrawn">Withdrawn</a></p>
 <div class="example">
 <div class="example-heading">Example</div>
-Submitted
+http://vocab.fairdatacollective.org/gdmt/Created
 </div>
 
 <h3 id="date">Date</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>The date/time that is specific to the associated event.  </p>
-<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format.  This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day.  Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm.  When times are specified a timezone must also be specified.</p>
-<p>The date time 2022-11-23T01:23:45.678+09:00 specifies November 23, 2022 at just past 1:23am Pacific Time.</p>
-<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp).</p>
+<p>The date/time that is specific to the associated event. </p>
+<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format. This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day. Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm. When times are specified a time zone must also be specified (Z or +00:00 indicates Greenwich Mean Time).</p>
+<p>The date time 2022-11-23T01:23:45.678-07:00 specifies November 23, 2022 at just past 1:23am Pacific Daylight Time. Hyphens and colons are optional.</p>
+<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates are assumed GMT if no time zone is specified.</p>
 <div class="example">
 <div class="example-heading">Example</div>
-2022-11-23T01:23:45.678+09:00
+2022-11-23T01:23:45.678-07:00
 </div>
 
 <h2 id="data-file-parent-study">Data File Parent Study</h2>
@@ -927,69 +937,101 @@ Submitted
 <p>The research study for which this data file was created.</p>
 <h3 id="phs-identifier">PHS Identifier</h3>
 <p><span class="badge badge--required">Required</span></p>
-<p>The PHS number, that identifies the study for which this data file was created.</p>
+<p>The PHS number that identifies the study for which this data file was created.</p>
+<p>This corresponds to the <em>local identifier</em> in the DataCite standard. All RADx studies are required to have a PHS identifier; if you do not have one, please contact the Data Hub for information on filling out this field.</p>
 <div class="example">
 <div class="example-heading">Example</div>
-phs002691
+phs000296
 </div>
 
 <h3 id="study-identifier">Study Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
 <p>Globally unique string that identifies the study for which this data file was created.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000296
+</div>
+
 <h3 id="study-identifier-scheme">Study Identifier Scheme</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The name of the scheme or authority used for the Study Identifier.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/ARK">ARK</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/arXiv">arXiv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/bibcode">bibcode</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/DOI">DOI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EAN13">EAN13</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/EISSN">EISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/Handle">Handle</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IGSN">IGSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/IRI">IRI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISBN">ISBN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISSN">ISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/ISTC">ISTC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LISSN">LISSN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/LSID">LSID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PMID">PMID</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/PURL">PURL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/UPC">UPC</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URI">URI</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URL">URL</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/URN">URN</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/w3id">w3id</a></p>
+<div class="example">
+<div class="example-heading">Example</div>
+IRI
+</div>
+
 <h3 id="study-identifier-scheme-iri">Study Identifier Scheme IRI</h3>
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
-<p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
+<p>The value of this field is automatically determined from the <em>Study Identifier Scheme</em> field.  This field should not be manually specified or edited.</p>
 <p>The unique identifier (IRI) of the scheme or authority used for the Study Identifier.</p>
 <h3 id="study-name">Study Name</h3>
-<p><span class="badge badge--derived">Derived</span>
-<span class="badge badge--recommended">Recommended</span></p>
-<p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
+<p><span class="badge badge--recommended">Recommended</span></p>
 <p>The name of the research study for which this data file was created.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+NHLBI GO-ESP: Lung Cohorts Exome Sequencing Project (COPDGene)
+</div>
+
 <h3 id="study-start-date">Study Start Date</h3>
-<p><span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span></p>
-<p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
-<p>The official start date for the study for which this data file was created.  This date must be in the ISO-8601 format of yyyy-mm-dd.  For example, 2022-10-05 specified October 5, 2022.</p>
+<p><span class="badge badge--optional">Optional</span></p>
+<p>The official start date for the study for which this data file was created. This date must be in the ISO-8601 format of yyyy-mm-dd. For example, 2022-10-05 specifies October 5, 2022.</p>
+<p>This field is considered auxiliary information to the initially registered Study Start Date. It will not update the registered information, but may trigger a verification that the registered Start Date has not changed.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 2021-10-05
 </div>
 
 <h3 id="study-end-date">Study End Date</h3>
-<p><span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span></p>
-<p>The value of this field is automatically determined from the <em>PHS Identifier</em> field.  This field should not be manually specified or edited.</p>
-<p>The official end date for the study for which this data file was created.   This date must be in the ISO-8601 format of yyyy-mm-dd.  For example, 2022-10-05 specified October 5, 2022.</p>
+<p><span class="badge badge--optional">Optional</span></p>
+<p>The official end date for the study for which this data file was created. This date must be in the ISO-8601 format of yyyy-mm-dd. For example, 2022-10-05 specifies October 5, 2022.</p>
+<p>This field is considered auxiliary information to the initially registered Study End Date. It will not update the registered information, but may trigger a verification that the registered End Date has not changed.</p>
 <div class="example">
 <div class="example-heading">Example</div>
-2021-10-05
+2022-10-05
 </div>
 
 <h2 id="data-file-funding-source">Data File Funding Source</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>The sources of funding that enabled and drove the creation of the data file. (Non-monetary sources are described under Contributor.)</p>
+<p>The sources of funding that enabled and drove the creation of the data file. (Non-monetary sources are described under Contributor.) Each funding source may be described as a separate element (set of fields).</p>
 <h3 id="award-title">Award Title</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The human readable title of the award, grant, or other specific funding mechanism for the described data file.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+Safer At School Early Alert (SASEA)
+</div>
+
 <h3 id="award-page-url">Award Page URL</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The unique identifier (IRI) leading to a page provided by the funder for more information about the award (grant).</p>
+<div class="example">
+<div class="example-heading">Example</div>
+https://reporter.nih.gov/search/44g5CsIy-EGIvKlnlFwXrA/project-details/10447530
+</div>
+
 <h3 id="award-local-identifier">Award Local Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>The code assigned by the funding provider to a sponsored award (grant). (Can be an IRI, but typically is not.)</p>
+<p>The code assigned by the funding provider to a sponsored award (grant). (This can be an IRI, but typically is not.)</p>
+<div class="example">
+<div class="example-heading">Example</div>
+1U01HD108787-01
+</div>
+
 <h3 id="funder-name">Funder Name</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
 <p>Name of the organization providing the funding for the described data file ('funding provider').</p>
 <p>This is typically the NIH Institute that awarded the grant.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+Eunice Kennedy Shriver National Institute of Child Health and Human Development
+</div>
+
 <h3 id="funder-identifier">Funder Identifier</h3>
 <p><span class="badge badge--recommended">Recommended</span></p>
-<p>Globally unique string that identifies the funding provider.  A list of NIH Institute identifiers may be found <a href="https://ror.org/01cwqze88">here</a>.</p>
+<p>Globally unique string that identifies the funding provider. A list of NIH Institute identifiers may be found <a href="https://ror.org/01cwqze88">here</a>.</p>
 <table>
 <thead>
 <tr>
@@ -1112,11 +1154,21 @@ phs002691
 </tr>
 </tbody>
 </table>
+<div class="example">
+<div class="example-heading">Example</div>
+https://ror.org/04byxyr05
+</div>
+
 <h3 id="funder-identifier-scheme">Funder Identifier Scheme</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Name of the scheme or authority for the Funder Identifier.  This field is optional as in most cases it will be determined from the <em>Funder Identifier</em> field.</p>
+<p>Name of the scheme or authority for the Funder Identifier. This field is optional as in most cases it can be determined from the <em>Funder Identifier</em> field.</p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme">use BioPortal to search for values for this field</a>.</p>
 <p><a href="https://www.grid.ac/">GRID</a>  |  <a href="https://isni.org/">ISNI</a>  |  <a href="https://www.linkedin.com/">LinkedIn ID</a>  |  <a href="https://orcid.org/">ORCiD</a>  |  <a href="http://www.researcherid.com/">ResearcherID</a>  |  <a href="https://ror.org/">ROR</a>  |  <a href="https://www.scopus.com/">Scopus</a></p>
+<div class="example">
+<div class="example-heading">Example</div>
+ROR
+</div>
+
 <h3 id="funder-identifier-scheme-iri">Funder Identifier Scheme IRI</h3>
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
@@ -1124,7 +1176,7 @@ phs002691
 <p>The unique identifier (IRI) of the scheme or authority used for the Funder Identifier.</p>
 <h2 id="data-file-distribution">Data File Distribution</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>Details about the distribution for this individual public presentation of the data file (if part of the Distribution metadata), or for all the public presentations of the data file being described (if part of the data file metadata).</p>
+<p>Details about a specific (non-Data Hub) distribution for this data file. If the only available distribution for the Data File is in the RADx Data Hub, there is no need to fill out Distribution information.</p>
 <h3 id="distribution-publisher">Distribution Publisher</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The organization or resource that provides services to make publicly available this distribution of the data file.</p>
@@ -1154,7 +1206,7 @@ phs002691
 <p>An established standard to which the data file distribution conforms.</p>
 <h3 id="distribution-media-type">Distribution Media Type</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A media type (formerly known as a MIME type) of data file distribution.  The most common media type for dataset distributions in the RADx Data Hub is <a href="http://vocab.fairdatacollective.org/gdmt/text-css">text/css</a></p>
+<p>A media type (formerly known as a MIME type) of data file distribution. The most common media type for dataset distributions in the RADx Data Hub is <a href="http://vocab.fairdatacollective.org/gdmt/text-css">text/css</a></p>
 <p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/MIMEType">use BioPortal to search for values for this field</a>.</p>
 <p><a href="http://vocab.fairdatacollective.org/gdmt/application-acad">application/acad</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-arj">application/arj</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-base64">application/base64</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-binhex4">application/binhex4</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-binhex">application/binhex</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-book">application/book</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-cdf">application/cdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-clariscad">application/clariscad</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-commonground">application/commonground</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-drafting">application/drafting</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-dsptype">application/dsptype</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-dxf">application/dxf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-ecmascript">application/ecmascript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-envoy">application/envoy</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-epub+zip">application/epub+zip</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-excel">application/excel</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-fractals">application/fractals</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-freeloader">application/freeloader</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-futuresplash">application/futuresplash</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-gnutar">application/gnutar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-groupwise">application/groupwise</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-hlp">application/hlp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-hta">application/hta</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-i-deas">application/i-deas</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-iges">application/iges</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-inf">application/inf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-java-archive">application/java-archive</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-java-byte-code">application/java-byte-code</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-java">application/java</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-javascript">application/javascript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-json">application/json</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-ld+json">application/ld+json</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-lha">application/lha</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-lzx">application/lzx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mac-binary">application/mac-binary</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mac-binhex40">application/mac-binhex40</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mac-binhex">application/mac-binhex</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mac-compactpro">application/mac-compactpro</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-macbinary">application/macbinary</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-marc">application/marc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mbedlet">application/mbedlet</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mcad">application/mcad</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mime">application/mime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mspowerpoint">application/mspowerpoint</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-msword">application/msword</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-mswrite">application/mswrite</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-netmc">application/netmc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-octet-stream">application/octet-stream</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-oda">application/oda</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-ogg">application/ogg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pdf">application/pdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkcs-12">application/pkcs-12</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkcs-crl">application/pkcs-crl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkcs10">application/pkcs10</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkcs7-mime">application/pkcs7-mime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkcs7-signature">application/pkcs7-signature</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkix-cert">application/pkix-cert</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pkix-crl">application/pkix-crl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-plain">application/plain</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-postscript">application/postscript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-powerpoint">application/powerpoint</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-pro_eng">application/pro_eng</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-ringing-tones">application/ringing-tones</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-rtf">application/rtf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-sdp">application/sdp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-sea">application/sea</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-set">application/set</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-sla">application/sla</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-smil">application/smil</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-solids">application/solids</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-sounder">application/sounder</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-step">application/step</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-streamingmedia">application/streamingmedia</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-toolbook">application/toolbook</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vda">application/vda</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.amazon.ebook">application/vnd.amazon.ebook</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.android.package-archive">application/vnd.android.package-archive</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.apple.installer+xml">application/vnd.apple.installer+xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.fdf">application/vnd.fdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.hp-hpgl">application/vnd.hp-hpgl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.hp-pcl">application/vnd.hp-pcl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.mozilla.xul+xml">application/vnd.mozilla.xul+xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-excel">application/vnd.ms-excel</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-fontobject">application/vnd.ms-fontobject</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.certstore">application/vnd.ms-pki.certstore</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.pko">application/vnd.ms-pki.pko</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.seccat">application/vnd.ms-pki.seccat</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.stl">application/vnd.ms-pki.stl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-powerpoint">application/vnd.ms-powerpoint</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-project">application/vnd.ms-project</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.nokia.configuration-message">application/vnd.nokia.configuration-message</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.nokia.ringing-tone">application/vnd.nokia.ringing-tone</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.presentation">application/vnd.oasis.opendocument.presentation</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.spreadsheet">application/vnd.oasis.opendocument.spreadsheet</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.text">application/vnd.oasis.opendocument.text</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.presentationml.presentation">application/vnd.openxmlformats-officedocument.presentationml.presentation</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.wordprocessingml.document">application/vnd.openxmlformats-officedocument.wordprocessingml.document</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.rn-realmedia">application/vnd.rn-realmedia</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.rn-realplayer">application/vnd.rn-realplayer</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.visio">application/vnd.visio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.wap.wmlc">application/vnd.wap.wmlc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.wap.wmlscriptc">application/vnd.wap.wmlscriptc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vnd.xara">application/vnd.xara</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vocaltec-media-desc">application/vocaltec-media-desc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-vocaltec-media-file">application/vocaltec-media-file</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-wordperfect6.0">application/wordperfect6.0</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-wordperfect6.1">application/wordperfect6.1</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-wordperfect">application/wordperfect</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-123">application/x-123</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-7z-compressed">application/x-7z-compressed</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-abiword">application/x-abiword</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-aim">application/x-aim</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-authorware-bin">application/x-authorware-bin</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-authorware-map">application/x-authorware-map</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-authorware-seg">application/x-authorware-seg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bcpio">application/x-bcpio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-binary">application/x-binary</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-binhex40">application/x-binhex40</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bsh">application/x-bsh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bytecode.elisp(compiledelisp)">application/x-bytecode.elisp (compiled elisp)</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bytecode.python">application/x-bytecode.python</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bzip2">application/x-bzip2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-bzip">application/x-bzip</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cdf">application/x-cdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cdlink">application/x-cdlink</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-chat">application/x-chat</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cmu-raster">application/x-cmu-raster</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cocoa">application/x-cocoa</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-compactpro">application/x-compactpro</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-compress">application/x-compress</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-compressed">application/x-compressed</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-conference">application/x-conference</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cpio">application/x-cpio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-cpt">application/x-cpt</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-csh">application/x-csh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-deepv">application/x-deepv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-director">application/x-director</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-dvi">application/x-dvi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-elc">application/x-elc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-envoy">application/x-envoy</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-esrehber">application/x-esrehber</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-excel">application/x-excel</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-fictionbook">application/x-fictionbook</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-frame">application/x-frame</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-freearc">application/x-freearc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-freelance">application/x-freelance</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-gsp">application/x-gsp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-gss">application/x-gss</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-gtar">application/x-gtar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-gzip">application/x-gzip</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-hdf">application/x-hdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-helpfile">application/x-helpfile</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-httpd-imap">application/x-httpd-imap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-ima">application/x-ima</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-internett-signup">application/x-internett-signup</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-inventor">application/x-inventor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-ip2">application/x-ip2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-java-class">application/x-java-class</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-java-commerce">application/x-java-commerce</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-javascript">application/x-javascript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-koan">application/x-koan</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-ksh">application/x-ksh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-latex">application/x-latex</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lha">application/x-lha</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lisp">application/x-lisp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-livescreen">application/x-livescreen</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lotus">application/x-lotus</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lotusscreencam">application/x-lotusscreencam</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lzh">application/x-lzh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-lzx">application/x-lzx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mac-binhex40">application/x-mac-binhex40</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-macbinary">application/x-macbinary</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-magic-cap-package-1.0">application/x-magic-cap-package-1.0</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mathcad">application/x-mathcad</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-meme">application/x-meme</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-midi">application/x-midi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mif">application/x-mif</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mix-transfer">application/x-mix-transfer</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mplayer2">application/x-mplayer2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-msexcel">application/x-msexcel</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-mspowerpoint">application/x-mspowerpoint</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-navi-animation">application/x-navi-animation</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-navidoc">application/x-navidoc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-navimap">application/x-navimap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-navistyle">application/x-navistyle</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-netcdf">application/x-netcdf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-newton-compatible-pkg">application/x-newton-compatible-pkg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-nokia-9000-communicator-add-on-software">application/x-nokia-9000-communicator-add-on-software</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-omc">application/x-omc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-omcdatamaker">application/x-omcdatamaker</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-omcregerator">application/x-omcregerator</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pagemaker">application/x-pagemaker</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pcl">application/x-pcl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pixclscript">application/x-pixclscript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs10">application/x-pkcs10</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs12">application/x-pkcs12</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-certificates">application/x-pkcs7-certificates</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-certreqresp">application/x-pkcs7-certreqresp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-mime">application/x-pkcs7-mime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-signature">application/x-pkcs7-signature</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-pointplus">application/x-pointplus</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-portable-anymap">application/x-portable-anymap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-project">application/x-project</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-qpro">application/x-qpro</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-rar-compressed">application/x-rar-compressed</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-rtf">application/x-rtf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sdp">application/x-sdp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sea">application/x-sea</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-seelogo">application/x-seelogo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sh">application/x-sh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-shar">application/x-shar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-shockwave-flash">application/x-shockwave-flash</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sit">application/x-sit</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sprite">application/x-sprite</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-stuffit">application/x-stuffit</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sv4cpio">application/x-sv4cpio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-sv4crc">application/x-sv4crc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-tar">application/x-tar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-tbook">application/x-tbook</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-tcl">application/x-tcl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-tex">application/x-tex</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-texinfo">application/x-texinfo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-troff-man">application/x-troff-man</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-troff-me">application/x-troff-me</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-troff-ms">application/x-troff-ms</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-troff-msvideo">application/x-troff-msvideo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-troff">application/x-troff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-ustar">application/x-ustar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-visio">application/x-visio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-vnd.audioexplosion.mzz">application/x-vnd.audioexplosion.mzz</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-vnd.ls-xpix">application/x-vnd.ls-xpix</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-vrml">application/x-vrml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-wais-source">application/x-wais-source</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-winhelp">application/x-winhelp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-wintalk">application/x-wintalk</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-world">application/x-world</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-wpwin">application/x-wpwin</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-wri">application/x-wri</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-x509-ca-cert">application/x-x509-ca-cert</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-x-x509-user-cert">application/x-x509-user-cert</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-xhtml+xml">application/xhtml+xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-xml">application/xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/application-zip">application/zip</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-aac">audio/aac</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-aiff">audio/aiff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-basic">audio/basic</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-it">audio/it</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-make.my.funk">audio/make.my.funk</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-make">audio/make</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-mid">audio/mid</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-midi">audio/midi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-mod">audio/mod</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-mp3">audio/mp3</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-mpeg">audio/mpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-nspaudio">audio/nspaudio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-ogg">audio/ogg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-s3m">audio/s3m</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-tsp-audio">audio/tsp-audio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-tsplayer">audio/tsplayer</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-vnd.qcelp">audio/vnd.qcelp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-voc">audio/voc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-voxware">audio/voxware</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-wav">audio/wav</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-webm">audio/webm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-adpcm">audio/x-adpcm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-aiff">audio/x-aiff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-au">audio/x-au</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-gsm">audio/x-gsm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-jam">audio/x-jam</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-liveaudio">audio/x-liveaudio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-mid">audio/x-mid</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-midi">audio/x-midi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-mod">audio/x-mod</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-mpeg">audio/x-mpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-mpequrl">audio/x-mpequrl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-nspaudio">audio/x-nspaudio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-pn-realaudio-plugin">audio/x-pn-realaudio-plugin</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-pn-realaudio">audio/x-pn-realaudio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-psid">audio/x-psid</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-realaudio">audio/x-realaudio</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-twinvq-plugin">audio/x-twinvq-plugin</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-twinvq">audio/x-twinvq</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-vnd.audioexplosion.mjuicemediafile">audio/x-vnd.audioexplosion.mjuicemediafile</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-voc">audio/x-voc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-x-wav">audio/x-wav</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/audio-xm">audio/xm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/chemical-x-pdb">chemical/x-pdb</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/drawing-x-dwf(old)">drawing/x-dwf (old)</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/font-otf">font/otf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/font-ttf">font/ttf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/font-woff2">font/woff2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/font-woff">font/woff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/i-world-i-vrml">i-world/i-vrml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-bmp">image/bmp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-cmu-raster">image/cmu-raster</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-fif">image/fif</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-florian">image/florian</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-g3fax">image/g3fax</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-gif">image/gif</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-ief">image/ief</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-jpeg">image/jpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-jutvision">image/jutvision</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-naplps">image/naplps</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-pict">image/pict</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-pjpeg">image/pjpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-png">image/png</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-svg+xml">image/svg+xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-tiff">image/tiff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vasa">image/vasa</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.djvu">image/vnd.djvu</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.dwg">image/vnd.dwg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.fpx">image/vnd.fpx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.microsoft.icon">image/vnd.microsoft.icon</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.net-fpx">image/vnd.net-fpx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.rn-realflash">image/vnd.rn-realflash</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.rn-realpix">image/vnd.rn-realpix</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.wap.wbmp">image/vnd.wap.wbmp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-vnd.xiff">image/vnd.xiff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-webp">image/webp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-cmu-raster">image/x-cmu-raster</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-dwg">image/x-dwg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-icon">image/x-icon</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-jg">image/x-jg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-jps">image/x-jps</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-niff">image/x-niff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-pcx">image/x-pcx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-pict">image/x-pict</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-portable-anymap">image/x-portable-anymap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-portable-bitmap">image/x-portable-bitmap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-portable-graymap">image/x-portable-graymap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-portable-greymap">image/x-portable-greymap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-portable-pixmap">image/x-portable-pixmap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-quicktime">image/x-quicktime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-rgb">image/x-rgb</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-tiff">image/x-tiff</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-windows-bmp">image/x-windows-bmp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-xbitmap">image/x-xbitmap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-xbm">image/x-xbm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-xpixmap">image/x-xpixmap</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-xwd">image/x-xwd</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-x-xwindowdump">image/x-xwindowdump</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-xbm">image/xbm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/image-xpm">image/xpm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/message-rfc822">message/rfc822</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/model-iges">model/iges</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/model-vnd.dwf">model/vnd.dwf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/model-vrml">model/vrml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/model-x-pov">model/x-pov</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/multipart-x-gzip">multipart/x-gzip</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/multipart-x-ustar">multipart/x-ustar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/music-crescendo">music/crescendo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/music-x-karaoke">music/x-karaoke</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/paleovu-x-pv">paleovu/x-pv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-asp">text/asp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-calendar">text/calendar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-css">text/css</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-csv">text/csv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-ecmascript">text/ecmascript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-fb2">text/fb2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-html">text/html</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-javascript">text/javascript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-mcf">text/mcf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-pascal">text/pascal</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-plain">text/plain</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-richtext">text/richtext</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-scriplet">text/scriplet</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-sgml">text/sgml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-tab-separated-values">text/tab-separated-values</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-uri-list">text/uri-list</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-vnd.abc">text/vnd.abc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-vnd.fmi.flexstor">text/vnd.fmi.flexstor</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-vnd.rn-realtext">text/vnd.rn-realtext</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-vnd.wap.wml">text/vnd.wap.wml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-vnd.wap.wmlscript">text/vnd.wap.wmlscript</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-webviewhtml">text/webviewhtml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-asm">text/x-asm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-audiosoft-intra">text/x-audiosoft-intra</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-c">text/x-c</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-component">text/x-component</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-fortran">text/x-fortran</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-h">text/x-h</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-java-source">text/x-java-source</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-la-asf">text/x-la-asf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-m">text/x-m</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-pascal">text/x-pascal</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.csh">text/x-script.csh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.elisp">text/x-script.elisp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.guile">text/x-script.guile</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.ksh">text/x-script.ksh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.lisp">text/x-script.lisp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.perl-module">text/x-script.perl-module</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.perl">text/x-script.perl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.phyton">text/x-script.phyton</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.rexx">text/x-script.rexx</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.scheme">text/x-script.scheme</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.sh">text/x-script.sh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.tcl">text/x-script.tcl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.tcsh">text/x-script.tcsh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script.zsh">text/x-script.zsh</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-script">text/x-script</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-server-parsed-html">text/x-server-parsed-html</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-setext">text/x-setext</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-sgml">text/x-sgml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-speech">text/x-speech</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-uil">text/x-uil</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-uuencode">text/x-uuencode</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-x-vcalendar">text/x-vcalendar</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/text-xml">text/xml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-3gpp2">video/3gpp2</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-3gpp">video/3gpp</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-animaflex">video/animaflex</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-avi">video/avi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-avs-video">video/avs-video</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-dl">video/dl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-fli">video/fli</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-gl">video/gl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-mp2t">video/mp2t</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-mp4">video/mp4</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-mpeg">video/mpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-msvideo">video/msvideo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-ogg">video/ogg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-quicktime">video/quicktime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-vdo">video/vdo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-vivo">video/vivo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-vnd.rn-realvideo">video/vnd.rn-realvideo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-vnd.vivo">video/vnd.vivo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-vosaic">video/vosaic</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-webm">video/webm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-amt-demorun">video/x-amt-demorun</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-amt-showrun">video/x-amt-showrun</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-atomic3d-feature">video/x-atomic3d-feature</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-dl">video/x-dl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-dv">video/x-dv</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-fli">video/x-fli</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-gl">video/x-gl</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-isvideo">video/x-isvideo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-motion-jpeg">video/x-motion-jpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-mpeg">video/x-mpeg</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-mpeq2a">video/x-mpeq2a</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-ms-asf-plugin">video/x-ms-asf-plugin</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-ms-asf">video/x-ms-asf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-msvideo">video/x-msvideo</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-qtc">video/x-qtc</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-scm">video/x-scm</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/video-x-sgi-movie">video/x-sgi-movie</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/windows-metafile">windows/metafile</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/www-mime">www/mime</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-conference-x-cooltalk">x-conference/x-cooltalk</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-music-x-midi">x-music/x-midi</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-world-x-3dmf">x-world/x-3dmf</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-world-x-svr">x-world/x-svr</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-world-x-vrml">x-world/x-vrml</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/x-world-x-vrt">x-world/x-vrt</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/xgl-drawing">xgl/drawing</a>  |  <a href="http://vocab.fairdatacollective.org/gdmt/xgl-movie">xgl/movie</a></p>
 <h3 id="distribution-size">Distribution Size</h3>
@@ -1178,32 +1230,31 @@ phs002691
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
 <p>The value of this field is a fixed type and is automatically inserted.  This field should not be manually specified or edited.</p>
-<p>Type of the date ('Published') with respect to the data file.</p>
-<p>Values for this field are taken from the FDC-GDMT ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&amp;conceptid=http://vocab.fairdatacollective.org/gdmt/DataType">use BioPortal to search for values for this field</a>.</p>
+<p>Type of the date ('Published') with respect to the data file.  The value of this field is always <a href="http://vocab.fairdatacollective.org/gdmt/Published">Published</a>.</p>
 <h2 id="data-characteristics-summary">Data Characteristics Summary</h2>
-<p>Characteristics of the data within the data file, particularly of the cohorts in the data file.</p>
+<p>Characteristics of the data within the data file, particularly of the cohorts in the data file. This section provides multiple ways to enter such information; it is only necessary to enter the information in one of these formats.</p>
 <h3 id="data-characteristics-table-in-html">Data Characteristics Table in HTML</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Formatted HTML code for a table of statistical values</p>
+<p>Formatted HTML code for a table of summary statistics.</p>
 <h3 id="data-characteristics-table-in-csv">Data Characteristics Table in CSV</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Enter comma-separated values containing summary statistics characterizing this data file</p>
+<p>Enter comma-separated values containing summary statistics characterizing this data file.</p>
 <h3 id="data-characteristics-table-in-tsv">Data Characteristics Table in TSV</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Enter tab-separated values containing summary statistics characterizing this data file</p>
+<p>Enter tab-separated values containing summary statistics characterizing this data file.</p>
 <h3 id="data-characteristics-table-in-key-value-pairs">Data Characteristics Table in Key-Value Pairs</h3>
 <p><span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span></p>
-<p>Enter the name of the characteristic being described in the first (key) field, and the value for that characteristic in the second (value) field.. Note this is a repeating field and so can support multiple key-value pairs.</p>
+<p>Enter the name of the characteristic being described in the first (key) field, and the value for that characteristic in the second (value) field. Note this is a repeating field and so can support multiple key-value pairs.</p>
 <h2 id="data-source">Data Source</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>Physical or conceptual entity (agent) that creates the data streams that make up the described data file. The data source may or may not be associated with a fixed location; for example, a series of discrete sensors deployed over time to a single location may be considered a single data source in some systems.</p>
+<p>Physical or conceptual entity (agent) that creates the data streams that make up the described data file. This is a physical or conceptual entity that creates the data streams that make up the described data file. The data source may or may not be associated with a fixed location; for example, a series of discrete sensors deployed over time, either to a single location or to a series of locations, may be considered a single data source in some systems.</p>
 <h3 id="data-source-name">Data Source Name</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Human readable name of data source from which the variable(s) come(s). Physical or conceptual entity that creates the data streams that make up the described data file. The data source may or may not be associated with a fixed location; for example, a series of discrete sensors deployed over time to a single location may be considered a single data source in some systems.</p>
+<p>Human readable name of data source from which the variable(s) in the data stream(s) originate.</p>
 <h3 id="data-source-identifier">Data Source Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Globally unique string that identifies the data source (e.g., PID of an instrument).</p>
+<p>Globally unique string that identifies the data source (e.g., PID of an instrument). This is a required field if you plan to describe the original source of a given Data Stream.</p>
 <h3 id="data-source-identifier-scheme">Data Source Identifier Scheme</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The name of the scheme or authority used for the Data Source Identifier.</p>
@@ -1216,7 +1267,7 @@ phs002691
 <p>The unique identifier (IRI) of the scheme or authority used for the Data Source Identifier.</p>
 <h2 id="data-stream">Data Stream</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>A collection of one or more variable records that make up this data set. Each data stream originates from a single data source (e.g., sensor, process, or person). A data stream can grow over time. </p>
+<p>A collection of one or more variable records that contribute to this data file. Each data stream originates from a single data source (e.g., sensor, process, or person). A data stream can grow over time. </p>
 <h3 id="data-stream-name">Data Stream Name</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Human readable name of collection of records coming from a data source. A data stream is a collection of one or more variable records originating from a single data source (e.g., sensor, process, or person). A data stream can grow over time.</p>
@@ -1248,22 +1299,23 @@ phs002691
 <p>Full name of the process that operates to make the data file or product.</p>
 <h3 id="process-iri">Process IRI</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Unique identifier (IRI) for the process used to make the data file or product (preferably a resolvable and persistent identifier)</p>
+<p>Unique identifier (IRI) for the process used to make the data file or product (preferably a resolvable and persistent identifier). </p>
 <h3 id="process-version">Process Version</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Version of the process used to make this data file, typically a string (e.g., '3.0.3')</p>
+<p>Version of the process used to make this data file, typically a string (e.g., '3.0.3'). It may be a software release tag, e.g., in GitHub.</p>
 <h3 id="process-execution-identifier">Process Execution Identifier</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Identification of the particular run of the process used to make this data file (a deterministic string; in software, typically either a timestamp combined with the machine on which the software was executed; or a unique identifier generated by the controlling software for each run of the process).</p>
+<p>Identification of the particular run of the process used to make this data file. </p>
+<p>This is a deterministic string; in software, typically it is either a timestamp combined with the machine on which the software was executed; or a unique identifier generated by the controlling software for each run of the process.</p>
 <h2 id="data-file-temporal-coverage">Data File Temporal Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>A temporal description that specifies the temporal coverage of the data contained within the data file associated with this metadata.</p>
 <h3 id="temporal-extent-minimum-value">Temporal Extent Minimum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The start date (and optionally time) of the data.</p>
-<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format.  This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day.  Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm.  When times are specified a timezone must also be specified.</p>
-<p>The date time 2022-11-23T01:23:45.678+09:00 specifies November 23, 2022 at just past 1:23am Pacific Time.</p>
-<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp).</p>
+<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format. This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day. Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm. When times are specified a time zone must also be specified (Z or +00:00 indicates Greenwich Mean Time).</p>
+<p>The date time 2022-11-23T01:23:45.678-07:00 specifies November 23, 2022 at just past 1:23am Pacific Daylight Time. Hyphens and colons are optional.</p>
+<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates are assumed GMT if no time zone is specified.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 2022-06-01
@@ -1272,9 +1324,9 @@ phs002691
 <h3 id="temporal-extent-maximum-value">Temporal Extent Maximum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The end date (and optionally time) of the data.</p>
-<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format.  This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day.  Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm.  When times are specified a timezone must also be specified.</p>
-<p>The date time 2022-11-23T01:23:45.678+09:00 specifies November 23, 2022 at just past 1:23am Pacific Time.</p>
-<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp).</p>
+<p>Note that dates must be specified in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> format. This format specifies date/times in a locale neutral way with temporal components ordered largest to smallest, for example year, month, day. Note that times are in 24 hour clock (military time) format, thus 13:43 is 1:43pm. When times are specified a time zone must also be specified (Z or +00:00 indicates Greenwich Mean Time).</p>
+<p>The date time 2022-11-23T01:23:45.678-07:00 specifies November 23, 2022 at just past 1:23am Pacific Daylight Time. Hyphens and colons are optional.</p>
+<p>The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates are assumed GMT if no time zone is specified.</p>
 <div class="example">
 <div class="example-heading">Example</div>
 2022-06-29
@@ -1282,12 +1334,33 @@ phs002691
 
 <h3 id="temporal-resolution">Temporal Resolution</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Interval between two consecutive data records.</p>
+<p>The nominal time interval between the measurement time of one data record and that of the following data record, in seconds. Measurement time can be considered as the beginning, end, or other known point in the measurement process.</p>
+<p>Most repeating measurement processes have some variation in the interval between measurements. If there is no planned schedule for the measurements, this value can be set to 0.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+3600
+</div>
+
 <h3 id="duration">Duration</h3>
 <p><span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span></p>
-<p>The value of this field is computed from the difference between the <em>Temporal Extent Minimum Value</em> and <em>Temporal Extent Maximum Value</em> fields.  This field should not be manually specified or edited.</p>
-<p>The total duration of data temporal coverage.</p>
+<p>The value of this field is computed from the difference between the <em>Temporal Extent Minimum Value</em> and <em>Temporal Extent Maximum Value</em> fields, if both those fields are available.  This field should not be manually specified or edited.</p>
+<p>The total duration of data temporal coverage, specified in in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO-8601</a> duration format.</p>
+<p>P is the duration designator (for period) placed at the start of the duration representation.
+- Y is the year designator that follows the value for the number of calendar years.
+- M is the month designator that follows the value for the number of calendar months.
+- W is the week designator that follows the value for the number of weeks.
+- D is the day designator that follows the value for the number of calendar days.
+T is the time designator that precedes the time components of the representation.
+- H is the hour designator that follows the value for the number of hours.
+- M is the minute designator that follows the value for the number of minutes.
+- S is the second designator that follows the value for the number of seconds.</p>
+<p>The duration format must begin with P, and include at least one designator and value; other designators may be dropped. The smallest designator may include a decimal fraction. For example, P8DT1.5H indicates a duration of 8 calendar days + 1.5 hours.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+P8DT1.5H
+</div>
+
 <h2 id="data-file-spatial-coverage">Data File Spatial Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>A geospatial description that specifies the geographical coverage of the data contained within the data file associated with this metadata.</p>
@@ -1297,8 +1370,8 @@ phs002691
 <h3 id="maximum-latitude">Maximum Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the maximum, or northernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative).</p>
-<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
-<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
+<p>37.5 specifies 37.5 degrees North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degrees South (5 degrees and 30 minutes South)</p>
 <div class="example">
 <div class="example-heading">Example</div>
 -121.208178
@@ -1307,8 +1380,8 @@ phs002691
 <h3 id="minimum-latitude">Minimum Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the minimum, or southernmost, data point in this data file, expressed in decimal degrees (southern latitudes are negative).</p>
-<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
-<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
+<p>37.5 specifies 37.5 degrees North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degrees South (5 degrees and 30 minutes South)</p>
 <div class="example">
 <div class="example-heading">Example</div>
 -122.202653
@@ -1318,7 +1391,7 @@ phs002691
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the minimum, or westernmost, data point in this data file, expressed in decimal degrees (western longitudes are negative)</p>
 <p>150.0 specifies 150 degrees East</p>
-<p>-122.0 specifies 122 degress West</p>
+<p>-122.0 specifies 122 degrees West</p>
 <div class="example">
 <div class="example-heading">Example</div>
 36.892976
@@ -1328,7 +1401,7 @@ phs002691
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of the maximum, or easternmost, data point in this data file, expressed in decimal degrees (western longitudes are negative)</p>
 <p>150.0 specifies 150 degrees East</p>
-<p>-122.0 specifies 122 degress West</p>
+<p>-122.0 specifies 122 degrees West</p>
 <div class="example">
 <div class="example-heading">Example</div>
 37.484637
@@ -1336,60 +1409,94 @@ phs002691
 
 <h2 id="bounding-shape">Bounding Shape</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>A list of geographical coordinates that specifies the external bounday of the polygon that describes the coverage of the data contained within the data file associated with this metadata.</p>
+<p>A list of geographical coordinates that specifies the external bounday of the polygon that describes the coverage of the data contained within the data file being described.</p>
 <h3 id="point-number">Point Number</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>Monotonically increasing identifier of the point in the shape being defined (defined in clockwise order and containing the right side of the closed shape).</p>
+<p>Monotonically increasing identifier of the point in the shape being defined (defined in clockwise order and containing the right side of the closed shape). The last point must be the same as the first point.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+1,2,3,4
+</div>
+
 <h3 id="latitude">Latitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of this point in north latitude decimal degrees (southern latitudes are negative)</p>
-<p>37.5 specifies 37.5 degress North (37 degrees and 30 minutes North)</p>
-<p>-5.5  specifies 5.5 degress South (5 degress and 30 minutes South)</p>
+<p>37.5 specifies 37.5 degrees North (37 degrees and 30 minutes North)</p>
+<p>-5.5  specifies 5.5 degrees South (5 degrees and 30 minutes South)</p>
+<div class="example">
+<div class="example-heading">Example</div>
+10,8,8,10
+</div>
+
 <h3 id="longitude">Longitude</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>Location of this point in east longitude decimal degrees (western longitudes are negative)</p>
 <p>150.0 specifies 150 degrees East</p>
-<p>-122.0 specifies 122 degress West</p>
+<p>-122.0 specifies 122 degrees West</p>
+<div class="example">
+<div class="example-heading">Example</div>
+150,152,148,150
+</div>
+
 <h2 id="data-file-geopolitical-coverage">Data File Geopolitical Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
 <p>A region specified by the totality of one or more place names</p>
 <h3 id="geopolitical-region">Geopolitical region</h3>
 <p><span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span></p>
-<p>Place name depicting a geopolitical region.  We recommend that you use <a href="http://www.geonames.org/search.html">Geonames</a> to specify an identifier for a place.</p>
-<p>Values for this field are taken from the GAZ ontology.  You may <a href="https://bioportal.bioontology.org/ontologies/GAZ/?p=classes">use BioPortal to search for values for this field</a>.</p>
+<p>Place name depicting a geopolitical region. Recommended practice is to use <a href="http://www.geonames.org/search.html">Geonames</a> to find an identifier matching any particular place.</p>
 <div class="example">
 <div class="example-heading">Example</div>
-https://www.geonames.org/5128581
+https://www.geonames.org/5128581 
 </div>
 
 <h2 id="data-file-elevation-coverage">Data File Elevation Coverage</h2>
 <p><span class="badge badge--multi">Multi-valued</span></p>
-<p>The elevation  covered by the data file being described.</p>
+<p>The elevation range encompassed by the data within the data file being described.</p>
 <h3 id="vertical-extent-minimum-value">Vertical Extent Minimum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A minimum vertical extent in metres of the data file collection. In case of depth, this contains the maximum depth of data file collection (it is a negative number of greater absolute magnitude than the Vertical Extent Maximum Value).  </p>
-<p>Note that the unit is metres.</p>
+<p>The minimum vertical extent of the data file collection, specified in meters. </p>
+<p>In case of depth, this is the maximum depth of data file collection (that is, it is a negative number of greater absolute magnitude than the Vertical Extent Maximum Value if that is also a depth). </p>
+<div class="example">
+<div class="example-heading">Example</div>
+-1223
+</div>
+
 <h3 id="vertical-extent-maximum-value">Vertical Extent Maximum Value</h3>
 <p><span class="badge badge--optional">Optional</span></p>
-<p>A maximum vertical extent in metres of data file collection. In case of depth, this contains the minimum depth of data file collection (it is a negative number of lesser absolute magnitude than the Vertical Extent Minimum Value).  </p>
-<p>Note that the unit is metres.</p>
+<p>The maximum vertical extent of the collected, specified in meters. </p>
+<p>In case of depth, this is the minimum depth of data file collection (that is, it is a negative number of lesser absolute magnitude than the Vertical Extent Minimum Value). </p>
+<div class="example">
+<div class="example-heading">Example</div>
+-2.5
+</div>
+
 <h3 id="vertical-extent-datum">Vertical Extent Datum</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The name of the Datum (reference frame) used for the Vertical Extent values.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+WGS84
+</div>
+
 <h3 id="vertical-extent-datum-iri">Vertical Extent Datum IRI</h3>
 <p><span class="badge badge--optional">Optional</span></p>
 <p>The IRI (Internationalized Resource Identifier) of the Datum (reference frame) used for the Vertical Extent values.</p>
+<div class="example">
+<div class="example-heading">Example</div>
+https://epsg.io/4326
+</div>
+
 <h2 id="auxiliary-metadata">Auxiliary Metadata</h2>
 <p>Information about the data file or metadata submission that does not fit into the other categories</p>
-<h3 id="data-file-descriptive-attribute">Data File Descriptive Attribute</h3>
+<h3 id="data-file-descriptive-key-value-pair">Data File Descriptive Key-Value Pair</h3>
 <p><span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span></p>
 <p>This field supports entry of both the metadata attribute name (in the first field), and the value for that attribute (in the second field). Note this is a repeating field and so can support multiple key-value pairs.</p>
 <h3 id="additional-commentary">Additional Commentary</h3>
 <p><span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span></p>
-<p>Any additional information about the data file or provided metadata.</p>
+<p>This text field can contain additional information about the data file or provided metadata. Multiple Additional Commentary fields may be filled out to address different topics.</p>
               
             </div>
           </div><footer>
