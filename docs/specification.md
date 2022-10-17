@@ -8,9 +8,9 @@
 <h2 plain>Required fields</h2>
 The following fields are required fields.  These fields MUST be filled out in a metadata instance for the instance to be valid.
 
-[Data File Title](#data-file-title)  >>  [Title](#title)
+[Data File Titles](#data-file-titles)  >>  [Title](#title)
 
-[Data File Parent Study](#data-file-parent-study)  >>  [PHS Identifier](#phs-identifier)
+[Data File Parent Studies](#data-file-parent-studies)  >>  [PHS Identifier](#phs-identifier)
 <h2 plain>Recommended fields</h2>
 The following fields are recommended fields.  These fields SHOULD be filled out in a metadata instance to greatly increase the likelihood of the associated data file being found by interested parties and to provide proper accreditation for the creators of the file.
 
@@ -24,40 +24,40 @@ The following fields are recommended fields.  These fields SHOULD be filled out 
 
 [Data File Subjects](#data-file-subjects)  >>  [Subject Identifier](#subject-identifier)
 
-[Data File Description](#data-file-description)  >>  [Description](#description)
+[Data File Descriptions](#data-file-descriptions)  >>  [Description](#description)
 
-[Data File Description](#data-file-description)  >>  [Type Of Content](#type-of-content)
+[Data File Descriptions](#data-file-descriptions)  >>  [Type Of Content](#type-of-content)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Type](#creator-type)
+[Data File Creators](#data-file-creators)  >>  [Creator Type](#creator-type)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Name](#creator-name)
+[Data File Creators](#data-file-creators)  >>  [Creator Name](#creator-name)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Given Name](#creator-given-name)
+[Data File Creators](#data-file-creators)  >>  [Creator Given Name](#creator-given-name)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Family Name](#creator-family-name)
+[Data File Creators](#data-file-creators)  >>  [Creator Family Name](#creator-family-name)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Identifier](#creator-identifier)
+[Data File Creators](#data-file-creators)  >>  [Creator Identifier](#creator-identifier)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Email](#creator-email)
+[Data File Creators](#data-file-creators)  >>  [Creator Email](#creator-email)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Affiliation](#creator-affiliation)
+[Data File Creators](#data-file-creators)  >>  [Creator Affiliation](#creator-affiliation)
 
-[Data File Creator](#data-file-creator)  >>  [Creator Role](#creator-role)
+[Data File Creators](#data-file-creators)  >>  [Creator Role](#creator-role)
 
-[Data File Parent Study](#data-file-parent-study)  >>  [Study Identifier](#study-identifier)
+[Data File Parent Studies](#data-file-parent-studies)  >>  [Study Identifier](#study-identifier)
 
-[Data File Parent Study](#data-file-parent-study)  >>  [Study Name](#study-name)
+[Data File Parent Studies](#data-file-parent-studies)  >>  [Study Name](#study-name)
 
-[Data File Funding Source](#data-file-funding-source)  >>  [Award Local Identifier](#award-local-identifier)
+[Data File Funding Sources](#data-file-funding-sources)  >>  [Award Local Identifier](#award-local-identifier)
 
-[Data File Funding Source](#data-file-funding-source)  >>  [Funder Name](#funder-name)
+[Data File Funding Sources](#data-file-funding-sources)  >>  [Funder Name](#funder-name)
 
-[Data File Funding Source](#data-file-funding-source)  >>  [Funder Identifier](#funder-identifier)
+[Data File Funding Sources](#data-file-funding-sources)  >>  [Funder Identifier](#funder-identifier)
 
-## Data File Title
+## Data File Titles
 <span class="badge badge--multi">Multi-valued</span>
 
-The name or title of the Data File being described. Mutliple titles may be specified in different languages. At least one Data File Title element is required.
+A list of names or titles of the Data File being described. At least one Data File Title is required.  Mutliple values may be specified to provide titles in different languages.
 
 ### Title
 <span class="badge badge--required">Required</span>
@@ -68,7 +68,8 @@ Multiple titles and different languages may be specified by repeating this eleme
 
 <div class="example">
 <div class="example-heading">Example</div>
-COVID-19 Booster Shot Side Effects Survey Responses
+<p>COVID-19 Booster Shot Side Effects Survey Responses</p>
+
 </div>
 
 ### Language
@@ -76,13 +77,12 @@ COVID-19 Booster Shot Side Effects Survey Responses
 
 The language tag that identifies the language in which the Data File Title is provided. Languages are identified using codes that are structured in accordance with [RFC 5646](https://www.rfc-editor.org/rfc/rfc5646). If no value is specified then the default code of `en` for English is assumed.
 
-A comprehensive list of language codes is provided here. If you cannot find an appropriate language code please contact the Data Hub administrators.
-
 The value of this field is a language code.  See the [language code table](language-codes.md) for a list of possible language codes.
 
 <div class="example">
 <div class="example-heading">Example</div>
-en
+<p>en</p>
+
 </div>
 
 
@@ -101,7 +101,8 @@ See also:  [https://en.wikipedia.org/wiki/Digital_object_identifier](https://en.
 
 <div class="example">
 <div class="example-heading">Example</div>
-http://doi.org/10.1000/182
+<p>http://doi.org/10.1000/182</p>
+
 </div>
 
 ### Identifier Type
@@ -116,7 +117,8 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
 <div class="example">
 <div class="example-heading">Example</div>
-DOI
+<p><a href="http://vocab.fairdatacollective.org/gdmt/DOI">DOI</a></p>
+
 </div>
 
 ### File Name 
@@ -126,7 +128,8 @@ The local name of the resource (for example, in a file-based operating system or
 
 <div class="example">
 <div class="example-heading">Example</div>
-COVID-19_Booster_Shot_June_2022_Responses.csv
+<p>COVID-19_Booster_Shot_June_2022_Responses.csv</p>
+
 </div>
 
 ### Version
@@ -138,7 +141,8 @@ This field accepts any version string, but we suggest that you use semantic vers
 
 <div class="example">
 <div class="example-heading">Example</div>
-1.0.1
+<p>1.0.1</p>
+
 </div>
 
 ### SHA256 digest
@@ -156,7 +160,8 @@ shasum -a 256 /path/to/file
 
 <div class="example">
 <div class="example-heading">Example</div>
-ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011
+<p>ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011</p>
+
 </div>
 
 
@@ -173,27 +178,29 @@ The value of this field is a language code.  See the [language code table](langu
 
 <div class="example">
 <div class="example-heading">Example</div>
-en
+<p>en</p>
+
 </div>
 
-### Other Language
+### Other Languages
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
-A language in which the data file being described is provided.
+A list of other, non-primary, languages in which the data file being described is provided.
 
 The value of this field is a language code.  See the [language code table](language-codes.md) for a list of possible language codes.
 
 <div class="example">
 <div class="example-heading">Example</div>
-de,es
+<p>de,es</p>
+
 </div>
 
 
 ## Data File Subjects
 <span class="badge badge--multi">Multi-valued</span>
 
-Concepts (keywords, classification, or free text terms) that define the data file or purpose (subjects which can be addressed) using the data file.
+A list of concepts (keywords, classification, or free text terms) that define the data file or purpose (subjects which can be addressed) using the data file.
 
 ### Subject Identifier
 <span class="badge badge--recommended">Recommended</span>
@@ -204,7 +211,8 @@ Values for this field are taken from the MESH ontology.  You may [use BioPortal 
 
 <div class="example">
 <div class="example-heading">Example</div>
-http://purl.bioontology.org/ontology/MESH/C000719227
+<p><a href="http://purl.bioontology.org/ontology/MESH/C000719227">COVID-19 vaccine booster shot</a></p>
+
 </div>
 
 ### Subject Identifier Scheme
@@ -215,14 +223,6 @@ This value is derived  This field should not be manually specified or edited.
 
 The name of the scheme or authority used for the Subject Identifier.
 
-### Subject Identifier Scheme Identifier
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-This value is derived  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Subject Identifier.
-
 ### Keyword
 <span class="badge badge--optional">Optional</span>
 
@@ -230,14 +230,15 @@ Free text subject, keyword, classification code, or key phrase describing the da
 
 <div class="example">
 <div class="example-heading">Example</div>
-COVID-19 vaccine booster shot
+<p>COVID-19 vaccine booster shot</p>
+
 </div>
 
 
-## Data File Description
+## Data File Descriptions
 <span class="badge badge--multi">Multi-valued</span>
 
-Summary of the Data File and its contents.
+A list of summaries of the Data File and its contents.
 
 ### Description
 <span class="badge badge--recommended">Recommended</span>
@@ -246,7 +247,8 @@ An account of the resource contained in the Data File; may include but is not li
 
 <div class="example">
 <div class="example-heading">Example</div>
-This dataset provides responses from a survey carried out in June 2022 whose purpose was to ascertain side-effects of receiving the COVID-19 booster shot.
+<p>This dataset provides responses from a survey carried out in June 2022 whose purpose was to ascertain side-effects of receiving the COVID-19 booster shot.</p>
+
 </div>
 
 ### Description Language
@@ -258,7 +260,8 @@ The value of this field is a language code.  See the [language code table](langu
 
 <div class="example">
 <div class="example-heading">Example</div>
-en
+<p>en</p>
+
 </div>
 
 ### Type Of Content
@@ -271,7 +274,8 @@ This is the type of digital object being described, which for RADx Data Files is
 
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/Dataset
+<p><a href="http://vocab.fairdatacollective.org/gdmt/Dataset">Dataset</a></p>
+
 </div>
 
 
@@ -288,14 +292,15 @@ Each Data File submitted should have its own data dictionary. For example, surve
 
 <div class="example">
 <div class="example-heading">Example</div>
-COVID-19_Booster_Shot_June_2022_Responses--DICT.csv
+<p>COVID-19_Booster_Shot_June_2022_Responses--DICT.csv</p>
+
 </div>
 
 
-## Data File Creator
+## Data File Creators
 <span class="badge badge--multi">Multi-valued</span>
 
-Information about the person or organization that created the data file.
+A list of people and/or organizations that created the data file.
 
 ### Creator Type
 <span class="badge badge--recommended">Recommended</span>
@@ -307,7 +312,8 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Organization](http://vocab.fairdatacollective.org/gdmt/Organization)  |  [Person](http://vocab.fairdatacollective.org/gdmt/Person)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/Person
+<p><a href="http://vocab.fairdatacollective.org/gdmt/Person">Person</a></p>
+
 </div>
 
 ### Creator Name
@@ -317,7 +323,8 @@ The full name of the creator. For a person this is the combination of the given 
 
 <div class="example">
 <div class="example-heading">Example</div>
-Josiah Carberry
+<p>Josiah Carberry</p>
+
 </div>
 
 ### Creator Given Name
@@ -327,7 +334,8 @@ If the creator is a person, the personal name(s) of the creator (e.g., first and
 
 <div class="example">
 <div class="example-heading">Example</div>
-Josiah
+<p>Josiah</p>
+
 </div>
 
 ### Creator Family Name
@@ -337,7 +345,8 @@ If the creator is a person, the surname(s) of the creator (e.g., last name in We
 
 <div class="example">
 <div class="example-heading">Example</div>
-Carberry
+<p>Carberry</p>
+
 </div>
 
 ### Creator Identifier
@@ -355,7 +364,8 @@ _The [Research Organization Registry (ROR)](https://ror.org) is a community-led 
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://orcid.org/0000-0002-1825-0097
+<p>https://orcid.org/0000-0002-1825-0097</p>
+
 </div>
 
 ### Creator Identifier Scheme
@@ -368,16 +378,9 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 <div class="example">
 <div class="example-heading">Example</div>
-https://orcid.org/
+<p><a href="https://orcid.org/">ORCID</a></p>
+
 </div>
-
-### Creator Identifier Scheme Identifier
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the value of the _Creator Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-_The [Research Organization Registry (ROR)](https://ror.org) is a community-led project to develop an open, sustainable, usable, and unique identifier for every research organization in the world._
 
 ### Creator Email
 <span class="badge badge--recommended">Recommended</span>
@@ -386,7 +389,8 @@ The email address of the creator.
 
 <div class="example">
 <div class="example-heading">Example</div>
-josiah.carberry@example.com
+<p>josiah.carberry@example.com</p>
+
 </div>
 
 ### Creator Affiliation
@@ -396,7 +400,8 @@ If the creator is a Person who is affiliated with an instition then this field s
 
 <div class="example">
 <div class="example-heading">Example</div>
-Brown University
+<p>Brown University</p>
+
 </div>
 
 ### Creator Affiliation Identifier
@@ -408,7 +413,8 @@ We suggest that you an identifier from the [Research Organization Registry (ROR)
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://ror.org/05gq02987
+<p>https://ror.org/05gq02987</p>
+
 </div>
 
 ### Creator Affiliation Identifier Scheme
@@ -421,16 +427,9 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 <div class="example">
 <div class="example-heading">Example</div>
-ROR
+<p><a href="https://ror.org">ROR</a></p>
+
 </div>
-
-### Creator Affiliation Identifier Scheme Identifier
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the _Creator Affiliation Scheme_ field  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Subject Identifier.
 
 ### Creator Role
 <span class="badge badge--recommended">Recommended</span>
@@ -442,14 +441,15 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Contact Person](http://vocab.fairdatacollective.org/gdmt/ContactPerson)  |  [Data Collector](http://vocab.fairdatacollective.org/gdmt/DataCollector)  |  [Data Curator](http://vocab.fairdatacollective.org/gdmt/DataCurator)  |  [Data Manager](http://vocab.fairdatacollective.org/gdmt/DataManager)  |  [Distributor](http://vocab.fairdatacollective.org/gdmt/Distributor)  |  [Editor](http://vocab.fairdatacollective.org/gdmt/Editor)  |  [Hosting Institution](http://vocab.fairdatacollective.org/gdmt/HostingInstitution)  |  [Other Role](http://vocab.fairdatacollective.org/gdmt/OtherRole)  |  [Producer](http://vocab.fairdatacollective.org/gdmt/Producer)  |  [Project Leader](http://vocab.fairdatacollective.org/gdmt/ProjectLeader)  |  [Project Manager](http://vocab.fairdatacollective.org/gdmt/ProjectManager)  |  [Project Member](http://vocab.fairdatacollective.org/gdmt/ProjectMember)  |  [Registration Agency](http://vocab.fairdatacollective.org/gdmt/RegistrationAgency)  |  [Registration Authority](http://vocab.fairdatacollective.org/gdmt/RegistrationAuthority)  |  [Related Person](http://vocab.fairdatacollective.org/gdmt/RelatedPerson)  |  [Research Group](http://vocab.fairdatacollective.org/gdmt/ResearchGroup)  |  [Researcher](http://vocab.fairdatacollective.org/gdmt/Researcher)  |  [Rights Holder](http://vocab.fairdatacollective.org/gdmt/RightsHolder)  |  [Sponsor](http://vocab.fairdatacollective.org/gdmt/Sponsor)  |  [Supervisor](http://vocab.fairdatacollective.org/gdmt/Supervisor)  |  [Work Package Leader](http://vocab.fairdatacollective.org/gdmt/WorkPackageLeader)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/DataManager
+<p><a href="http://vocab.fairdatacollective.org/gdmt/DataManager">Data Manager</a></p>
+
 </div>
 
 
-## Data File Related Resource
+## Data File Related Resources
 <span class="badge badge--multi">Multi-valued</span>
 
-Information about a resource related to the data file being described. Resources may be publications, manuals, depositories, web pages, or other entities that related to this data set and its creation and use.
+A list of resources related to the Data File being described. Resources may be publications, manuals, depositories, web pages, or other entities that related to this data set and its creation and use.
 
 ### Related Resource Identifier
 <span class="badge badge--optional">Optional</span>
@@ -469,7 +469,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 The local name of the related resource file (given by the operating system or web service), or for non-digital resources, the local name used to refer to it.
 
-### Resource Type Category
+### Related Resource Type Category
 <span class="badge badge--optional">Optional</span>
 
 Categorical type of the resource being described. (Corresponds to DataCite's resourceTypeGeneral.) For publications about the Data File, choose Text; for any other related publications, choose Text. For the Data Dictionary, choose Other Resource. 
@@ -479,24 +479,26 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Audiovisual](http://vocab.fairdatacollective.org/gdmt/Audiovisual)  |  [Collection](http://vocab.fairdatacollective.org/gdmt/Collection)  |  [Data Catalog](http://vocab.fairdatacollective.org/gdmt/DataCatalog)  |  [Data Paper](http://vocab.fairdatacollective.org/gdmt/DataPaper)  |  [Data Stream](http://vocab.fairdatacollective.org/gdmt/DataStream)  |  [Dataset](http://vocab.fairdatacollective.org/gdmt/Dataset)  |  [Event](http://vocab.fairdatacollective.org/gdmt/Event)  |  [Image](http://vocab.fairdatacollective.org/gdmt/Image)  |  [Interactive Resource](http://vocab.fairdatacollective.org/gdmt/InteractiveResource)  |  [Model](http://vocab.fairdatacollective.org/gdmt/Model)  |  [Other Resource](http://vocab.fairdatacollective.org/gdmt/OtherResource)  |  [Physical Object](http://vocab.fairdatacollective.org/gdmt/PhysicalObject)  |  [Service](http://vocab.fairdatacollective.org/gdmt/Service)  |  [Software](http://vocab.fairdatacollective.org/gdmt/Software)  |  [Sound](http://vocab.fairdatacollective.org/gdmt/Sound)  |  [Text](http://vocab.fairdatacollective.org/gdmt/Text)  |  [Workflow](http://vocab.fairdatacollective.org/gdmt/Workflow)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/Text
+<p><a href="http://vocab.fairdatacollective.org/gdmt/Text">Text</a></p>
+
 </div>
 
-### Relation of Resource to Data File
+### Related Resource Relation
 <span class="badge badge--optional">Optional</span>
 
 Description of the relationship of the related resource to the Data File being described.
 
 <div class="example">
 <div class="example-heading">Example</div>
-The publication describes how the data file is constructed and can be used.
+<p>The publication describes how the data file is constructed and can be used.</p>
+
 </div>
 
 
-## Data File Contributor
+## Data File Contributors
 <span class="badge badge--multi">Multi-valued</span>
 
-An entity that contributed in bringing into existence the data file being described. Contributors can be people or organizations. While data file creators are also contributors, data file creators should be provided in the Data File Creator section instead of here
+A list of people and/or organizations that contributed in bringing into existence the data file being described. While data file creators are also contributors, data file creators should be provided in the Data File Creator section instead of here
 
 ### Contributor Type
 <span class="badge badge--optional">Optional</span>
@@ -508,7 +510,8 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Organization](http://vocab.fairdatacollective.org/gdmt/Organization)  |  [Person](http://vocab.fairdatacollective.org/gdmt/Person)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/Person
+<p><a href="http://vocab.fairdatacollective.org/gdmt/Person">Person</a></p>
+
 </div>
 
 ### Contributor Name
@@ -518,7 +521,8 @@ The full name of the contributor.
 
 <div class="example">
 <div class="example-heading">Example</div>
-Josiah Carberry
+<p>Josiah Carberry</p>
+
 </div>
 
 ### Contributor Given Name
@@ -528,7 +532,8 @@ If the contributor is a person, the personal name(s) of the contributor (e.g., f
 
 <div class="example">
 <div class="example-heading">Example</div>
-Josiah
+<p>Josiah</p>
+
 </div>
 
 ### Contributor Family Name
@@ -538,7 +543,8 @@ If the contributor is a person, the surname(s) of the conributor (e.g., last nam
 
 <div class="example">
 <div class="example-heading">Example</div>
-Carberry
+<p>Carberry</p>
+
 </div>
 
 ### Contributor Identifier
@@ -556,7 +562,8 @@ _The [Research Organization Registry (ROR)](https://ror.org) is a community-led 
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://orcid.org/0000-0002-1825-0097
+<p>https://orcid.org/0000-0002-1825-0097</p>
+
 </div>
 
 ### Contributor Identifier Scheme
@@ -569,16 +576,9 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 <div class="example">
 <div class="example-heading">Example</div>
-ORCID
+<p><a href="https://orcid.org">ORCID</a></p>
+
 </div>
-
-### Contributor Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the value of the _Contributor Identifier Scheme_ Field  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Contributor Identifier.
 
 ### Contributor Affiliation
 <span class="badge badge--optional">Optional</span>
@@ -587,7 +587,8 @@ If the contributor is a person, the organizational or institutional affiliation 
 
 <div class="example">
 <div class="example-heading">Example</div>
-Brown University
+<p>Brown University</p>
+
 </div>
 
 ### Contributor Affiliation Identifier
@@ -599,7 +600,8 @@ We suggest that you an identifier from the [Research Organization Registry (ROR)
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://ror.org/05gq02987
+<p>https://ror.org/05gq02987</p>
+
 </div>
 
 ### Contributor Affiliation Identifier Scheme
@@ -612,16 +614,9 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 <div class="example">
 <div class="example-heading">Example</div>
-ROR
+<p><a href="https://ror.org">ROR</a></p>
+
 </div>
-
-### Contributor Affiliation Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the value of the _Contributor Affiliation Scheme_ Field  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Contributor Affiliation Identifier Scheme.
 
 ### Contributor Email
 <span class="badge badge--optional">Optional</span>
@@ -630,7 +625,8 @@ An email address of the contributor.
 
 <div class="example">
 <div class="example-heading">Example</div>
-josiah.carberry@example.com
+<p>josiah.carberry@example.com</p>
+
 </div>
 
 ### Contributor Role
@@ -643,14 +639,15 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Contact Person](http://vocab.fairdatacollective.org/gdmt/ContactPerson)  |  [Data Collector](http://vocab.fairdatacollective.org/gdmt/DataCollector)  |  [Data Curator](http://vocab.fairdatacollective.org/gdmt/DataCurator)  |  [Data Manager](http://vocab.fairdatacollective.org/gdmt/DataManager)  |  [Distributor](http://vocab.fairdatacollective.org/gdmt/Distributor)  |  [Editor](http://vocab.fairdatacollective.org/gdmt/Editor)  |  [Hosting Institution](http://vocab.fairdatacollective.org/gdmt/HostingInstitution)  |  [Other Role](http://vocab.fairdatacollective.org/gdmt/OtherRole)  |  [Producer](http://vocab.fairdatacollective.org/gdmt/Producer)  |  [Project Leader](http://vocab.fairdatacollective.org/gdmt/ProjectLeader)  |  [Project Manager](http://vocab.fairdatacollective.org/gdmt/ProjectManager)  |  [Project Member](http://vocab.fairdatacollective.org/gdmt/ProjectMember)  |  [Registration Agency](http://vocab.fairdatacollective.org/gdmt/RegistrationAgency)  |  [Registration Authority](http://vocab.fairdatacollective.org/gdmt/RegistrationAuthority)  |  [Related Person](http://vocab.fairdatacollective.org/gdmt/RelatedPerson)  |  [Research Group](http://vocab.fairdatacollective.org/gdmt/ResearchGroup)  |  [Researcher](http://vocab.fairdatacollective.org/gdmt/Researcher)  |  [Rights Holder](http://vocab.fairdatacollective.org/gdmt/RightsHolder)  |  [Sponsor](http://vocab.fairdatacollective.org/gdmt/Sponsor)  |  [Supervisor](http://vocab.fairdatacollective.org/gdmt/Supervisor)  |  [Work Package Leader](http://vocab.fairdatacollective.org/gdmt/WorkPackageLeader)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/DataCollector
+<p><a href="http://vocab.fairdatacollective.org/gdmt/DataCollector">Data Collector</a></p>
+
 </div>
 
 
 ## Data File Rights
 <span class="badge badge--multi">Multi-valued</span>
 
-Way in which the data file may or may not be accessed and used.
+A list of ways in which the data file may or may not be accessed and used.
 
 ### License Name
 <span class="badge badge--optional">Optional</span>
@@ -662,20 +659,8 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [0BSD](http://vocab.fairdatacollective.org/gdmt/0BSD)  |  [AAL](http://vocab.fairdatacollective.org/gdmt/AAL)  |  [Abstyles](http://vocab.fairdatacollective.org/gdmt/Abstyles)  |  [Adobe-2006](http://vocab.fairdatacollective.org/gdmt/Adobe2006)  |  [Adobe-Glyph](http://vocab.fairdatacollective.org/gdmt/AdobeGlyph)  |  [ADSL](http://vocab.fairdatacollective.org/gdmt/ADSL)  |  [AFL-1.1](http://vocab.fairdatacollective.org/gdmt/AFL1.1)  |  [AFL-1.2](http://vocab.fairdatacollective.org/gdmt/AFL1.2)  |  [AFL-2.0](http://vocab.fairdatacollective.org/gdmt/AFL2.0)  |  [AFL-2.1](http://vocab.fairdatacollective.org/gdmt/AFL2.1)  |  [AFL-3.0](http://vocab.fairdatacollective.org/gdmt/AFL3.0)  |  [Afmparse](http://vocab.fairdatacollective.org/gdmt/Afmparse)  |  [AGPL-1.0-only](http://vocab.fairdatacollective.org/gdmt/AGPL1.0only)  |  [AGPL-1.0-or-later](http://vocab.fairdatacollective.org/gdmt/AGPL1.0orlater)  |  [AGPL-3.0-only](http://vocab.fairdatacollective.org/gdmt/AGPL3.0only)  |  [AGPL-3.0-or-later](http://vocab.fairdatacollective.org/gdmt/AGPL3.0orlater)  |  [Aladdin](http://vocab.fairdatacollective.org/gdmt/Aladdin)  |  [AMDPLPA](http://vocab.fairdatacollective.org/gdmt/AMDPLPA)  |  [AML](http://vocab.fairdatacollective.org/gdmt/AML)  |  [AMPAS](http://vocab.fairdatacollective.org/gdmt/AMPAS)  |  [ANTLR-PD-fallback](http://vocab.fairdatacollective.org/gdmt/ANTLRPDfallback)  |  [ANTLR-PD](http://vocab.fairdatacollective.org/gdmt/ANTLRPD)  |  [Apache-1.0](http://vocab.fairdatacollective.org/gdmt/Apache1.0)  |  [Apache-1.1](http://vocab.fairdatacollective.org/gdmt/Apache1.1)  |  [Apache-2.0](http://vocab.fairdatacollective.org/gdmt/Apache2.0)  |  [APAFML](http://vocab.fairdatacollective.org/gdmt/APAFML)  |  [APL-1.0](http://vocab.fairdatacollective.org/gdmt/APL1.0)  |  [APSL-1.0](http://vocab.fairdatacollective.org/gdmt/APSL1.0)  |  [APSL-1.1](http://vocab.fairdatacollective.org/gdmt/APSL1.1)  |  [APSL-1.2](http://vocab.fairdatacollective.org/gdmt/APSL1.2)  |  [APSL-2.0](http://vocab.fairdatacollective.org/gdmt/APSL2.0)  |  [Artistic-1.0-cl8](http://vocab.fairdatacollective.org/gdmt/Artistic1.0cl8)  |  [Artistic-1.0-Perl](http://vocab.fairdatacollective.org/gdmt/Artistic1.0Perl)  |  [Artistic-1.0](http://vocab.fairdatacollective.org/gdmt/Artistic1.0)  |  [Artistic-2.0](http://vocab.fairdatacollective.org/gdmt/Artistic2.0)  |  [Bahyph](http://vocab.fairdatacollective.org/gdmt/Bahyph)  |  [Barr](http://vocab.fairdatacollective.org/gdmt/Barr)  |  [Beerware](http://vocab.fairdatacollective.org/gdmt/Beerware)  |  [BitTorrent-1.0](http://vocab.fairdatacollective.org/gdmt/BitTorrent1.0)  |  [BitTorrent-1.1](http://vocab.fairdatacollective.org/gdmt/BitTorrent1.1)  |  [blessing](http://vocab.fairdatacollective.org/gdmt/blessing)  |  [BlueOak-1.0.0](http://vocab.fairdatacollective.org/gdmt/BlueOak1.0.0)  |  [Borceux](http://vocab.fairdatacollective.org/gdmt/Borceux)  |  [BSD-1-Clause](http://vocab.fairdatacollective.org/gdmt/BSD1Clause)  |  [BSD-2-Clause-Patent](http://vocab.fairdatacollective.org/gdmt/BSD2ClausePatent)  |  [BSD-2-Clause-Views](http://vocab.fairdatacollective.org/gdmt/BSD2ClauseViews)  |  [BSD-2-Clause](http://vocab.fairdatacollective.org/gdmt/BSD2Clause)  |  [BSD-3-Clause-Attribution](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseAttribution)  |  [BSD-3-Clause-Clear](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseClear)  |  [BSD-3-Clause-LBNL](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseLBNL)  |  [BSD-3-Clause-No-Nuclear-License-2014](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseNoNuclearLicense2014)  |  [BSD-3-Clause-No-Nuclear-License](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseNoNuclearLicense)  |  [BSD-3-Clause-No-Nuclear-Warranty](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseNoNuclearWarranty)  |  [BSD-3-Clause-Open-MPI](http://vocab.fairdatacollective.org/gdmt/BSD3ClauseOpenMPI)  |  [BSD-3-Clause](http://vocab.fairdatacollective.org/gdmt/BSD3Clause)  |  [BSD-4-Clause-UC](http://vocab.fairdatacollective.org/gdmt/BSD4ClauseUC)  |  [BSD-4-Clause](http://vocab.fairdatacollective.org/gdmt/BSD4Clause)  |  [BSD-Protection](http://vocab.fairdatacollective.org/gdmt/BSDProtection)  |  [BSD-Source-Code](http://vocab.fairdatacollective.org/gdmt/BSDSourceCode)  |  [BSL-1.0](http://vocab.fairdatacollective.org/gdmt/BSL1.0)  |  [BUSL-1.1](http://vocab.fairdatacollective.org/gdmt/BUSL1.1)  |  [bzip2-1.0.5](http://vocab.fairdatacollective.org/gdmt/bzip21.0.5)  |  [bzip2-1.0.6](http://vocab.fairdatacollective.org/gdmt/bzip21.0.6)  |  [CAL-1.0-Combined-Work-Exception](http://vocab.fairdatacollective.org/gdmt/CAL1.0CombinedWorkException)  |  [CAL-1.0](http://vocab.fairdatacollective.org/gdmt/CAL1.0)  |  [Caldera](http://vocab.fairdatacollective.org/gdmt/Caldera)  |  [CATOSL-1.1](http://vocab.fairdatacollective.org/gdmt/CATOSL1.1)  |  [CC-BY-1.0](http://vocab.fairdatacollective.org/gdmt/CCBY1.0)  |  [CC-BY-2.0](http://vocab.fairdatacollective.org/gdmt/CCBY2.0)  |  [CC-BY-2.5](http://vocab.fairdatacollective.org/gdmt/CCBY2.5)  |  [CC-BY-3.0-AT](http://vocab.fairdatacollective.org/gdmt/CCBY3.0AT)  |  [CC-BY-3.0-US](http://vocab.fairdatacollective.org/gdmt/CCBY3.0US)  |  [CC-BY-3.0](http://vocab.fairdatacollective.org/gdmt/CCBY3.0)  |  [CC-BY-4.0](http://vocab.fairdatacollective.org/gdmt/CCBY4.0)  |  [CC-BY-NC-1.0](http://vocab.fairdatacollective.org/gdmt/CCBYNC1.0)  |  [CC-BY-NC-2.0](http://vocab.fairdatacollective.org/gdmt/CCBYNC2.0)  |  [CC-BY-NC-2.5](http://vocab.fairdatacollective.org/gdmt/CCBYNC2.5)  |  [CC-BY-NC-3.0](http://vocab.fairdatacollective.org/gdmt/CCBYNC3.0)  |  [CC-BY-NC-4.0](http://vocab.fairdatacollective.org/gdmt/CCBYNC4.0)  |  [CC-BY-NC-ND-1.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCND1.0)  |  [CC-BY-NC-ND-2.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCND2.0)  |  [CC-BY-NC-ND-2.5](http://vocab.fairdatacollective.org/gdmt/CCBYNCND2.5)  |  [CC-BY-NC-ND-3.0-IGO](http://vocab.fairdatacollective.org/gdmt/CCBYNCND3.0IGO)  |  [CC-BY-NC-ND-3.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCND3.0)  |  [CC-BY-NC-ND-4.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCND4.0)  |  [CC-BY-NC-SA-1.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCSA1.0)  |  [CC-BY-NC-SA-2.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCSA2.0)  |  [CC-BY-NC-SA-2.5](http://vocab.fairdatacollective.org/gdmt/CCBYNCSA2.5)  |  [CC-BY-NC-SA-3.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCSA3.0)  |  [CC-BY-NC-SA-4.0](http://vocab.fairdatacollective.org/gdmt/CCBYNCSA4.0)  |  [CC-BY-ND-1.0](http://vocab.fairdatacollective.org/gdmt/CCBYND1.0)  |  [CC-BY-ND-2.0](http://vocab.fairdatacollective.org/gdmt/CCBYND2.0)  |  [CC-BY-ND-2.5](http://vocab.fairdatacollective.org/gdmt/CCBYND2.5)  |  [CC-BY-ND-3.0](http://vocab.fairdatacollective.org/gdmt/CCBYND3.0)  |  [CC-BY-ND-4.0](http://vocab.fairdatacollective.org/gdmt/CCBYND4.0)  |  [CC-BY-SA-1.0](http://vocab.fairdatacollective.org/gdmt/CCBYSA1.0)  |  [CC-BY-SA-2.0-UK](http://vocab.fairdatacollective.org/gdmt/CCBYSA2.0UK)  |  [CC-BY-SA-2.0](http://vocab.fairdatacollective.org/gdmt/CCBYSA2.0)  |  [CC-BY-SA-2.5](http://vocab.fairdatacollective.org/gdmt/CCBYSA2.5)  |  [CC-BY-SA-3.0-AT](http://vocab.fairdatacollective.org/gdmt/CCBYSA3.0AT)  |  [CC-BY-SA-3.0](http://vocab.fairdatacollective.org/gdmt/CCBYSA3.0)  |  [CC-BY-SA-4.0](http://vocab.fairdatacollective.org/gdmt/CCBYSA4.0)  |  [CC-PDDC](http://vocab.fairdatacollective.org/gdmt/CCPDDC)  |  [CC0-1.0](http://vocab.fairdatacollective.org/gdmt/CC01.0)  |  [CDDL-1.0](http://vocab.fairdatacollective.org/gdmt/CDDL1.0)  |  [CDDL-1.1](http://vocab.fairdatacollective.org/gdmt/CDDL1.1)  |  [CDLA-Permissive-1.0](http://vocab.fairdatacollective.org/gdmt/CDLAPermissive1.0)  |  [CDLA-Sharing-1.0](http://vocab.fairdatacollective.org/gdmt/CDLASharing1.0)  |  [CECILL-1.0](http://vocab.fairdatacollective.org/gdmt/CECILL1.0)  |  [CECILL-1.1](http://vocab.fairdatacollective.org/gdmt/CECILL1.1)  |  [CECILL-2.0](http://vocab.fairdatacollective.org/gdmt/CECILL2.0)  |  [CECILL-2.1](http://vocab.fairdatacollective.org/gdmt/CECILL2.1)  |  [CECILL-B](http://vocab.fairdatacollective.org/gdmt/CECILLB)  |  [CECILL-C](http://vocab.fairdatacollective.org/gdmt/CECILLC)  |  [CERN-OHL-1.1](http://vocab.fairdatacollective.org/gdmt/CERNOHL1.1)  |  [CERN-OHL-1.2](http://vocab.fairdatacollective.org/gdmt/CERNOHL1.2)  |  [CERN-OHL-P-2.0](http://vocab.fairdatacollective.org/gdmt/CERNOHLP2.0)  |  [CERN-OHL-S-2.0](http://vocab.fairdatacollective.org/gdmt/CERNOHLS2.0)  |  [CERN-OHL-W-2.0](http://vocab.fairdatacollective.org/gdmt/CERNOHLW2.0)  |  [ClArtistic](http://vocab.fairdatacollective.org/gdmt/ClArtistic)  |  [CNRI-Jython](http://vocab.fairdatacollective.org/gdmt/CNRIJython)  |  [CNRI-Python-GPL-Compatible](http://vocab.fairdatacollective.org/gdmt/CNRIPythonGPLCompatible)  |  [CNRI-Python](http://vocab.fairdatacollective.org/gdmt/CNRIPython)  |  [Condor-1.1](http://vocab.fairdatacollective.org/gdmt/Condor1.1)  |  [copyleft-next-0.3.0](http://vocab.fairdatacollective.org/gdmt/copyleftnext0.3.0)  |  [copyleft-next-0.3.1](http://vocab.fairdatacollective.org/gdmt/copyleftnext0.3.1)  |  [CPAL-1.0](http://vocab.fairdatacollective.org/gdmt/CPAL1.0)  |  [CPL-1.0](http://vocab.fairdatacollective.org/gdmt/CPL1.0)  |  [CPOL-1.02](http://vocab.fairdatacollective.org/gdmt/CPOL1.02)  |  [Crossword](http://vocab.fairdatacollective.org/gdmt/Crossword)  |  [CrystalStacker](http://vocab.fairdatacollective.org/gdmt/CrystalStacker)  |  [CUA-OPL-1.0](http://vocab.fairdatacollective.org/gdmt/CUAOPL1.0)  |  [Cube](http://vocab.fairdatacollective.org/gdmt/Cube)  |  [curl](http://vocab.fairdatacollective.org/gdmt/curl)  |  [D-FSL-1.0](http://vocab.fairdatacollective.org/gdmt/DFSL1.0)  |  [diffmark](http://vocab.fairdatacollective.org/gdmt/diffmark)  |  [DOC](http://vocab.fairdatacollective.org/gdmt/DOC)  |  [Dotseqn](http://vocab.fairdatacollective.org/gdmt/Dotseqn)  |  [DSDP](http://vocab.fairdatacollective.org/gdmt/DSDP)  |  [dvipdfm](http://vocab.fairdatacollective.org/gdmt/dvipdfm)  |  [ECL-1.0](http://vocab.fairdatacollective.org/gdmt/ECL1.0)  |  [ECL-2.0](http://vocab.fairdatacollective.org/gdmt/ECL2.0)  |  [EFL-1.0](http://vocab.fairdatacollective.org/gdmt/EFL1.0)  |  [EFL-2.0](http://vocab.fairdatacollective.org/gdmt/EFL2.0)  |  [eGenix](http://vocab.fairdatacollective.org/gdmt/eGenix)  |  [Entessa](http://vocab.fairdatacollective.org/gdmt/Entessa)  |  [EPICS](http://vocab.fairdatacollective.org/gdmt/EPICS)  |  [EPL-1.0](http://vocab.fairdatacollective.org/gdmt/EPL1.0)  |  [EPL-2.0](http://vocab.fairdatacollective.org/gdmt/EPL2.0)  |  [ErlPL-1.1](http://vocab.fairdatacollective.org/gdmt/ErlPL1.1)  |  [etalab-2.0](http://vocab.fairdatacollective.org/gdmt/etalab2.0)  |  [EUDatagrid](http://vocab.fairdatacollective.org/gdmt/EUDatagrid)  |  [EUPL-1.0](http://vocab.fairdatacollective.org/gdmt/EUPL1.0)  |  [EUPL-1.1](http://vocab.fairdatacollective.org/gdmt/EUPL1.1)  |  [EUPL-1.2](http://vocab.fairdatacollective.org/gdmt/EUPL1.2)  |  [Eurosym](http://vocab.fairdatacollective.org/gdmt/Eurosym)  |  [Fair](http://vocab.fairdatacollective.org/gdmt/Fair)  |  [Frameworx-1.0](http://vocab.fairdatacollective.org/gdmt/Frameworx1.0)  |  [FreeImage](http://vocab.fairdatacollective.org/gdmt/FreeImage)  |  [FSFAP](http://vocab.fairdatacollective.org/gdmt/FSFAP)  |  [FSFUL](http://vocab.fairdatacollective.org/gdmt/FSFUL)  |  [FSFULLR](http://vocab.fairdatacollective.org/gdmt/FSFULLR)  |  [FTL](http://vocab.fairdatacollective.org/gdmt/FTL)  |  [GFDL-1.1-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.1invariantsonly)  |  [GFDL-1.1-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.1invariantsorlater)  |  [GFDL-1.1-no-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.1noinvariantsonly)  |  [GFDL-1.1-no-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.1noinvariantsorlater)  |  [GFDL-1.1-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.1only)  |  [GFDL-1.1-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.1orlater)  |  [GFDL-1.2-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.2invariantsonly)  |  [GFDL-1.2-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.2invariantsorlater)  |  [GFDL-1.2-no-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.2noinvariantsonly)  |  [GFDL-1.2-no-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.2noinvariantsorlater)  |  [GFDL-1.2-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.2only)  |  [GFDL-1.2-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.2orlater)  |  [GFDL-1.3-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.3invariantsonly)  |  [GFDL-1.3-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.3invariantsorlater)  |  [GFDL-1.3-no-invariants-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.3noinvariantsonly)  |  [GFDL-1.3-no-invariants-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.3noinvariantsorlater)  |  [GFDL-1.3-only](http://vocab.fairdatacollective.org/gdmt/GFDL1.3only)  |  [GFDL-1.3-or-later](http://vocab.fairdatacollective.org/gdmt/GFDL1.3orlater)  |  [Giftware](http://vocab.fairdatacollective.org/gdmt/Giftware)  |  [GL2PS](http://vocab.fairdatacollective.org/gdmt/GL2PS)  |  [Glide](http://vocab.fairdatacollective.org/gdmt/Glide)  |  [Glulxe](http://vocab.fairdatacollective.org/gdmt/Glulxe)  |  [GLWTPL](http://vocab.fairdatacollective.org/gdmt/GLWTPL)  |  [gnuplot](http://vocab.fairdatacollective.org/gdmt/gnuplot)  |  [GPL-1.0-only](http://vocab.fairdatacollective.org/gdmt/GPL1.0only)  |  [GPL-1.0-or-later](http://vocab.fairdatacollective.org/gdmt/GPL1.0orlater)  |  [GPL-2.0-only](http://vocab.fairdatacollective.org/gdmt/GPL2.0only)  |  [GPL-2.0-or-later](http://vocab.fairdatacollective.org/gdmt/GPL2.0orlater)  |  [GPL-3.0-only](http://vocab.fairdatacollective.org/gdmt/GPL3.0only)  |  [GPL-3.0-or-later](http://vocab.fairdatacollective.org/gdmt/GPL3.0orlater)  |  [gSOAP-1.3b](http://vocab.fairdatacollective.org/gdmt/gSOAP1.3b)  |  [HaskellReport](http://vocab.fairdatacollective.org/gdmt/HaskellReport)  |  [Hippocratic-2.1](http://vocab.fairdatacollective.org/gdmt/Hippocratic2.1)  |  [HPND-sell-variant](http://vocab.fairdatacollective.org/gdmt/HPNDsellvariant)  |  [HPND](http://vocab.fairdatacollective.org/gdmt/HPND)  |  [HTMLTIDY](http://vocab.fairdatacollective.org/gdmt/HTMLTIDY)  |  [IBM-pibs](http://vocab.fairdatacollective.org/gdmt/IBMpibs)  |  [ICU](http://vocab.fairdatacollective.org/gdmt/ICU)  |  [IJG](http://vocab.fairdatacollective.org/gdmt/IJG)  |  [ImageMagick](http://vocab.fairdatacollective.org/gdmt/ImageMagick)  |  [iMatix](http://vocab.fairdatacollective.org/gdmt/iMatix)  |  [Imlib2](http://vocab.fairdatacollective.org/gdmt/Imlib2)  |  [Info-ZIP](http://vocab.fairdatacollective.org/gdmt/InfoZIP)  |  [Intel-ACPI](http://vocab.fairdatacollective.org/gdmt/IntelACPI)  |  [Intel](http://vocab.fairdatacollective.org/gdmt/Intel)  |  [Interbase-1.0](http://vocab.fairdatacollective.org/gdmt/Interbase1.0)  |  [IPA](http://vocab.fairdatacollective.org/gdmt/IPA)  |  [IPL-1.0](http://vocab.fairdatacollective.org/gdmt/IPL1.0)  |  [ISC](http://vocab.fairdatacollective.org/gdmt/ISC)  |  [JasPer-2.0](http://vocab.fairdatacollective.org/gdmt/JasPer2.0)  |  [JPNIC](http://vocab.fairdatacollective.org/gdmt/JPNIC)  |  [JSON](http://vocab.fairdatacollective.org/gdmt/JSON)  |  [LAL-1.2](http://vocab.fairdatacollective.org/gdmt/LAL1.2)  |  [LAL-1.3](http://vocab.fairdatacollective.org/gdmt/LAL1.3)  |  [Latex2e](http://vocab.fairdatacollective.org/gdmt/Latex2e)  |  [Leptonica](http://vocab.fairdatacollective.org/gdmt/Leptonica)  |  [LGPL-2.0-only](http://vocab.fairdatacollective.org/gdmt/LGPL2.0only)  |  [LGPL-2.0-or-later](http://vocab.fairdatacollective.org/gdmt/LGPL2.0orlater)  |  [LGPL-2.1-only](http://vocab.fairdatacollective.org/gdmt/LGPL2.1only)  |  [LGPL-2.1-or-later](http://vocab.fairdatacollective.org/gdmt/LGPL2.1orlater)  |  [LGPL-3.0-only](http://vocab.fairdatacollective.org/gdmt/LGPL3.0only)  |  [LGPL-3.0-or-later](http://vocab.fairdatacollective.org/gdmt/LGPL3.0orlater)  |  [LGPLLR](http://vocab.fairdatacollective.org/gdmt/LGPLLR)  |  [libpng-2.0](http://vocab.fairdatacollective.org/gdmt/libpng2.0)  |  [Libpng](http://vocab.fairdatacollective.org/gdmt/Libpng)  |  [libselinux-1.0](http://vocab.fairdatacollective.org/gdmt/libselinux1.0)  |  [libtiff](http://vocab.fairdatacollective.org/gdmt/libtiff)  |  [LiLiQ-P-1.1](http://vocab.fairdatacollective.org/gdmt/LiLiQP1.1)  |  [LiLiQ-R-1.1](http://vocab.fairdatacollective.org/gdmt/LiLiQR1.1)  |  [LiLiQ-Rplus-1.1](http://vocab.fairdatacollective.org/gdmt/LiLiQRplus1.1)  |  [Linux-OpenIB](http://vocab.fairdatacollective.org/gdmt/LinuxOpenIB)  |  [LPL-1.02](http://vocab.fairdatacollective.org/gdmt/LPL1.02)  |  [LPL-1.0](http://vocab.fairdatacollective.org/gdmt/LPL1.0)  |  [LPPL-1.0](http://vocab.fairdatacollective.org/gdmt/LPPL1.0)  |  [LPPL-1.1](http://vocab.fairdatacollective.org/gdmt/LPPL1.1)  |  [LPPL-1.2](http://vocab.fairdatacollective.org/gdmt/LPPL1.2)  |  [LPPL-1.3a](http://vocab.fairdatacollective.org/gdmt/LPPL1.3a)  |  [LPPL-1.3c](http://vocab.fairdatacollective.org/gdmt/LPPL1.3c)  |  [MakeIndex](http://vocab.fairdatacollective.org/gdmt/MakeIndex)  |  [MirOS](http://vocab.fairdatacollective.org/gdmt/MirOS)  |  [MIT-0](http://vocab.fairdatacollective.org/gdmt/MIT0)  |  [MIT-advertising](http://vocab.fairdatacollective.org/gdmt/MITadvertising)  |  [MIT-CMU](http://vocab.fairdatacollective.org/gdmt/MITCMU)  |  [MIT-enna](http://vocab.fairdatacollective.org/gdmt/MITenna)  |  [MIT-feh](http://vocab.fairdatacollective.org/gdmt/MITfeh)  |  [MIT-open-group](http://vocab.fairdatacollective.org/gdmt/MITopengroup)  |  [MIT](http://vocab.fairdatacollective.org/gdmt/MIT)  |  [MITNFA](http://vocab.fairdatacollective.org/gdmt/MITNFA)  |  [Motosoto](http://vocab.fairdatacollective.org/gdmt/Motosoto)  |  [mpich2](http://vocab.fairdatacollective.org/gdmt/mpich2)  |  [MPL-1.0](http://vocab.fairdatacollective.org/gdmt/MPL1.0)  |  [MPL-1.1](http://vocab.fairdatacollective.org/gdmt/MPL1.1)  |  [MPL-2.0-no-copyleft-exception](http://vocab.fairdatacollective.org/gdmt/MPL2.0nocopyleftexception)  |  [MPL-2.0](http://vocab.fairdatacollective.org/gdmt/MPL2.0)  |  [MS-PL](http://vocab.fairdatacollective.org/gdmt/MSPL)  |  [MS-RL](http://vocab.fairdatacollective.org/gdmt/MSRL)  |  [MTLL](http://vocab.fairdatacollective.org/gdmt/MTLL)  |  [MulanPSL-1.0](http://vocab.fairdatacollective.org/gdmt/MulanPSL1.0)  |  [MulanPSL-2.0](http://vocab.fairdatacollective.org/gdmt/MulanPSL2.0)  |  [Multics](http://vocab.fairdatacollective.org/gdmt/Multics)  |  [Mup](http://vocab.fairdatacollective.org/gdmt/Mup)  |  [NASA-1.3](http://vocab.fairdatacollective.org/gdmt/NASA1.3)  |  [Naumen](http://vocab.fairdatacollective.org/gdmt/Naumen)  |  [NBPL-1.0](http://vocab.fairdatacollective.org/gdmt/NBPL1.0)  |  [NCGL-UK-2.0](http://vocab.fairdatacollective.org/gdmt/NCGLUK2.0)  |  [NCSA](http://vocab.fairdatacollective.org/gdmt/NCSA)  |  [Net-SNMP](http://vocab.fairdatacollective.org/gdmt/NetSNMP)  |  [NetCDF](http://vocab.fairdatacollective.org/gdmt/NetCDF)  |  [Newsletr](http://vocab.fairdatacollective.org/gdmt/Newsletr)  |  [NGPL](http://vocab.fairdatacollective.org/gdmt/NGPL)  |  [NIST-PD-fallback](http://vocab.fairdatacollective.org/gdmt/NISTPDfallback)  |  [NIST-PD](http://vocab.fairdatacollective.org/gdmt/NISTPD)  |  [NLOD-1.0](http://vocab.fairdatacollective.org/gdmt/NLOD1.0)  |  [NLPL](http://vocab.fairdatacollective.org/gdmt/NLPL)  |  [Nokia](http://vocab.fairdatacollective.org/gdmt/Nokia)  |  [NOSL](http://vocab.fairdatacollective.org/gdmt/NOSL)  |  [Noweb](http://vocab.fairdatacollective.org/gdmt/Noweb)  |  [NPL-1.0](http://vocab.fairdatacollective.org/gdmt/NPL1.0)  |  [NPL-1.1](http://vocab.fairdatacollective.org/gdmt/NPL1.1)  |  [NPOSL-3.0](http://vocab.fairdatacollective.org/gdmt/NPOSL3.0)  |  [NRL](http://vocab.fairdatacollective.org/gdmt/NRL)  |  [NTP-0](http://vocab.fairdatacollective.org/gdmt/NTP0)  |  [NTP](http://vocab.fairdatacollective.org/gdmt/NTP)  |  [O-UDA-1.0](http://vocab.fairdatacollective.org/gdmt/OUDA1.0)  |  [OCCT-PL](http://vocab.fairdatacollective.org/gdmt/OCCTPL)  |  [OCLC-2.0](http://vocab.fairdatacollective.org/gdmt/OCLC2.0)  |  [ODbL-1.0](http://vocab.fairdatacollective.org/gdmt/ODbL1.0)  |  [ODC-By-1.0](http://vocab.fairdatacollective.org/gdmt/ODCBy1.0)  |  [OFL-1.0-no-RFN](http://vocab.fairdatacollective.org/gdmt/OFL1.0noRFN)  |  [OFL-1.0-RFN](http://vocab.fairdatacollective.org/gdmt/OFL1.0RFN)  |  [OFL-1.0](http://vocab.fairdatacollective.org/gdmt/OFL1.0)  |  [OFL-1.1-no-RFN](http://vocab.fairdatacollective.org/gdmt/OFL1.1noRFN)  |  [OFL-1.1-RFN](http://vocab.fairdatacollective.org/gdmt/OFL1.1RFN)  |  [OFL-1.1](http://vocab.fairdatacollective.org/gdmt/OFL1.1)  |  [OGC-1.0](http://vocab.fairdatacollective.org/gdmt/OGC1.0)  |  [OGL-Canada-2.0](http://vocab.fairdatacollective.org/gdmt/OGLCanada2.0)  |  [OGL-UK-1.0](http://vocab.fairdatacollective.org/gdmt/OGLUK1.0)  |  [OGL-UK-2.0](http://vocab.fairdatacollective.org/gdmt/OGLUK2.0)  |  [OGL-UK-3.0](http://vocab.fairdatacollective.org/gdmt/OGLUK3.0)  |  [OGTSL](http://vocab.fairdatacollective.org/gdmt/OGTSL)  |  [OLDAP-1.1](http://vocab.fairdatacollective.org/gdmt/OLDAP1.1)  |  [OLDAP-1.2](http://vocab.fairdatacollective.org/gdmt/OLDAP1.2)  |  [OLDAP-1.3](http://vocab.fairdatacollective.org/gdmt/OLDAP1.3)  |  [OLDAP-1.4](http://vocab.fairdatacollective.org/gdmt/OLDAP1.4)  |  [OLDAP-2.0.1](http://vocab.fairdatacollective.org/gdmt/OLDAP2.0.1)  |  [OLDAP-2.0](http://vocab.fairdatacollective.org/gdmt/OLDAP2.0)  |  [OLDAP-2.1](http://vocab.fairdatacollective.org/gdmt/OLDAP2.1)  |  [OLDAP-2.2.1](http://vocab.fairdatacollective.org/gdmt/OLDAP2.2.1)  |  [OLDAP-2.2.2](http://vocab.fairdatacollective.org/gdmt/OLDAP2.2.2)  |  [OLDAP-2.2](http://vocab.fairdatacollective.org/gdmt/OLDAP2.2)  |  [OLDAP-2.3](http://vocab.fairdatacollective.org/gdmt/OLDAP2.3)  |  [OLDAP-2.4](http://vocab.fairdatacollective.org/gdmt/OLDAP2.4)  |  [OLDAP-2.5](http://vocab.fairdatacollective.org/gdmt/OLDAP2.5)  |  [OLDAP-2.6](http://vocab.fairdatacollective.org/gdmt/OLDAP2.6)  |  [OLDAP-2.7](http://vocab.fairdatacollective.org/gdmt/OLDAP2.7)  |  [OLDAP-2.8](http://vocab.fairdatacollective.org/gdmt/OLDAP2.8)  |  [OML](http://vocab.fairdatacollective.org/gdmt/OML)  |  [OpenSSL](http://vocab.fairdatacollective.org/gdmt/OpenSSL)  |  [OPL-1.0](http://vocab.fairdatacollective.org/gdmt/OPL1.0)  |  [OSET-PL-2.1](http://vocab.fairdatacollective.org/gdmt/OSETPL2.1)  |  [OSL-1.0](http://vocab.fairdatacollective.org/gdmt/OSL1.0)  |  [OSL-1.1](http://vocab.fairdatacollective.org/gdmt/OSL1.1)  |  [OSL-2.0](http://vocab.fairdatacollective.org/gdmt/OSL2.0)  |  [OSL-2.1](http://vocab.fairdatacollective.org/gdmt/OSL2.1)  |  [OSL-3.0](http://vocab.fairdatacollective.org/gdmt/OSL3.0)  |  [Parity-6.0.0](http://vocab.fairdatacollective.org/gdmt/Parity6.0.0)  |  [Parity-7.0.0](http://vocab.fairdatacollective.org/gdmt/Parity7.0.0)  |  [PDDL-1.0](http://vocab.fairdatacollective.org/gdmt/PDDL1.0)  |  [PHP-3.01](http://vocab.fairdatacollective.org/gdmt/PHP3.01)  |  [PHP-3.0](http://vocab.fairdatacollective.org/gdmt/PHP3.0)  |  [Plexus](http://vocab.fairdatacollective.org/gdmt/Plexus)  |  [PolyForm-Noncommercial-1.0.0](http://vocab.fairdatacollective.org/gdmt/PolyFormNoncommercial1.0.0)  |  [PolyForm-Small-Business-1.0.0](http://vocab.fairdatacollective.org/gdmt/PolyFormSmallBusiness1.0.0)  |  [PostgreSQL](http://vocab.fairdatacollective.org/gdmt/PostgreSQL)  |  [PSF-2.0](http://vocab.fairdatacollective.org/gdmt/PSF2.0)  |  [psfrag](http://vocab.fairdatacollective.org/gdmt/psfrag)  |  [psutils](http://vocab.fairdatacollective.org/gdmt/psutils)  |  [Python-2.0](http://vocab.fairdatacollective.org/gdmt/Python2.0)  |  [Qhull](http://vocab.fairdatacollective.org/gdmt/Qhull)  |  [QPL-1.0](http://vocab.fairdatacollective.org/gdmt/QPL1.0)  |  [Rdisc](http://vocab.fairdatacollective.org/gdmt/Rdisc)  |  [RHeCos-1.1](http://vocab.fairdatacollective.org/gdmt/RHeCos1.1)  |  [RPL-1.1](http://vocab.fairdatacollective.org/gdmt/RPL1.1)  |  [RPL-1.5](http://vocab.fairdatacollective.org/gdmt/RPL1.5)  |  [RPSL-1.0](http://vocab.fairdatacollective.org/gdmt/RPSL1.0)  |  [RSA-MD](http://vocab.fairdatacollective.org/gdmt/RSAMD)  |  [RSCPL](http://vocab.fairdatacollective.org/gdmt/RSCPL)  |  [Ruby](http://vocab.fairdatacollective.org/gdmt/Ruby)  |  [SAX-PD](http://vocab.fairdatacollective.org/gdmt/SAXPD)  |  [Saxpath](http://vocab.fairdatacollective.org/gdmt/Saxpath)  |  [SCEA](http://vocab.fairdatacollective.org/gdmt/SCEA)  |  [Sendmail-8.23](http://vocab.fairdatacollective.org/gdmt/Sendmail8.23)  |  [Sendmail](http://vocab.fairdatacollective.org/gdmt/Sendmail)  |  [SGI-B-1.0](http://vocab.fairdatacollective.org/gdmt/SGIB1.0)  |  [SGI-B-1.1](http://vocab.fairdatacollective.org/gdmt/SGIB1.1)  |  [SGI-B-2.0](http://vocab.fairdatacollective.org/gdmt/SGIB2.0)  |  [SHL-0.51](http://vocab.fairdatacollective.org/gdmt/SHL0.51)  |  [SHL-0.5](http://vocab.fairdatacollective.org/gdmt/SHL0.5)  |  [SimPL-2.0](http://vocab.fairdatacollective.org/gdmt/SimPL2.0)  |  [SISSL-1.2](http://vocab.fairdatacollective.org/gdmt/SISSL1.2)  |  [SISSL](http://vocab.fairdatacollective.org/gdmt/SISSL)  |  [Sleepycat](http://vocab.fairdatacollective.org/gdmt/Sleepycat)  |  [SMLNJ](http://vocab.fairdatacollective.org/gdmt/SMLNJ)  |  [SMPPL](http://vocab.fairdatacollective.org/gdmt/SMPPL)  |  [SNIA](http://vocab.fairdatacollective.org/gdmt/SNIA)  |  [Spencer-86](http://vocab.fairdatacollective.org/gdmt/Spencer86)  |  [Spencer-94](http://vocab.fairdatacollective.org/gdmt/Spencer94)  |  [Spencer-99](http://vocab.fairdatacollective.org/gdmt/Spencer99)  |  [SPL-1.0](http://vocab.fairdatacollective.org/gdmt/SPL1.0)  |  [SSH-OpenSSH](http://vocab.fairdatacollective.org/gdmt/SSHOpenSSH)  |  [SSH-short](http://vocab.fairdatacollective.org/gdmt/SSHshort)  |  [SSPL-1.0](http://vocab.fairdatacollective.org/gdmt/SSPL1.0)  |  [SugarCRM-1.1.3](http://vocab.fairdatacollective.org/gdmt/SugarCRM1.1.3)  |  [SWL](http://vocab.fairdatacollective.org/gdmt/SWL)  |  [TAPR-OHL-1.0](http://vocab.fairdatacollective.org/gdmt/TAPROHL1.0)  |  [TCL](http://vocab.fairdatacollective.org/gdmt/TCL)  |  [TCP-wrappers](http://vocab.fairdatacollective.org/gdmt/TCPwrappers)  |  [TMate](http://vocab.fairdatacollective.org/gdmt/TMate)  |  [TORQUE-1.1](http://vocab.fairdatacollective.org/gdmt/TORQUE1.1)  |  [TOSL](http://vocab.fairdatacollective.org/gdmt/TOSL)  |  [TU-Berlin-1.0](http://vocab.fairdatacollective.org/gdmt/TUBerlin1.0)  |  [TU-Berlin-2.0](http://vocab.fairdatacollective.org/gdmt/TUBerlin2.0)  |  [UCL-1.0](http://vocab.fairdatacollective.org/gdmt/UCL1.0)  |  [Unicode-DFS-2015](http://vocab.fairdatacollective.org/gdmt/UnicodeDFS2015)  |  [Unicode-DFS-2016](http://vocab.fairdatacollective.org/gdmt/UnicodeDFS2016)  |  [Unicode-TOU](http://vocab.fairdatacollective.org/gdmt/UnicodeTOU)  |  [Unlicense](http://vocab.fairdatacollective.org/gdmt/Unlicense)  |  [UPL-1.0](http://vocab.fairdatacollective.org/gdmt/UPL1.0)  |  [Vim](http://vocab.fairdatacollective.org/gdmt/Vim)  |  [VOSTROM](http://vocab.fairdatacollective.org/gdmt/VOSTROM)  |  [VSL-1.0](http://vocab.fairdatacollective.org/gdmt/VSL1.0)  |  [W3C-19980720](http://vocab.fairdatacollective.org/gdmt/W3C19980720)  |  [W3C-20150513](http://vocab.fairdatacollective.org/gdmt/W3C20150513)  |  [W3C](http://vocab.fairdatacollective.org/gdmt/W3C)  |  [Watcom-1.0](http://vocab.fairdatacollective.org/gdmt/Watcom1.0)  |  [Wsuipa](http://vocab.fairdatacollective.org/gdmt/Wsuipa)  |  [WTFPL](http://vocab.fairdatacollective.org/gdmt/WTFPL)  |  [X11](http://vocab.fairdatacollective.org/gdmt/X11)  |  [Xerox](http://vocab.fairdatacollective.org/gdmt/Xerox)  |  [XFree86-1.1](http://vocab.fairdatacollective.org/gdmt/XFree861.1)  |  [xinetd](http://vocab.fairdatacollective.org/gdmt/xinetd)  |  [Xnet](http://vocab.fairdatacollective.org/gdmt/Xnet)  |  [xpp](http://vocab.fairdatacollective.org/gdmt/xpp)  |  [XSkat](http://vocab.fairdatacollective.org/gdmt/XSkat)  |  [YPL-1.0](http://vocab.fairdatacollective.org/gdmt/YPL1.0)  |  [YPL-1.1](http://vocab.fairdatacollective.org/gdmt/YPL1.1)  |  [Zed](http://vocab.fairdatacollective.org/gdmt/Zed)  |  [Zend-2.0](http://vocab.fairdatacollective.org/gdmt/Zend2.0)  |  [Zimbra-1.3](http://vocab.fairdatacollective.org/gdmt/Zimbra1.3)  |  [Zimbra-1.4](http://vocab.fairdatacollective.org/gdmt/Zimbra1.4)  |  [zlib-acknowledgement](http://vocab.fairdatacollective.org/gdmt/zlibacknowledgement)  |  [Zlib](http://vocab.fairdatacollective.org/gdmt/Zlib)  |  [ZPL-1.1](http://vocab.fairdatacollective.org/gdmt/ZPL1.1)  |  [ZPL-2.0](http://vocab.fairdatacollective.org/gdmt/ZPL2.0)  |  [ZPL-2.1](http://vocab.fairdatacollective.org/gdmt/ZPL2.1)
 <div class="example">
 <div class="example-heading">Example</div>
-CC BY-SA 4.0
-</div>
+<p><a href="http://vocab.fairdatacollective.org/gdmt/CCBYSA4.0">CC BY-SA 4.0</a></p>
 
-### License Identifier
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the _License Name_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the license for the data file being described.
-
-<div class="example">
-<div class="example-heading">Example</div>
-https://creativecommons.org/licenses/by-sa/4.0/
 </div>
 
 ### License Text
@@ -686,10 +671,10 @@ Text string describing any rights information for the data file being described.
 If a uniquely identiable license is named above, it is not necessary to repeat the text of the license in this field. This field allows additional rights information to be provided, either to expand licensing terms, clarify the license holder, or provide unique license terms that are not available in a standardized license.
 
 
-## Data File Date
+## Data File Dates
 <span class="badge badge--multi">Multi-valued</span>
 
-A relevant date related to the data file being described. Such dates pertain to some data-file-related event, for example "creation date", "submission date" etc. Dates are specified as a pair containing the actual date (in ISO-8601 format) and the event that the date relates to. See individual fields for specific examples.
+A list of relevant dates related to the data file being described. Such dates pertain to some data-file-related event, for example "creation date", "submission date" etc. Dates are specified as a pair containing the actual date (in ISO-8601 format) and the event that the date relates to. See individual fields for specific examples.
 
 The dates of some types of events can be captured by the RADx Data Hub, for example the "Submitted" date/time.
 
@@ -703,7 +688,8 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [Accepted](http://vocab.fairdatacollective.org/gdmt/Accepted)  |  [Available](http://vocab.fairdatacollective.org/gdmt/Available)  |  [Collected](http://vocab.fairdatacollective.org/gdmt/Collected)  |  [Copyrighted](http://vocab.fairdatacollective.org/gdmt/Copyrighted)  |  [Created](http://vocab.fairdatacollective.org/gdmt/Created)  |  [Issued](http://vocab.fairdatacollective.org/gdmt/Issued)  |  [Published](http://vocab.fairdatacollective.org/gdmt/Published)  |  [Submitted](http://vocab.fairdatacollective.org/gdmt/Submitted)  |  [Updated](http://vocab.fairdatacollective.org/gdmt/Updated)  |  [Valid](http://vocab.fairdatacollective.org/gdmt/Valid)  |  [Withdrawn](http://vocab.fairdatacollective.org/gdmt/Withdrawn)
 <div class="example">
 <div class="example-heading">Example</div>
-http://vocab.fairdatacollective.org/gdmt/Created
+<p><a href="http://vocab.fairdatacollective.org/gdmt/Created">Created</a></p>
+
 </div>
 
 ### Date
@@ -719,14 +705,15 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 <div class="example">
 <div class="example-heading">Example</div>
-2022-11-23T01:23:45.678-07:00
+<p>2022-11-23T01:23:45.678-07:00</p>
+
 </div>
 
 
-## Data File Parent Study
+## Data File Parent Studies
 <span class="badge badge--multi">Multi-valued</span>
 
-The research study for which this data file was created.
+A list of research studies for which this data file was created.
 
 ### PHS Identifier
 <span class="badge badge--required">Required</span>
@@ -737,7 +724,8 @@ This corresponds to the _local identifier_ in the DataCite standard. All RADx st
 
 <div class="example">
 <div class="example-heading">Example</div>
-phs000296
+<p>phs000296</p>
+
 </div>
 
 ### Study Identifier
@@ -747,7 +735,8 @@ Globally unique string that identifies the study for which this data file was cr
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000296
+<p>https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000296</p>
+
 </div>
 
 ### Study Identifier Scheme
@@ -760,16 +749,9 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
 <div class="example">
 <div class="example-heading">Example</div>
-IRI
+<p><a href="http://vocab.fairdatacollective.org/gdmt/IRI">IRI</a></p>
+
 </div>
-
-### Study Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is automatically determined from the _Study Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Study Identifier.
 
 ### Study Name
 <span class="badge badge--recommended">Recommended</span>
@@ -778,7 +760,8 @@ The name of the research study for which this data file was created.
 
 <div class="example">
 <div class="example-heading">Example</div>
-NHLBI GO-ESP: Lung Cohorts Exome Sequencing Project (COPDGene)
+<p>NHLBI GO-ESP: Lung Cohorts Exome Sequencing Project (COPDGene)</p>
+
 </div>
 
 ### Study Start Date
@@ -790,7 +773,8 @@ This field is considered auxiliary information to the initially registered Study
 
 <div class="example">
 <div class="example-heading">Example</div>
-2021-10-05
+<p>2021-10-05</p>
+
 </div>
 
 ### Study End Date
@@ -802,14 +786,15 @@ This field is considered auxiliary information to the initially registered Study
 
 <div class="example">
 <div class="example-heading">Example</div>
-2022-10-05
+<p>2022-10-05</p>
+
 </div>
 
 
-## Data File Funding Source
+## Data File Funding Sources
 <span class="badge badge--multi">Multi-valued</span>
 
-The sources of funding that enabled and drove the creation of the data file. (Non-monetary sources are described under Contributor.) Each funding source may be described as a separate element (set of fields).
+A list of sources of funding that enabled and drove the creation of the data file. (Non-monetary sources are described under Contributor.) Each funding source may be described as a separate element (set of fields).
 
 ### Award Title
 <span class="badge badge--optional">Optional</span>
@@ -818,7 +803,8 @@ The human readable title of the award, grant, or other specific funding mechanis
 
 <div class="example">
 <div class="example-heading">Example</div>
-Safer At School Early Alert (SASEA)
+<p>Safer At School Early Alert (SASEA)</p>
+
 </div>
 
 ### Award Page URL
@@ -828,7 +814,8 @@ The unique identifier (IRI) leading to a page provided by the funder for more in
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://reporter.nih.gov/search/44g5CsIy-EGIvKlnlFwXrA/project-details/10447530
+<p>https://reporter.nih.gov/search/44g5CsIy-EGIvKlnlFwXrA/project-details/10447530</p>
+
 </div>
 
 ### Award Local Identifier
@@ -838,7 +825,8 @@ The code assigned by the funding provider to a sponsored award (grant). (This ca
 
 <div class="example">
 <div class="example-heading">Example</div>
-1U01HD108787-01
+<p>1U01HD108787-01</p>
+
 </div>
 
 ### Funder Name
@@ -850,7 +838,8 @@ This is typically the NIH Institute that awarded the grant.
 
 <div class="example">
 <div class="example-heading">Example</div>
-Eunice Kennedy Shriver National Institute of Child Health and Human Development
+<p>Eunice Kennedy Shriver National Institute of Child Health and Human Development</p>
+
 </div>
 
 ### Funder Identifier
@@ -891,7 +880,8 @@ Globally unique string that identifies the funding provider. A list of NIH Insti
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://ror.org/04byxyr05
+<p>https://ror.org/04byxyr05</p>
+
 </div>
 
 ### Funder Identifier Scheme
@@ -904,22 +894,15 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 <div class="example">
 <div class="example-heading">Example</div>
-ROR
+<p><a href="https://ror.org">ROR</a></p>
+
 </div>
 
-### Funder Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
 
-The value of this field is derived from the _Funder Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Funder Identifier.
-
-
-## Data File Distribution
+## Data File Distributions
 <span class="badge badge--multi">Multi-valued</span>
 
-Details about a specific (non-Data Hub) distribution for this data file. If the only available distribution for the Data File is in the RADx Data Hub, there is no need to fill out Distribution information.
+A list of specific (non-Data Hub) distributions for this data file. If the only available distribution for the Data File is in the RADx Data Hub, there is no need to fill out Distribution information.
 
 ### Distribution Publisher
 <span class="badge badge--optional">Optional</span>
@@ -931,6 +914,9 @@ The organization or resource that provides services to make publicly available t
 
 Globally unique string that identifies the Distribution Publisher.
 
+Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme).
+
+[GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
 ### Distribution Publisher Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -939,14 +925,6 @@ Name of the scheme or authority for the Distribution Publisher Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme).
 
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
-### Distribution Publisher Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the _Distribution Publisher Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Distribution Publisher Identifier.
-
 ### Distribution Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -1038,10 +1016,10 @@ Enter tab-separated values containing summary statistics characterizing this dat
 Enter the name of the characteristic being described in the first (key) field, and the value for that characteristic in the second (value) field. Note this is a repeating field and so can support multiple key-value pairs.
 
 
-## Data Source
+## Data Sources
 <span class="badge badge--multi">Multi-valued</span>
 
-Physical or conceptual entity (agent) that creates the data streams that make up the described data file. This is a physical or conceptual entity that creates the data streams that make up the described data file. The data source may or may not be associated with a fixed location; for example, a series of discrete sensors deployed over time, either to a single location or to a series of locations, may be considered a single data source in some systems.
+A list of physical or conceptual entities (agents) that create the data streams that make up the described data file. A data source may or may not be associated with a fixed location; for example, a series of discrete sensors deployed over time, either to a single location or to a series of locations, may be considered a single data source in some systems.
 
 ### Data Source Name
 <span class="badge badge--optional">Optional</span>
@@ -1061,19 +1039,11 @@ The name of the scheme or authority used for the Data Source Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
-### Data Source Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
 
-The value of this field is derived from the _Data Source Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Data Source Identifier.
-
-
-## Data Stream
+## Data Streams
 <span class="badge badge--multi">Multi-valued</span>
 
-A collection of one or more variable records that contribute to this data file. Each data stream originates from a single data source (e.g., sensor, process, or person). A data stream can grow over time. 
+A list of one or more variable records that contribute to this data file. Each data stream originates from a single data source (e.g., sensor, process, or person). A data stream can grow over time. 
 
 ### Data Stream Name
 <span class="badge badge--optional">Optional</span>
@@ -1093,19 +1063,11 @@ The name of the scheme or authority used for the Data Stream Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
-### Data Stream Identifier Scheme IRI
-<span class="badge badge--derived">Derived</span>
-<span class="badge badge--optional">Optional</span>
-
-The value of this field is derived from the _Data Stream Identifier Scheme_ field.  This field should not be manually specified or edited.
-
-The unique identifier (IRI) of the scheme or authority used for the Data Stream Identifier.
-
-### Data Stream Variable Name
+### Data Stream Variable Names
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
-The local name of a variable contained in the data stream.
+The local names of variables contained in the data stream.
 
 ### Data Stream Data Source Identifier
 <span class="badge badge--optional">Optional</span>
@@ -1113,10 +1075,10 @@ The local name of a variable contained in the data stream.
 Globally unique string that identifies the data source (e.g., PID of an instrument) that generated this Data Stream.
 
 
-## Data File Creation Process
+## Data File Creation Processes
 <span class="badge badge--multi">Multi-valued</span>
 
-Process (activity) used to make the data file or product.
+A list of processes (activities) used to make the data file.
 
 ### Process Name
 <span class="badge badge--optional">Optional</span>
@@ -1144,7 +1106,7 @@ This is a deterministic string; in software, typically it is either a timestamp 
 ## Data File Temporal Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
-A temporal description that specifies the temporal coverage of the data contained within the data file associated with this metadata.
+A list of temporal descriptions that specify the temporal coverage of the data contained within the data file associated with this metadata.
 
 ### Temporal Extent Minimum Value
 <span class="badge badge--optional">Optional</span>
@@ -1159,7 +1121,8 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 <div class="example">
 <div class="example-heading">Example</div>
-2022-06-01
+<p>2022-06-01</p>
+
 </div>
 
 ### Temporal Extent Maximum Value
@@ -1175,7 +1138,8 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 <div class="example">
 <div class="example-heading">Example</div>
-2022-06-29
+<p>2022-06-29</p>
+
 </div>
 
 ### Temporal Resolution
@@ -1187,7 +1151,8 @@ Most repeating measurement processes have some variation in the interval between
 
 <div class="example">
 <div class="example-heading">Example</div>
-3600
+<p>3600</p>
+
 </div>
 
 ### Duration
@@ -1212,19 +1177,20 @@ The duration format must begin with P, and include at least one designator and v
 
 <div class="example">
 <div class="example-heading">Example</div>
-P8DT1.5H
+<p>P8DT1.5H</p>
+
 </div>
 
 
 ## Data File Spatial Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
-A geospatial description that specifies the geographical coverage of the data contained within the data file associated with this metadata.
+A list of geospatial descriptions that specify the geographical coverage of the data contained within the data file associated with this metadata.
 
-## Bounding Box
+## Bounding Boxes
 <span class="badge badge--multi">Multi-valued</span>
 
-A geographical bounding box that specifies the geographical coverage of the data contained within the data file associated with this metadata.
+A list of geographical bounding boxes that specifies the geographical coverage of the data contained within the data file associated with this metadata.
 
 ### Maximum Latitude
 <span class="badge badge--optional">Optional</span>
@@ -1237,7 +1203,8 @@ Location of the maximum, or northernmost, data point in this data file, expresse
 
 <div class="example">
 <div class="example-heading">Example</div>
--121.208178
+<p>-121.208178</p>
+
 </div>
 
 ### Minimum Latitude
@@ -1251,7 +1218,8 @@ Location of the minimum, or southernmost, data point in this data file, expresse
 
 <div class="example">
 <div class="example-heading">Example</div>
--122.202653
+<p>-122.202653</p>
+
 </div>
 
 ### Minimum Longitude
@@ -1265,7 +1233,8 @@ Location of the minimum, or westernmost, data point in this data file, expressed
 
 <div class="example">
 <div class="example-heading">Example</div>
-36.892976
+<p>36.892976</p>
+
 </div>
 
 ### Maximum Longitude
@@ -1279,11 +1248,12 @@ Location of the maximum, or easternmost, data point in this data file, expressed
 
 <div class="example">
 <div class="example-heading">Example</div>
-37.484637
+<p>37.484637</p>
+
 </div>
 
 
-## Bounding Shape
+## Bounding Shapes
 <span class="badge badge--multi">Multi-valued</span>
 
 A list of geographical coordinates that specifies the external bounday of the polygon that describes the coverage of the data contained within the data file being described.
@@ -1295,7 +1265,8 @@ Monotonically increasing identifier of the point in the shape being defined (def
 
 <div class="example">
 <div class="example-heading">Example</div>
-1,2,3,4
+<p>1,2,3,4</p>
+
 </div>
 
 ### Latitude
@@ -1309,7 +1280,8 @@ Location of this point in north latitude decimal degrees (southern latitudes are
 
 <div class="example">
 <div class="example-heading">Example</div>
-10,8,8,10
+<p>10,8,8,10</p>
+
 </div>
 
 ### Longitude
@@ -1323,14 +1295,15 @@ Location of this point in east longitude decimal degrees (western longitudes are
 
 <div class="example">
 <div class="example-heading">Example</div>
-150,152,148,150
+<p>150,152,148,150</p>
+
 </div>
 
 
 ## Data File Geopolitical Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
-A region specified by the totality of one or more place names
+A list of regions specified by the totality of one or more place names
 
 ### Geopolitical region 
 <span class="badge badge--optional">Optional</span>
@@ -1340,7 +1313,8 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://www.geonames.org/5128581 
+<p><a href="https://www.geonames.org/5128581">New York City</a></p>
+
 </div>
 
 
@@ -1348,7 +1322,7 @@ https://www.geonames.org/5128581
 ## Data File Elevation Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
-The elevation range encompassed by the data within the data file being described.
+A list of elevation ranges encompassed by the data within the data file being described.
 
 ### Vertical Extent Minimum Value
 <span class="badge badge--optional">Optional</span>
@@ -1359,7 +1333,8 @@ In case of depth, this is the maximum depth of data file collection (that is, it
 
 <div class="example">
 <div class="example-heading">Example</div>
--1223
+<p>-1223</p>
+
 </div>
 
 ### Vertical Extent Maximum Value
@@ -1371,7 +1346,8 @@ In case of depth, this is the minimum depth of data file collection (that is, it
 
 <div class="example">
 <div class="example-heading">Example</div>
--2.5
+<p>-2.5</p>
+
 </div>
 
 ### Vertical Extent Datum
@@ -1381,7 +1357,8 @@ The name of the Datum (reference frame) used for the Vertical Extent values.
 
 <div class="example">
 <div class="example-heading">Example</div>
-WGS84
+<p>WGS84</p>
+
 </div>
 
 ### Vertical Extent Datum IRI
@@ -1391,7 +1368,8 @@ The IRI (Internationalized Resource Identifier) of the Datum (reference frame) u
 
 <div class="example">
 <div class="example-heading">Example</div>
-https://epsg.io/4326
+<p>https://epsg.io/4326</p>
+
 </div>
 
 
@@ -1399,7 +1377,7 @@ https://epsg.io/4326
 
 Information about the data file or metadata submission that does not fit into the other categories
 
-### Data File Descriptive Key-Value Pair
+### Data File Descriptive Key-Value Pairs
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
