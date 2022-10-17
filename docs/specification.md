@@ -279,7 +279,7 @@ This is the type of digital object being described, which for RADx Data Files is
 </div>
 
 
-## Data File Dictionary
+## Data File Data Dictionary
 
 Information about the Data Dictionary associated with the Data File
 
