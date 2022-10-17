@@ -2,7 +2,7 @@
 
 # Introduction
 
-These pages describe the RADx [Metadata Specification](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2Fbb251c56-a720-4b39-92ea-55c053f1ad00).  This metadata specification contains a meta template that specifies required, recommended and optional fields that are used for capturing metadata that described data files submitted to the [RADx Data Hub](https://radx-hub.nih.gov/home).
+These pages describe the RADx [Metadata Specification](https://cedar.metadatacenter.org/dashboard?folderId=https:%2F%2Frepo.metadatacenter.org%2Ffolders%2F5ac6dcb6-7a9b-4a75-a945-60ae43750953).  This metadata specification contains a meta template that specifies required, recommended and optional fields that are used for capturing metadata that described data files submitted to the [RADx Data Hub](https://radx-hub.nih.gov/home).
 
 We provide a simple introduction to the specification below. For detailed technical information, you can directly access the [specification fields](specification.md). After this, you can learn about the different ways of [creating metadata](creating-metadata.md) instances that describe individual data files and comply with this specification.
 
