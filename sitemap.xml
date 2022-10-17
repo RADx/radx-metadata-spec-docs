@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://example.com/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/about/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/about/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/creating-metadata/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/creating-metadata/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/language-codes/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/language-codes/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/preliminaries/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/preliminaries/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/resources/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/resources/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://example.com/specification/</loc>
+         <loc>https://radx.github.io/radx-metadata-specification-docs/specification/</loc>
          <lastmod>2022-10-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
