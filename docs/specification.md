@@ -172,7 +172,7 @@ Language in which the data file being described is provided.
 ### Primary Language
 <span class="badge badge--optional">Optional</span>
 
-Primary language used to present the data file (if multiple languages are present, the Other Language field may be used to add additional languages).
+Primary language used to present the data file (if multiple languages are present, the _Other Languages_ field may be used to add additional languages).
 
 The value of this field is a language code.  See the [language code table](language-codes.md) for a list of possible language codes.
 
