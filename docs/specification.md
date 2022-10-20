@@ -192,7 +192,7 @@ The value of this field is a language code.  See the [language code table](langu
 
 <div class="example">
 <div class="example-heading">Example</div>
-<p>de,es</p>
+<p>es</p>
 
 </div>
 
@@ -1265,7 +1265,7 @@ Monotonically increasing identifier of the point in the shape being defined (def
 
 <div class="example">
 <div class="example-heading">Example</div>
-<p>1,2,3,4</p>
+<p>1</p>
 
 </div>
 
@@ -1280,7 +1280,7 @@ Location of this point in north latitude decimal degrees (southern latitudes are
 
 <div class="example">
 <div class="example-heading">Example</div>
-<p>10,8,8,10</p>
+<p>10</p>
 
 </div>
 
@@ -1295,7 +1295,7 @@ Location of this point in east longitude decimal degrees (western longitudes are
 
 <div class="example">
 <div class="example-heading">Example</div>
-<p>150,152,148,150</p>
+<p>150</p>
 
 </div>
 
