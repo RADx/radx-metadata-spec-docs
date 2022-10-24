@@ -8,5 +8,7 @@ nav:
     - Creating Metadata: creating-metadata.md
     - Language Codes: language-codes.md
     - About: about.md
+    - RADx DCC-Specific Mappings:
+        - RADx-rad: radx-rad-mapping.md
 
 theme: readthedocs
