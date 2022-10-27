@@ -5,6 +5,9 @@
 
 # Specification
 
+<div class="controls"><button id="jsonld-example-visibility-toggle">JSON-LD Examples</button></div>
+
+
 <h2 plain>Required fields</h2>
 The following fields are required fields.  These fields MUST be filled out in a metadata instance for the instance to be valid.
 
@@ -72,6 +75,20 @@ Multiple titles and different languages may be specified by repeating this eleme
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Title" : "http://purl.org/radx-terms/metadata-terms/title"
+  },
+  "Title" : {
+    "@value" : "COVID-19 Booster Shot Side Effects Survey Responses"
+  }
+}
+```
+
+</div>
 ### Language
 <span class="badge badge--optional">Optional</span>
 
@@ -85,7 +102,45 @@ The value of this field is a language code.  See the [language code table](langu
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Language" : "http://purl.org/radx-terms/metadata-terms/language"
+  },
+  "Language" : {
+    "@value" : "en"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Titles" : "http://purl.org/radx-terms/metadata-terms/titleDescriptor"
+  },
+  "Data File Titles" : [ {
+    "@context" : {
+      "Title" : "http://purl.org/radx-terms/metadata-terms/title",
+      "Language" : "http://purl.org/radx-terms/metadata-terms/language"
+    },
+    "Title" : {
+      "@value" : "COVID-19 Booster Shot Side Effects Survey Responses"
+    },
+    "Language" : {
+      "@value" : "en"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Identity
 
 Information used to identify the Data File being described.
@@ -105,6 +160,20 @@ See also:  [https://en.wikipedia.org/wiki/Digital_object_identifier](https://en.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Identifier" : "http://purl.org/radx-terms/metadata-terms/identifier"
+  },
+  "Identifier" : {
+    "@value" : "http://doi.org/10.1000/182"
+  }
+}
+```
+
+</div>
 ### Identifier Type
 <span class="badge badge--optional">Optional</span>
 
@@ -121,6 +190,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Identifier Type" : "http://purl.org/radx-terms/metadata-terms/identifierType"
+  },
+  "Identifier Type" : {
+    "rdfs:label" : "DOI",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/DOI"
+  }
+}
+```
+
+</div>
 ### File Name 
 <span class="badge badge--recommended">Recommended</span>
 
@@ -132,6 +216,20 @@ The local name of the resource (for example, in a file-based operating system or
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "File Name " : "http://purl.org/radx-terms/metadata-terms/fileName"
+  },
+  "File Name " : {
+    "@value" : "COVID-19_Booster_Shot_June_2022_Responses.csv"
+  }
+}
+```
+
+</div>
 ### Version
 <span class="badge badge--recommended">Recommended</span>
 
@@ -145,6 +243,20 @@ This field accepts any version string, but we suggest that you use semantic vers
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Version" : "http://purl.org/radx-terms/metadata-terms/version"
+  },
+  "Version" : {
+    "@value" : "1.0.1"
+  }
+}
+```
+
+</div>
 ### SHA256 digest
 <span class="badge badge--recommended">Recommended</span>
 
@@ -164,7 +276,57 @@ shasum -a 256 /path/to/file
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "SHA256 digest" : "https://purl.org/radx-terms/sha256"
+  },
+  "SHA256 digest" : {
+    "@value" : "ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Identity" : "http://purl.org/radx-terms/metadata-terms/identityDescriptor"
+  },
+  "Data File Identity" : {
+    "@context" : {
+      "Identifier" : "http://purl.org/radx-terms/metadata-terms/identifier",
+      "Identifier Type" : "http://purl.org/radx-terms/metadata-terms/identifierType",
+      "File Name " : "http://purl.org/radx-terms/metadata-terms/fileName",
+      "Version" : "http://purl.org/radx-terms/metadata-terms/version",
+      "SHA256 digest" : "https://purl.org/radx-terms/sha256"
+    },
+    "Identifier" : {
+      "@value" : "http://doi.org/10.1000/182"
+    },
+    "Identifier Type" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/DOI"
+    },
+    "File Name " : {
+      "@value" : "COVID-19_Booster_Shot_June_2022_Responses.csv"
+    },
+    "Version" : {
+      "@value" : "1.0.1"
+    },
+    "SHA256 digest" : {
+      "@value" : "ebff8d3da88b292622d3bfc36bdac4c4537ddc56cb07f344c5223d6b6f9cd011"
+    }
+  }
+}
+```
+
+</div>
 ## Data File Language
 
 Language in which the data file being described is provided.
@@ -182,6 +344,20 @@ The value of this field is a language code.  See the [language code table](langu
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Primary Language" : "http://purl.org/radx-terms/metadata-terms/primaryLanguage"
+  },
+  "Primary Language" : {
+    "@value" : "en"
+  }
+}
+```
+
+</div>
 ### Other Languages
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
@@ -196,7 +372,45 @@ The value of this field is a language code.  See the [language code table](langu
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Other Languages" : "http://purl.org/radx-terms/metadata-terms/otherLanguage"
+  },
+  "Other Languages" : [ {
+    "@value" : "es"
+  } ]
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Language" : "http://purl.org/radx-terms/metadata-terms/languageDescriptor"
+  },
+  "Data File Language" : {
+    "@context" : {
+      "Primary Language" : "http://purl.org/radx-terms/metadata-terms/primaryLanguage",
+      "Other Languages" : "http://purl.org/radx-terms/metadata-terms/otherLanguage"
+    },
+    "Primary Language" : {
+      "@value" : "en"
+    },
+    "Other Languages" : [ {
+      "@value" : "es"
+    } ]
+  }
+}
+```
+
+</div>
 ## Data File Subjects
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -215,6 +429,21 @@ Values for this field are taken from the MESH ontology.  You may [use BioPortal 
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Subject Identifier" : "http://purl.org/radx-terms/metadata-terms/subjectIdentifier"
+  },
+  "Subject Identifier" : {
+    "rdfs:label" : "COVID-19 vaccine booster shot",
+    "@id" : "http://purl.bioontology.org/ontology/MESH/C000719227"
+  }
+}
+```
+
+</div>
 ### Subject Identifier Scheme
 <span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span>
@@ -223,6 +452,20 @@ This value is derived  This field should not be manually specified or edited.
 
 The name of the scheme or authority used for the Subject Identifier.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Subject Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/subjectIdentifierScheme"
+  },
+  "Subject Identifier Scheme" : {
+    "@value" : "http://purl.bioontology.org/ontology/MESH"
+  }
+}
+```
+
+</div>
 ### Keyword
 <span class="badge badge--optional">Optional</span>
 
@@ -234,7 +477,49 @@ Free text subject, keyword, classification code, or key phrase describing the da
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Keyword" : "http://purl.org/radx-terms/metadata-terms/keyword"
+  },
+  "Keyword" : {
+    "@value" : "COVID-19 vaccine booster shot"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Subjects" : "http://purl.org/radx-terms/metadata-terms/subjectsAndKeywordsDescriptor"
+  },
+  "Data File Subjects" : [ {
+    "@context" : {
+      "Subject Identifier" : "http://purl.org/radx-terms/metadata-terms/subjectIdentifier",
+      "Subject Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/subjectIdentifierScheme",
+      "Keyword" : "http://purl.org/radx-terms/metadata-terms/keyword"
+    },
+    "Subject Identifier" : {
+      "@id" : "http://purl.bioontology.org/ontology/MESH/C000719227"
+    },
+    "Subject Identifier Scheme" : {
+      "@value" : "http://purl.bioontology.org/ontology/MESH"
+    },
+    "Keyword" : {
+      "@value" : "COVID-19 vaccine booster shot"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Descriptions
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -251,6 +536,20 @@ An account of the resource contained in the Data File; may include but is not li
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Description" : "http://purl.org/radx-terms/metadata-terms/description"
+  },
+  "Description" : {
+    "@value" : "This dataset provides responses from a survey carried out in June 2022 whose purpose was to ascertain side-effects of receiving the COVID-19 booster shot."
+  }
+}
+```
+
+</div>
 ### Description Language
 <span class="badge badge--optional">Optional</span>
 
@@ -264,6 +563,20 @@ The value of this field is a language code.  See the [language code table](langu
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Description Language" : "http://purl.org/radx-terms/metadata-terms/language"
+  },
+  "Description Language" : {
+    "@value" : "en"
+  }
+}
+```
+
+</div>
 ### Type Of Content
 <span class="badge badge--derived">Derived</span>
 <span class="badge badge--recommended">Recommended</span>
@@ -278,7 +591,50 @@ This is the type of digital object being described, which for RADx Data Files is
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Type Of Content" : "http://purl.org/radx-terms/metadata-terms/typeOfContent"
+  },
+  "Type Of Content" : {
+    "rdfs:label" : "Dataset",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/Dataset"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Descriptions" : "http://purl.org/radx-terms/metadata-terms/descriptionDescriptor"
+  },
+  "Data File Descriptions" : [ {
+    "@context" : {
+      "Description" : "http://purl.org/radx-terms/metadata-terms/description",
+      "Description Language" : "http://purl.org/radx-terms/metadata-terms/language",
+      "Type Of Content" : "http://purl.org/radx-terms/metadata-terms/typeOfContent"
+    },
+    "Description" : {
+      "@value" : "This dataset provides responses from a survey carried out in June 2022 whose purpose was to ascertain side-effects of receiving the COVID-19 booster shot."
+    },
+    "Description Language" : {
+      "@value" : "en"
+    },
+    "Type Of Content" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/Dataset"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Data Dictionary
 
 Information about the Data Dictionary associated with the Data File
@@ -296,7 +652,41 @@ Each Data File submitted should have its own data dictionary. For example, surve
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Data Dictionary File Name" : "http://purl.org/radx-terms/metadata-terms/dataDictionaryFileName"
+  },
+  "Data Dictionary File Name" : {
+    "@value" : "COVID-19_Booster_Shot_June_2022_Responses--DICT.csv"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Data Dictionary" : "http://purl.org/radx-terms/metadata-terms/dataDictionaryDescriptor"
+  },
+  "Data File Data Dictionary" : {
+    "@context" : {
+      "Data Dictionary File Name" : "http://purl.org/radx-terms/metadata-terms/dataDictionaryFileName"
+    },
+    "Data Dictionary File Name" : {
+      "@value" : "COVID-19_Booster_Shot_June_2022_Responses--DICT.csv"
+    }
+  }
+}
+```
+
+</div>
 ## Data File Creators
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -316,6 +706,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Type" : "http://purl.org/radx-terms/metadata-terms/creatorType"
+  },
+  "Creator Type" : {
+    "rdfs:label" : "Person",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/Person"
+  }
+}
+```
+
+</div>
 ### Creator Name
 <span class="badge badge--recommended">Recommended</span>
 
@@ -327,6 +732,20 @@ The full name of the creator. For a person this is the combination of the given 
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Name" : "http://purl.org/radx-terms/metadata-terms/creatorName"
+  },
+  "Creator Name" : {
+    "@value" : "Josiah Carberry"
+  }
+}
+```
+
+</div>
 ### Creator Given Name
 <span class="badge badge--recommended">Recommended</span>
 
@@ -338,6 +757,20 @@ If the creator is a person, the personal name(s) of the creator (e.g., first and
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Given Name" : "http://purl.org/radx-terms/metadata-terms/creatorGivenName"
+  },
+  "Creator Given Name" : {
+    "@value" : "Josiah"
+  }
+}
+```
+
+</div>
 ### Creator Family Name
 <span class="badge badge--recommended">Recommended</span>
 
@@ -349,6 +782,20 @@ If the creator is a person, the surname(s) of the creator (e.g., last name in We
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Family Name" : "http://purl.org/radx-terms/metadata-terms/creatorFamilyName"
+  },
+  "Creator Family Name" : {
+    "@value" : "Carberry"
+  }
+}
+```
+
+</div>
 ### Creator Identifier
 <span class="badge badge--recommended">Recommended</span>
 
@@ -368,6 +815,20 @@ _The [Research Organization Registry (ROR)](https://ror.org) is a community-led 
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Identifier" : "http://purl.org/radx-terms/metadata-terms/creatorIdentifier"
+  },
+  "Creator Identifier" : {
+    "@value" : "https://orcid.org/0000-0002-1825-0097"
+  }
+}
+```
+
+</div>
 ### Creator Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -382,6 +843,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/creatorIdentifierScheme"
+  },
+  "Creator Identifier Scheme" : {
+    "rdfs:label" : "ORCID",
+    "@id" : "https://orcid.org/"
+  }
+}
+```
+
+</div>
 ### Creator Email
 <span class="badge badge--recommended">Recommended</span>
 
@@ -393,6 +869,20 @@ The email address of the creator.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Email" : "http://purl.org/radx-terms/metadata-terms/creatorEmail"
+  },
+  "Creator Email" : {
+    "@value" : "josiah.carberry@example.com"
+  }
+}
+```
+
+</div>
 ### Creator Affiliation
 <span class="badge badge--recommended">Recommended</span>
 
@@ -404,6 +894,20 @@ If the creator is a Person who is affiliated with an instition then this field s
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Affiliation" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliation"
+  },
+  "Creator Affiliation" : {
+    "@value" : "Brown University"
+  }
+}
+```
+
+</div>
 ### Creator Affiliation Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -417,6 +921,20 @@ We suggest that you an identifier from the [Research Organization Registry (ROR)
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Affiliation Identifier" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliationIdentifier"
+  },
+  "Creator Affiliation Identifier" : {
+    "@value" : "https://ror.org/05gq02987"
+  }
+}
+```
+
+</div>
 ### Creator Affiliation Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -431,6 +949,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Creator Affiliation Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliationIdentifierScheme"
+  },
+  "Creator Affiliation Identifier Scheme" : {
+    "rdfs:label" : "ROR",
+    "@id" : "https://ror.org"
+  }
+}
+```
+
+</div>
 ### Creator Role
 <span class="badge badge--recommended">Recommended</span>
 
@@ -445,7 +978,82 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Creator Role" : "http://purl.org/radx-terms/metadata-terms/creatorRole"
+  },
+  "Creator Role" : {
+    "rdfs:label" : "Data Manager",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/DataManager"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Creators" : "http://purl.org/radx-terms/metadata-terms/creatorDescriptor"
+  },
+  "Data File Creators" : [ {
+    "@context" : {
+      "Creator Type" : "http://purl.org/radx-terms/metadata-terms/creatorType",
+      "Creator Name" : "http://purl.org/radx-terms/metadata-terms/creatorName",
+      "Creator Given Name" : "http://purl.org/radx-terms/metadata-terms/creatorGivenName",
+      "Creator Family Name" : "http://purl.org/radx-terms/metadata-terms/creatorFamilyName",
+      "Creator Identifier" : "http://purl.org/radx-terms/metadata-terms/creatorIdentifier",
+      "Creator Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/creatorIdentifierScheme",
+      "Creator Email" : "http://purl.org/radx-terms/metadata-terms/creatorEmail",
+      "Creator Affiliation" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliation",
+      "Creator Affiliation Identifier" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliationIdentifier",
+      "Creator Affiliation Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/creatorAffiliationIdentifierScheme",
+      "Creator Role" : "http://purl.org/radx-terms/metadata-terms/creatorRole"
+    },
+    "Creator Type" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/Person"
+    },
+    "Creator Name" : {
+      "@value" : "Josiah Carberry"
+    },
+    "Creator Given Name" : {
+      "@value" : "Josiah"
+    },
+    "Creator Family Name" : {
+      "@value" : "Carberry"
+    },
+    "Creator Identifier" : {
+      "@value" : "https://orcid.org/0000-0002-1825-0097"
+    },
+    "Creator Identifier Scheme" : {
+      "@id" : "https://orcid.org/"
+    },
+    "Creator Email" : {
+      "@value" : "josiah.carberry@example.com"
+    },
+    "Creator Affiliation" : {
+      "@value" : "Brown University"
+    },
+    "Creator Affiliation Identifier" : {
+      "@value" : "https://ror.org/05gq02987"
+    },
+    "Creator Affiliation Identifier Scheme" : {
+      "@id" : "https://ror.org"
+    },
+    "Creator Role" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/DataManager"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Related Resources
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -456,6 +1064,20 @@ A list of resources related to the Data File being described. Resources may be p
 
 A globally unique string that identifies a resource that is related to the data file being described. Typically this is an IRI representing a Web page, but it can be some other type of unique identifier that identifies any digital or non-digital resource.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Related Resource Identifier" : "http://purl.org/radx-terms/metadata-terms/relatedResourceIdentifier"
+  },
+  "Related Resource Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Related Resource Identifier Type
 <span class="badge badge--optional">Optional</span>
 
@@ -464,11 +1086,37 @@ The identifier type used to identify the related resource.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Related Resource Identifier Type" : "http://purl.org/radx-terms/metadata-terms/relatedResourceIdentifierType"
+  },
+  "Related Resource Identifier Type" : { }
+}
+```
+
+</div>
 ### Related Resource File Name
 <span class="badge badge--optional">Optional</span>
 
 The local name of the related resource file (given by the operating system or web service), or for non-digital resources, the local name used to refer to it.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Related Resource File Name" : "http://purl.org/radx-terms/metadata-terms/relatedResourceFileName"
+  },
+  "Related Resource File Name" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Related Resource Type Category
 <span class="badge badge--optional">Optional</span>
 
@@ -483,6 +1131,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Related Resource Type Category" : "http://purl.org/radx-terms/metadata-terms/relatedResourceTypeCategory"
+  },
+  "Related Resource Type Category" : {
+    "rdfs:label" : "Text",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/Text"
+  }
+}
+```
+
+</div>
 ### Related Resource Relation
 <span class="badge badge--optional">Optional</span>
 
@@ -494,7 +1157,55 @@ Description of the relationship of the related resource to the Data File being d
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Related Resource Relation" : "http://purl.org/radx-terms/metadata-terms/relatedResourceRelation"
+  },
+  "Related Resource Relation" : {
+    "@value" : "The publication describes how the data file is constructed and can be used."
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Related Resources" : "http://purl.org/radx-terms/metadata-terms/relatedResourceDescriptor"
+  },
+  "Data File Related Resources" : [ {
+    "@context" : {
+      "Related Resource Identifier" : "http://purl.org/radx-terms/metadata-terms/relatedResourceIdentifier",
+      "Related Resource Identifier Type" : "http://purl.org/radx-terms/metadata-terms/relatedResourceIdentifierType",
+      "Related Resource File Name" : "http://purl.org/radx-terms/metadata-terms/relatedResourceFileName",
+      "Related Resource Type Category" : "http://purl.org/radx-terms/metadata-terms/relatedResourceTypeCategory",
+      "Related Resource Relation" : "http://purl.org/radx-terms/metadata-terms/relatedResourceRelation"
+    },
+    "Related Resource Identifier" : {
+      "@value" : null
+    },
+    "Related Resource Identifier Type" : { },
+    "Related Resource File Name" : {
+      "@value" : null
+    },
+    "Related Resource Type Category" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/Text"
+    },
+    "Related Resource Relation" : {
+      "@value" : "The publication describes how the data file is constructed and can be used."
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Contributors
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -514,6 +1225,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Type" : "http://purl.org/radx-terms/metadata-terms/contributorType"
+  },
+  "Contributor Type" : {
+    "rdfs:label" : "Person",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/Person"
+  }
+}
+```
+
+</div>
 ### Contributor Name
 <span class="badge badge--optional">Optional</span>
 
@@ -525,6 +1251,20 @@ The full name of the contributor.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Name" : "http://purl.org/radx-terms/metadata-terms/contributorName"
+  },
+  "Contributor Name" : {
+    "@value" : "Josiah Carberry"
+  }
+}
+```
+
+</div>
 ### Contributor Given Name
 <span class="badge badge--optional">Optional</span>
 
@@ -536,6 +1276,20 @@ If the contributor is a person, the personal name(s) of the contributor (e.g., f
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Given Name" : "http://purl.org/radx-terms/metadata-terms/contributorGivenName"
+  },
+  "Contributor Given Name" : {
+    "@value" : "Josiah"
+  }
+}
+```
+
+</div>
 ### Contributor Family Name
 <span class="badge badge--optional">Optional</span>
 
@@ -547,6 +1301,20 @@ If the contributor is a person, the surname(s) of the conributor (e.g., last nam
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Family Name" : "http://purl.org/radx-terms/metadata-terms/contributorFamilyName"
+  },
+  "Contributor Family Name" : {
+    "@value" : "Carberry"
+  }
+}
+```
+
+</div>
 ### Contributor Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -566,6 +1334,20 @@ _The [Research Organization Registry (ROR)](https://ror.org) is a community-led 
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Identifier" : "http://purl.org/radx-terms/metadata-terms/contributorIdentifier"
+  },
+  "Contributor Identifier" : {
+    "@value" : "https://orcid.org/0000-0002-1825-0097"
+  }
+}
+```
+
+</div>
 ### Contributor Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -580,6 +1362,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/contributorIdentifierScheme"
+  },
+  "Contributor Identifier Scheme" : {
+    "rdfs:label" : "ORCID",
+    "@id" : "https://orcid.org"
+  }
+}
+```
+
+</div>
 ### Contributor Affiliation
 <span class="badge badge--optional">Optional</span>
 
@@ -591,6 +1388,20 @@ If the contributor is a person, the organizational or institutional affiliation 
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Affiliation" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliation"
+  },
+  "Contributor Affiliation" : {
+    "@value" : "Brown University"
+  }
+}
+```
+
+</div>
 ### Contributor Affiliation Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -604,6 +1415,20 @@ We suggest that you an identifier from the [Research Organization Registry (ROR)
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Affiliation Identifier" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliationIdentifier"
+  },
+  "Contributor Affiliation Identifier" : {
+    "@value" : "https://ror.org/05gq02987"
+  }
+}
+```
+
+</div>
 ### Contributor Affiliation Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -618,6 +1443,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Affiliation Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliationIdentifierScheme"
+  },
+  "Contributor Affiliation Identifier Scheme" : {
+    "rdfs:label" : "ROR",
+    "@id" : "https://ror.org"
+  }
+}
+```
+
+</div>
 ### Contributor Email
 <span class="badge badge--optional">Optional</span>
 
@@ -629,6 +1469,20 @@ An email address of the contributor.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Contributor Email" : "http://purl.org/radx-terms/metadata-terms/contributorEmail"
+  },
+  "Contributor Email" : {
+    "@value" : "josiah.carberry@example.com"
+  }
+}
+```
+
+</div>
 ### Contributor Role
 <span class="badge badge--optional">Optional</span>
 
@@ -643,7 +1497,82 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Contributor Role" : "http://purl.org/radx-terms/metadata-terms/contributorRole"
+  },
+  "Contributor Role" : {
+    "rdfs:label" : "Data Collector",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/DataCollector"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Contributors" : "http://purl.org/radx-terms/metadata-terms/contributorDescriptor"
+  },
+  "Data File Contributors" : [ {
+    "@context" : {
+      "Contributor Type" : "http://purl.org/radx-terms/metadata-terms/contributorType",
+      "Contributor Name" : "http://purl.org/radx-terms/metadata-terms/contributorName",
+      "Contributor Given Name" : "http://purl.org/radx-terms/metadata-terms/contributorGivenName",
+      "Contributor Family Name" : "http://purl.org/radx-terms/metadata-terms/contributorFamilyName",
+      "Contributor Identifier" : "http://purl.org/radx-terms/metadata-terms/contributorIdentifier",
+      "Contributor Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/contributorIdentifierScheme",
+      "Contributor Affiliation" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliation",
+      "Contributor Affiliation Identifier" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliationIdentifier",
+      "Contributor Affiliation Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/contributorAffiliationIdentifierScheme",
+      "Contributor Email" : "http://purl.org/radx-terms/metadata-terms/contributorEmail",
+      "Contributor Role" : "http://purl.org/radx-terms/metadata-terms/contributorRole"
+    },
+    "Contributor Type" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/Person"
+    },
+    "Contributor Name" : {
+      "@value" : "Josiah Carberry"
+    },
+    "Contributor Given Name" : {
+      "@value" : "Josiah"
+    },
+    "Contributor Family Name" : {
+      "@value" : "Carberry"
+    },
+    "Contributor Identifier" : {
+      "@value" : "https://orcid.org/0000-0002-1825-0097"
+    },
+    "Contributor Identifier Scheme" : {
+      "@id" : "https://orcid.org"
+    },
+    "Contributor Affiliation" : {
+      "@value" : "Brown University"
+    },
+    "Contributor Affiliation Identifier" : {
+      "@value" : "https://ror.org/05gq02987"
+    },
+    "Contributor Affiliation Identifier Scheme" : {
+      "@id" : "https://ror.org"
+    },
+    "Contributor Email" : {
+      "@value" : "josiah.carberry@example.com"
+    },
+    "Contributor Role" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/DataCollector"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Rights
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -663,6 +1592,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "License Name" : "http://purl.org/radx-terms/metadata-terms/licenseName"
+  },
+  "License Name" : {
+    "rdfs:label" : "CC BY-SA 4.0",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/CCBYSA4.0"
+  }
+}
+```
+
+</div>
 ### License Text
 <span class="badge badge--optional">Optional</span>
 
@@ -670,7 +1614,45 @@ Text string describing any rights information for the data file being described.
 
 If a uniquely identiable license is named above, it is not necessary to repeat the text of the license in this field. This field allows additional rights information to be provided, either to expand licensing terms, clarify the license holder, or provide unique license terms that are not available in a standardized license.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "License Text" : "http://purl.org/radx-terms/metadata-terms/licenseText"
+  },
+  "License Text" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Rights" : "http://purl.org/radx-terms/metadata-terms/rightsDescriptor"
+  },
+  "Data File Rights" : [ {
+    "@context" : {
+      "License Name" : "http://purl.org/radx-terms/metadata-terms/licenseName",
+      "License Text" : "http://purl.org/radx-terms/metadata-terms/licenseText"
+    },
+    "License Name" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/CCBYSA4.0"
+    },
+    "License Text" : {
+      "@value" : null
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Dates
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -692,6 +1674,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Event Type" : "http://purl.org/radx-terms/metadata-terms/eventType"
+  },
+  "Event Type" : {
+    "rdfs:label" : "Created",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/Created"
+  }
+}
+```
+
+</div>
 ### Date
 <span class="badge badge--optional">Optional</span>
 
@@ -709,7 +1706,47 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Date" : "http://purl.org/radx-terms/metadata-terms/eventDate"
+  },
+  "Date" : {
+    "@type" : "xsd:dateTime",
+    "@value" : "2022-11-23T01:23:45.678-07:00"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Dates" : "http://purl.org/radx-terms/metadata-terms/eventsDescriptor"
+  },
+  "Data File Dates" : [ {
+    "@context" : {
+      "Event Type" : "http://purl.org/radx-terms/metadata-terms/eventType",
+      "Date" : "http://purl.org/radx-terms/metadata-terms/eventDate"
+    },
+    "Event Type" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/Created"
+    },
+    "Date" : {
+      "@type" : "xsd:dateTime",
+      "@value" : "2022-11-23T01:23:45.678-07:00"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Parent Studies
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -728,6 +1765,20 @@ This corresponds to the _local identifier_ in the DataCite standard. All RADx st
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "PHS Identifier" : "http://purl.org/radx-terms/metadata-terms/parentStudyPhsIdentifier"
+  },
+  "PHS Identifier" : {
+    "@value" : "phs000296"
+  }
+}
+```
+
+</div>
 ### Study Identifier
 <span class="badge badge--recommended">Recommended</span>
 
@@ -739,6 +1790,20 @@ Globally unique string that identifies the study for which this data file was cr
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Study Identifier" : "http://purl.org/radx-terms/metadata-terms/ParentStudyIdentifier"
+  },
+  "Study Identifier" : {
+    "@value" : "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000296"
+  }
+}
+```
+
+</div>
 ### Study Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -753,6 +1818,21 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Study Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/parentStudyIdentifierScheme"
+  },
+  "Study Identifier Scheme" : {
+    "rdfs:label" : "IRI",
+    "@id" : "http://vocab.fairdatacollective.org/gdmt/IRI"
+  }
+}
+```
+
+</div>
 ### Study Name
 <span class="badge badge--recommended">Recommended</span>
 
@@ -764,6 +1844,20 @@ The name of the research study for which this data file was created.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Study Name" : "http://purl.org/radx-terms/metadata-terms/parentStudyName"
+  },
+  "Study Name" : {
+    "@value" : "NHLBI GO-ESP: Lung Cohorts Exome Sequencing Project (COPDGene)"
+  }
+}
+```
+
+</div>
 ### Study Start Date
 <span class="badge badge--optional">Optional</span>
 
@@ -777,6 +1871,21 @@ This field is considered auxiliary information to the initially registered Study
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Study Start Date" : "http://purl.org/radx-terms/metadata-terms/startDate"
+  },
+  "Study Start Date" : {
+    "@type" : "xsd:dateTime",
+    "@value" : "2021-10-05"
+  }
+}
+```
+
+</div>
 ### Study End Date
 <span class="badge badge--optional">Optional</span>
 
@@ -790,7 +1899,64 @@ This field is considered auxiliary information to the initially registered Study
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Study End Date" : "http://purl.org/radx-terms/metadata-terms/endDate"
+  },
+  "Study End Date" : {
+    "@type" : "xsd:dateTime",
+    "@value" : "2022-10-05"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Parent Studies" : "http://purl.org/radx-terms/metadata-terms/parentStudyDescriptor"
+  },
+  "Data File Parent Studies" : [ {
+    "@context" : {
+      "PHS Identifier" : "http://purl.org/radx-terms/metadata-terms/parentStudyPhsIdentifier",
+      "Study Identifier" : "http://purl.org/radx-terms/metadata-terms/ParentStudyIdentifier",
+      "Study Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/parentStudyIdentifierScheme",
+      "Study Name" : "http://purl.org/radx-terms/metadata-terms/parentStudyName",
+      "Study Start Date" : "http://purl.org/radx-terms/metadata-terms/startDate",
+      "Study End Date" : "http://purl.org/radx-terms/metadata-terms/endDate"
+    },
+    "PHS Identifier" : {
+      "@value" : "phs000296"
+    },
+    "Study Identifier" : {
+      "@value" : "https://www.ncbi.nlm.nih.gov/projects/gap/cgi-bin/study.cgi?study_id=phs000296"
+    },
+    "Study Identifier Scheme" : {
+      "@id" : "http://vocab.fairdatacollective.org/gdmt/IRI"
+    },
+    "Study Name" : {
+      "@value" : "NHLBI GO-ESP: Lung Cohorts Exome Sequencing Project (COPDGene)"
+    },
+    "Study Start Date" : {
+      "@type" : "xsd:dateTime",
+      "@value" : "2021-10-05"
+    },
+    "Study End Date" : {
+      "@type" : "xsd:dateTime",
+      "@value" : "2022-10-05"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Funding Sources
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -807,6 +1973,20 @@ The human readable title of the award, grant, or other specific funding mechanis
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Award Title" : "http://purl.org/radx-terms/metadata-terms/awardTitle"
+  },
+  "Award Title" : {
+    "@value" : "Safer At School Early Alert (SASEA)"
+  }
+}
+```
+
+</div>
 ### Award Page URL
 <span class="badge badge--optional">Optional</span>
 
@@ -818,6 +1998,20 @@ The unique identifier (IRI) leading to a page provided by the funder for more in
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Award Page URL" : "http://purl.org/radx-terms/metadata-terms/awardPageUrl"
+  },
+  "Award Page URL" : {
+    "@id" : "https://reporter.nih.gov/search/44g5CsIy-EGIvKlnlFwXrA/project-details/10447530"
+  }
+}
+```
+
+</div>
 ### Award Local Identifier
 <span class="badge badge--recommended">Recommended</span>
 
@@ -829,6 +2023,20 @@ The code assigned by the funding provider to a sponsored award (grant). (This ca
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Award Local Identifier" : "http://purl.org/radx-terms/metadata-terms/awardIdentifier"
+  },
+  "Award Local Identifier" : {
+    "@value" : "1U01HD108787-01"
+  }
+}
+```
+
+</div>
 ### Funder Name
 <span class="badge badge--recommended">Recommended</span>
 
@@ -842,6 +2050,20 @@ This is typically the NIH Institute that awarded the grant.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Funder Name" : "http://purl.org/radx-terms/metadata-terms/funderName"
+  },
+  "Funder Name" : {
+    "@value" : "Eunice Kennedy Shriver National Institute of Child Health and Human Development"
+  }
+}
+```
+
+</div>
 ### Funder Identifier
 <span class="badge badge--recommended">Recommended</span>
 
@@ -884,6 +2106,20 @@ Globally unique string that identifies the funding provider. A list of NIH Insti
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Funder Identifier" : "http://purl.org/radx-terms/metadata-terms/funderIdentifier"
+  },
+  "Funder Identifier" : {
+    "@value" : "https://ror.org/04byxyr05"
+  }
+}
+```
+
+</div>
 ### Funder Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -898,7 +2134,62 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Funder Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/funderIdentifierScheme"
+  },
+  "Funder Identifier Scheme" : {
+    "rdfs:label" : "ROR",
+    "@id" : "https://ror.org"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Funding Sources" : "http://purl.org/radx-terms/metadata-terms/fundingSourceDescriptor"
+  },
+  "Data File Funding Sources" : [ {
+    "@context" : {
+      "Award Title" : "http://purl.org/radx-terms/metadata-terms/awardTitle",
+      "Award Page URL" : "http://purl.org/radx-terms/metadata-terms/awardPageUrl",
+      "Award Local Identifier" : "http://purl.org/radx-terms/metadata-terms/awardIdentifier",
+      "Funder Name" : "http://purl.org/radx-terms/metadata-terms/funderName",
+      "Funder Identifier" : "http://purl.org/radx-terms/metadata-terms/funderIdentifier",
+      "Funder Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/funderIdentifierScheme"
+    },
+    "Award Title" : {
+      "@value" : "Safer At School Early Alert (SASEA)"
+    },
+    "Award Page URL" : {
+      "@id" : "https://reporter.nih.gov/search/44g5CsIy-EGIvKlnlFwXrA/project-details/10447530"
+    },
+    "Award Local Identifier" : {
+      "@value" : "1U01HD108787-01"
+    },
+    "Funder Name" : {
+      "@value" : "Eunice Kennedy Shriver National Institute of Child Health and Human Development"
+    },
+    "Funder Identifier" : {
+      "@value" : "https://ror.org/04byxyr05"
+    },
+    "Funder Identifier Scheme" : {
+      "@id" : "https://ror.org"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Distributions
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -909,6 +2200,20 @@ A list of specific (non-Data Hub) distributions for this data file. If the only 
 
 The organization or resource that provides services to make publicly available this distribution of the data file.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Publisher" : "http://purl.org/radx-terms/metadata-terms/distributionPublisher"
+  },
+  "Distribution Publisher" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Publisher Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -917,6 +2222,18 @@ Globally unique string that identifies the Distribution Publisher.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme).
 
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Publisher Identifier" : "http://purl.org/radx-terms/metadata-terms/distributionPublisherIdentifier"
+  },
+  "Distribution Publisher Identifier" : { }
+}
+```
+
+</div>
 ### Distribution Publisher Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -925,11 +2242,37 @@ Name of the scheme or authority for the Distribution Publisher Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierScheme).
 
 [GRID](https://www.grid.ac/)  |  [ISNI](https://isni.org/)  |  [LinkedIn ID](https://www.linkedin.com/)  |  [ORCiD](https://orcid.org/)  |  [ResearcherID](http://www.researcherid.com/)  |  [ROR](https://ror.org/)  |  [Scopus](https://www.scopus.com/)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Publisher Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/distributionPublisherIdentifierScheme"
+  },
+  "Distribution Publisher Identifier Scheme" : { }
+}
+```
+
+</div>
 ### Distribution Identifier
 <span class="badge badge--optional">Optional</span>
 
 A globally unique string that identifies the data file distribution.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Identifier" : "http://purl.org/radx-terms/metadata-terms/distributionIdentifier"
+  },
+  "Distribution Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Identifier Type
 <span class="badge badge--optional">Optional</span>
 
@@ -938,11 +2281,37 @@ The identifier type used to identify the data file distribution.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Identifier Type" : "http://purl.org/radx-terms/metadata-terms/distributionIdentifierType"
+  },
+  "Distribution Identifier Type" : { }
+}
+```
+
+</div>
 ### Distribution Format
 <span class="badge badge--optional">Optional</span>
 
 An established standard to which the data file distribution conforms.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Format" : "http://purl.org/radx-terms/metadata-terms/distributionFormat"
+  },
+  "Distribution Format" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Media Type
 <span class="badge badge--optional">Optional</span>
 
@@ -951,26 +2320,94 @@ A media type (formerly known as a MIME type) of data file distribution. The most
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/MIMEType).
 
 [application/acad](http://vocab.fairdatacollective.org/gdmt/application-acad)  |  [application/arj](http://vocab.fairdatacollective.org/gdmt/application-arj)  |  [application/base64](http://vocab.fairdatacollective.org/gdmt/application-base64)  |  [application/binhex4](http://vocab.fairdatacollective.org/gdmt/application-binhex4)  |  [application/binhex](http://vocab.fairdatacollective.org/gdmt/application-binhex)  |  [application/book](http://vocab.fairdatacollective.org/gdmt/application-book)  |  [application/cdf](http://vocab.fairdatacollective.org/gdmt/application-cdf)  |  [application/clariscad](http://vocab.fairdatacollective.org/gdmt/application-clariscad)  |  [application/commonground](http://vocab.fairdatacollective.org/gdmt/application-commonground)  |  [application/drafting](http://vocab.fairdatacollective.org/gdmt/application-drafting)  |  [application/dsptype](http://vocab.fairdatacollective.org/gdmt/application-dsptype)  |  [application/dxf](http://vocab.fairdatacollective.org/gdmt/application-dxf)  |  [application/ecmascript](http://vocab.fairdatacollective.org/gdmt/application-ecmascript)  |  [application/envoy](http://vocab.fairdatacollective.org/gdmt/application-envoy)  |  [application/epub+zip](http://vocab.fairdatacollective.org/gdmt/application-epub+zip)  |  [application/excel](http://vocab.fairdatacollective.org/gdmt/application-excel)  |  [application/fractals](http://vocab.fairdatacollective.org/gdmt/application-fractals)  |  [application/freeloader](http://vocab.fairdatacollective.org/gdmt/application-freeloader)  |  [application/futuresplash](http://vocab.fairdatacollective.org/gdmt/application-futuresplash)  |  [application/gnutar](http://vocab.fairdatacollective.org/gdmt/application-gnutar)  |  [application/groupwise](http://vocab.fairdatacollective.org/gdmt/application-groupwise)  |  [application/hlp](http://vocab.fairdatacollective.org/gdmt/application-hlp)  |  [application/hta](http://vocab.fairdatacollective.org/gdmt/application-hta)  |  [application/i-deas](http://vocab.fairdatacollective.org/gdmt/application-i-deas)  |  [application/iges](http://vocab.fairdatacollective.org/gdmt/application-iges)  |  [application/inf](http://vocab.fairdatacollective.org/gdmt/application-inf)  |  [application/java-archive](http://vocab.fairdatacollective.org/gdmt/application-java-archive)  |  [application/java-byte-code](http://vocab.fairdatacollective.org/gdmt/application-java-byte-code)  |  [application/java](http://vocab.fairdatacollective.org/gdmt/application-java)  |  [application/javascript](http://vocab.fairdatacollective.org/gdmt/application-javascript)  |  [application/json](http://vocab.fairdatacollective.org/gdmt/application-json)  |  [application/ld+json](http://vocab.fairdatacollective.org/gdmt/application-ld+json)  |  [application/lha](http://vocab.fairdatacollective.org/gdmt/application-lha)  |  [application/lzx](http://vocab.fairdatacollective.org/gdmt/application-lzx)  |  [application/mac-binary](http://vocab.fairdatacollective.org/gdmt/application-mac-binary)  |  [application/mac-binhex40](http://vocab.fairdatacollective.org/gdmt/application-mac-binhex40)  |  [application/mac-binhex](http://vocab.fairdatacollective.org/gdmt/application-mac-binhex)  |  [application/mac-compactpro](http://vocab.fairdatacollective.org/gdmt/application-mac-compactpro)  |  [application/macbinary](http://vocab.fairdatacollective.org/gdmt/application-macbinary)  |  [application/marc](http://vocab.fairdatacollective.org/gdmt/application-marc)  |  [application/mbedlet](http://vocab.fairdatacollective.org/gdmt/application-mbedlet)  |  [application/mcad](http://vocab.fairdatacollective.org/gdmt/application-mcad)  |  [application/mime](http://vocab.fairdatacollective.org/gdmt/application-mime)  |  [application/mspowerpoint](http://vocab.fairdatacollective.org/gdmt/application-mspowerpoint)  |  [application/msword](http://vocab.fairdatacollective.org/gdmt/application-msword)  |  [application/mswrite](http://vocab.fairdatacollective.org/gdmt/application-mswrite)  |  [application/netmc](http://vocab.fairdatacollective.org/gdmt/application-netmc)  |  [application/octet-stream](http://vocab.fairdatacollective.org/gdmt/application-octet-stream)  |  [application/oda](http://vocab.fairdatacollective.org/gdmt/application-oda)  |  [application/ogg](http://vocab.fairdatacollective.org/gdmt/application-ogg)  |  [application/pdf](http://vocab.fairdatacollective.org/gdmt/application-pdf)  |  [application/pkcs-12](http://vocab.fairdatacollective.org/gdmt/application-pkcs-12)  |  [application/pkcs-crl](http://vocab.fairdatacollective.org/gdmt/application-pkcs-crl)  |  [application/pkcs10](http://vocab.fairdatacollective.org/gdmt/application-pkcs10)  |  [application/pkcs7-mime](http://vocab.fairdatacollective.org/gdmt/application-pkcs7-mime)  |  [application/pkcs7-signature](http://vocab.fairdatacollective.org/gdmt/application-pkcs7-signature)  |  [application/pkix-cert](http://vocab.fairdatacollective.org/gdmt/application-pkix-cert)  |  [application/pkix-crl](http://vocab.fairdatacollective.org/gdmt/application-pkix-crl)  |  [application/plain](http://vocab.fairdatacollective.org/gdmt/application-plain)  |  [application/postscript](http://vocab.fairdatacollective.org/gdmt/application-postscript)  |  [application/powerpoint](http://vocab.fairdatacollective.org/gdmt/application-powerpoint)  |  [application/pro_eng](http://vocab.fairdatacollective.org/gdmt/application-pro_eng)  |  [application/ringing-tones](http://vocab.fairdatacollective.org/gdmt/application-ringing-tones)  |  [application/rtf](http://vocab.fairdatacollective.org/gdmt/application-rtf)  |  [application/sdp](http://vocab.fairdatacollective.org/gdmt/application-sdp)  |  [application/sea](http://vocab.fairdatacollective.org/gdmt/application-sea)  |  [application/set](http://vocab.fairdatacollective.org/gdmt/application-set)  |  [application/sla](http://vocab.fairdatacollective.org/gdmt/application-sla)  |  [application/smil](http://vocab.fairdatacollective.org/gdmt/application-smil)  |  [application/solids](http://vocab.fairdatacollective.org/gdmt/application-solids)  |  [application/sounder](http://vocab.fairdatacollective.org/gdmt/application-sounder)  |  [application/step](http://vocab.fairdatacollective.org/gdmt/application-step)  |  [application/streamingmedia](http://vocab.fairdatacollective.org/gdmt/application-streamingmedia)  |  [application/toolbook](http://vocab.fairdatacollective.org/gdmt/application-toolbook)  |  [application/vda](http://vocab.fairdatacollective.org/gdmt/application-vda)  |  [application/vnd.amazon.ebook](http://vocab.fairdatacollective.org/gdmt/application-vnd.amazon.ebook)  |  [application/vnd.android.package-archive](http://vocab.fairdatacollective.org/gdmt/application-vnd.android.package-archive)  |  [application/vnd.apple.installer+xml](http://vocab.fairdatacollective.org/gdmt/application-vnd.apple.installer+xml)  |  [application/vnd.fdf](http://vocab.fairdatacollective.org/gdmt/application-vnd.fdf)  |  [application/vnd.hp-hpgl](http://vocab.fairdatacollective.org/gdmt/application-vnd.hp-hpgl)  |  [application/vnd.hp-pcl](http://vocab.fairdatacollective.org/gdmt/application-vnd.hp-pcl)  |  [application/vnd.mozilla.xul+xml](http://vocab.fairdatacollective.org/gdmt/application-vnd.mozilla.xul+xml)  |  [application/vnd.ms-excel](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-excel)  |  [application/vnd.ms-fontobject](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-fontobject)  |  [application/vnd.ms-pki.certstore](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.certstore)  |  [application/vnd.ms-pki.pko](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.pko)  |  [application/vnd.ms-pki.seccat](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.seccat)  |  [application/vnd.ms-pki.stl](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-pki.stl)  |  [application/vnd.ms-powerpoint](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-powerpoint)  |  [application/vnd.ms-project](http://vocab.fairdatacollective.org/gdmt/application-vnd.ms-project)  |  [application/vnd.nokia.configuration-message](http://vocab.fairdatacollective.org/gdmt/application-vnd.nokia.configuration-message)  |  [application/vnd.nokia.ringing-tone](http://vocab.fairdatacollective.org/gdmt/application-vnd.nokia.ringing-tone)  |  [application/vnd.oasis.opendocument.presentation](http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.presentation)  |  [application/vnd.oasis.opendocument.spreadsheet](http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.spreadsheet)  |  [application/vnd.oasis.opendocument.text](http://vocab.fairdatacollective.org/gdmt/application-vnd.oasis.opendocument.text)  |  [application/vnd.openxmlformats-officedocument.presentationml.presentation](http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.presentationml.presentation)  |  [application/vnd.openxmlformats-officedocument.spreadsheetml.sheet](http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.spreadsheetml.sheet)  |  [application/vnd.openxmlformats-officedocument.wordprocessingml.document](http://vocab.fairdatacollective.org/gdmt/application-vnd.openxmlformats-officedocument.wordprocessingml.document)  |  [application/vnd.rn-realmedia](http://vocab.fairdatacollective.org/gdmt/application-vnd.rn-realmedia)  |  [application/vnd.rn-realplayer](http://vocab.fairdatacollective.org/gdmt/application-vnd.rn-realplayer)  |  [application/vnd.visio](http://vocab.fairdatacollective.org/gdmt/application-vnd.visio)  |  [application/vnd.wap.wmlc](http://vocab.fairdatacollective.org/gdmt/application-vnd.wap.wmlc)  |  [application/vnd.wap.wmlscriptc](http://vocab.fairdatacollective.org/gdmt/application-vnd.wap.wmlscriptc)  |  [application/vnd.xara](http://vocab.fairdatacollective.org/gdmt/application-vnd.xara)  |  [application/vocaltec-media-desc](http://vocab.fairdatacollective.org/gdmt/application-vocaltec-media-desc)  |  [application/vocaltec-media-file](http://vocab.fairdatacollective.org/gdmt/application-vocaltec-media-file)  |  [application/wordperfect6.0](http://vocab.fairdatacollective.org/gdmt/application-wordperfect6.0)  |  [application/wordperfect6.1](http://vocab.fairdatacollective.org/gdmt/application-wordperfect6.1)  |  [application/wordperfect](http://vocab.fairdatacollective.org/gdmt/application-wordperfect)  |  [application/x-123](http://vocab.fairdatacollective.org/gdmt/application-x-123)  |  [application/x-7z-compressed](http://vocab.fairdatacollective.org/gdmt/application-x-7z-compressed)  |  [application/x-abiword](http://vocab.fairdatacollective.org/gdmt/application-x-abiword)  |  [application/x-aim](http://vocab.fairdatacollective.org/gdmt/application-x-aim)  |  [application/x-authorware-bin](http://vocab.fairdatacollective.org/gdmt/application-x-authorware-bin)  |  [application/x-authorware-map](http://vocab.fairdatacollective.org/gdmt/application-x-authorware-map)  |  [application/x-authorware-seg](http://vocab.fairdatacollective.org/gdmt/application-x-authorware-seg)  |  [application/x-bcpio](http://vocab.fairdatacollective.org/gdmt/application-x-bcpio)  |  [application/x-binary](http://vocab.fairdatacollective.org/gdmt/application-x-binary)  |  [application/x-binhex40](http://vocab.fairdatacollective.org/gdmt/application-x-binhex40)  |  [application/x-bsh](http://vocab.fairdatacollective.org/gdmt/application-x-bsh)  |  [application/x-bytecode.elisp (compiled elisp)](http://vocab.fairdatacollective.org/gdmt/application-x-bytecode.elisp(compiledelisp))  |  [application/x-bytecode.python](http://vocab.fairdatacollective.org/gdmt/application-x-bytecode.python)  |  [application/x-bzip2](http://vocab.fairdatacollective.org/gdmt/application-x-bzip2)  |  [application/x-bzip](http://vocab.fairdatacollective.org/gdmt/application-x-bzip)  |  [application/x-cdf](http://vocab.fairdatacollective.org/gdmt/application-x-cdf)  |  [application/x-cdlink](http://vocab.fairdatacollective.org/gdmt/application-x-cdlink)  |  [application/x-chat](http://vocab.fairdatacollective.org/gdmt/application-x-chat)  |  [application/x-cmu-raster](http://vocab.fairdatacollective.org/gdmt/application-x-cmu-raster)  |  [application/x-cocoa](http://vocab.fairdatacollective.org/gdmt/application-x-cocoa)  |  [application/x-compactpro](http://vocab.fairdatacollective.org/gdmt/application-x-compactpro)  |  [application/x-compress](http://vocab.fairdatacollective.org/gdmt/application-x-compress)  |  [application/x-compressed](http://vocab.fairdatacollective.org/gdmt/application-x-compressed)  |  [application/x-conference](http://vocab.fairdatacollective.org/gdmt/application-x-conference)  |  [application/x-cpio](http://vocab.fairdatacollective.org/gdmt/application-x-cpio)  |  [application/x-cpt](http://vocab.fairdatacollective.org/gdmt/application-x-cpt)  |  [application/x-csh](http://vocab.fairdatacollective.org/gdmt/application-x-csh)  |  [application/x-deepv](http://vocab.fairdatacollective.org/gdmt/application-x-deepv)  |  [application/x-director](http://vocab.fairdatacollective.org/gdmt/application-x-director)  |  [application/x-dvi](http://vocab.fairdatacollective.org/gdmt/application-x-dvi)  |  [application/x-elc](http://vocab.fairdatacollective.org/gdmt/application-x-elc)  |  [application/x-envoy](http://vocab.fairdatacollective.org/gdmt/application-x-envoy)  |  [application/x-esrehber](http://vocab.fairdatacollective.org/gdmt/application-x-esrehber)  |  [application/x-excel](http://vocab.fairdatacollective.org/gdmt/application-x-excel)  |  [application/x-fictionbook](http://vocab.fairdatacollective.org/gdmt/application-x-fictionbook)  |  [application/x-frame](http://vocab.fairdatacollective.org/gdmt/application-x-frame)  |  [application/x-freearc](http://vocab.fairdatacollective.org/gdmt/application-x-freearc)  |  [application/x-freelance](http://vocab.fairdatacollective.org/gdmt/application-x-freelance)  |  [application/x-gsp](http://vocab.fairdatacollective.org/gdmt/application-x-gsp)  |  [application/x-gss](http://vocab.fairdatacollective.org/gdmt/application-x-gss)  |  [application/x-gtar](http://vocab.fairdatacollective.org/gdmt/application-x-gtar)  |  [application/x-gzip](http://vocab.fairdatacollective.org/gdmt/application-x-gzip)  |  [application/x-hdf](http://vocab.fairdatacollective.org/gdmt/application-x-hdf)  |  [application/x-helpfile](http://vocab.fairdatacollective.org/gdmt/application-x-helpfile)  |  [application/x-httpd-imap](http://vocab.fairdatacollective.org/gdmt/application-x-httpd-imap)  |  [application/x-ima](http://vocab.fairdatacollective.org/gdmt/application-x-ima)  |  [application/x-internett-signup](http://vocab.fairdatacollective.org/gdmt/application-x-internett-signup)  |  [application/x-inventor](http://vocab.fairdatacollective.org/gdmt/application-x-inventor)  |  [application/x-ip2](http://vocab.fairdatacollective.org/gdmt/application-x-ip2)  |  [application/x-java-class](http://vocab.fairdatacollective.org/gdmt/application-x-java-class)  |  [application/x-java-commerce](http://vocab.fairdatacollective.org/gdmt/application-x-java-commerce)  |  [application/x-javascript](http://vocab.fairdatacollective.org/gdmt/application-x-javascript)  |  [application/x-koan](http://vocab.fairdatacollective.org/gdmt/application-x-koan)  |  [application/x-ksh](http://vocab.fairdatacollective.org/gdmt/application-x-ksh)  |  [application/x-latex](http://vocab.fairdatacollective.org/gdmt/application-x-latex)  |  [application/x-lha](http://vocab.fairdatacollective.org/gdmt/application-x-lha)  |  [application/x-lisp](http://vocab.fairdatacollective.org/gdmt/application-x-lisp)  |  [application/x-livescreen](http://vocab.fairdatacollective.org/gdmt/application-x-livescreen)  |  [application/x-lotus](http://vocab.fairdatacollective.org/gdmt/application-x-lotus)  |  [application/x-lotusscreencam](http://vocab.fairdatacollective.org/gdmt/application-x-lotusscreencam)  |  [application/x-lzh](http://vocab.fairdatacollective.org/gdmt/application-x-lzh)  |  [application/x-lzx](http://vocab.fairdatacollective.org/gdmt/application-x-lzx)  |  [application/x-mac-binhex40](http://vocab.fairdatacollective.org/gdmt/application-x-mac-binhex40)  |  [application/x-macbinary](http://vocab.fairdatacollective.org/gdmt/application-x-macbinary)  |  [application/x-magic-cap-package-1.0](http://vocab.fairdatacollective.org/gdmt/application-x-magic-cap-package-1.0)  |  [application/x-mathcad](http://vocab.fairdatacollective.org/gdmt/application-x-mathcad)  |  [application/x-meme](http://vocab.fairdatacollective.org/gdmt/application-x-meme)  |  [application/x-midi](http://vocab.fairdatacollective.org/gdmt/application-x-midi)  |  [application/x-mif](http://vocab.fairdatacollective.org/gdmt/application-x-mif)  |  [application/x-mix-transfer](http://vocab.fairdatacollective.org/gdmt/application-x-mix-transfer)  |  [application/x-mplayer2](http://vocab.fairdatacollective.org/gdmt/application-x-mplayer2)  |  [application/x-msexcel](http://vocab.fairdatacollective.org/gdmt/application-x-msexcel)  |  [application/x-mspowerpoint](http://vocab.fairdatacollective.org/gdmt/application-x-mspowerpoint)  |  [application/x-navi-animation](http://vocab.fairdatacollective.org/gdmt/application-x-navi-animation)  |  [application/x-navidoc](http://vocab.fairdatacollective.org/gdmt/application-x-navidoc)  |  [application/x-navimap](http://vocab.fairdatacollective.org/gdmt/application-x-navimap)  |  [application/x-navistyle](http://vocab.fairdatacollective.org/gdmt/application-x-navistyle)  |  [application/x-netcdf](http://vocab.fairdatacollective.org/gdmt/application-x-netcdf)  |  [application/x-newton-compatible-pkg](http://vocab.fairdatacollective.org/gdmt/application-x-newton-compatible-pkg)  |  [application/x-nokia-9000-communicator-add-on-software](http://vocab.fairdatacollective.org/gdmt/application-x-nokia-9000-communicator-add-on-software)  |  [application/x-omc](http://vocab.fairdatacollective.org/gdmt/application-x-omc)  |  [application/x-omcdatamaker](http://vocab.fairdatacollective.org/gdmt/application-x-omcdatamaker)  |  [application/x-omcregerator](http://vocab.fairdatacollective.org/gdmt/application-x-omcregerator)  |  [application/x-pagemaker](http://vocab.fairdatacollective.org/gdmt/application-x-pagemaker)  |  [application/x-pcl](http://vocab.fairdatacollective.org/gdmt/application-x-pcl)  |  [application/x-pixclscript](http://vocab.fairdatacollective.org/gdmt/application-x-pixclscript)  |  [application/x-pkcs10](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs10)  |  [application/x-pkcs12](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs12)  |  [application/x-pkcs7-certificates](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-certificates)  |  [application/x-pkcs7-certreqresp](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-certreqresp)  |  [application/x-pkcs7-mime](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-mime)  |  [application/x-pkcs7-signature](http://vocab.fairdatacollective.org/gdmt/application-x-pkcs7-signature)  |  [application/x-pointplus](http://vocab.fairdatacollective.org/gdmt/application-x-pointplus)  |  [application/x-portable-anymap](http://vocab.fairdatacollective.org/gdmt/application-x-portable-anymap)  |  [application/x-project](http://vocab.fairdatacollective.org/gdmt/application-x-project)  |  [application/x-qpro](http://vocab.fairdatacollective.org/gdmt/application-x-qpro)  |  [application/x-rar-compressed](http://vocab.fairdatacollective.org/gdmt/application-x-rar-compressed)  |  [application/x-rtf](http://vocab.fairdatacollective.org/gdmt/application-x-rtf)  |  [application/x-sdp](http://vocab.fairdatacollective.org/gdmt/application-x-sdp)  |  [application/x-sea](http://vocab.fairdatacollective.org/gdmt/application-x-sea)  |  [application/x-seelogo](http://vocab.fairdatacollective.org/gdmt/application-x-seelogo)  |  [application/x-sh](http://vocab.fairdatacollective.org/gdmt/application-x-sh)  |  [application/x-shar](http://vocab.fairdatacollective.org/gdmt/application-x-shar)  |  [application/x-shockwave-flash](http://vocab.fairdatacollective.org/gdmt/application-x-shockwave-flash)  |  [application/x-sit](http://vocab.fairdatacollective.org/gdmt/application-x-sit)  |  [application/x-sprite](http://vocab.fairdatacollective.org/gdmt/application-x-sprite)  |  [application/x-stuffit](http://vocab.fairdatacollective.org/gdmt/application-x-stuffit)  |  [application/x-sv4cpio](http://vocab.fairdatacollective.org/gdmt/application-x-sv4cpio)  |  [application/x-sv4crc](http://vocab.fairdatacollective.org/gdmt/application-x-sv4crc)  |  [application/x-tar](http://vocab.fairdatacollective.org/gdmt/application-x-tar)  |  [application/x-tbook](http://vocab.fairdatacollective.org/gdmt/application-x-tbook)  |  [application/x-tcl](http://vocab.fairdatacollective.org/gdmt/application-x-tcl)  |  [application/x-tex](http://vocab.fairdatacollective.org/gdmt/application-x-tex)  |  [application/x-texinfo](http://vocab.fairdatacollective.org/gdmt/application-x-texinfo)  |  [application/x-troff-man](http://vocab.fairdatacollective.org/gdmt/application-x-troff-man)  |  [application/x-troff-me](http://vocab.fairdatacollective.org/gdmt/application-x-troff-me)  |  [application/x-troff-ms](http://vocab.fairdatacollective.org/gdmt/application-x-troff-ms)  |  [application/x-troff-msvideo](http://vocab.fairdatacollective.org/gdmt/application-x-troff-msvideo)  |  [application/x-troff](http://vocab.fairdatacollective.org/gdmt/application-x-troff)  |  [application/x-ustar](http://vocab.fairdatacollective.org/gdmt/application-x-ustar)  |  [application/x-visio](http://vocab.fairdatacollective.org/gdmt/application-x-visio)  |  [application/x-vnd.audioexplosion.mzz](http://vocab.fairdatacollective.org/gdmt/application-x-vnd.audioexplosion.mzz)  |  [application/x-vnd.ls-xpix](http://vocab.fairdatacollective.org/gdmt/application-x-vnd.ls-xpix)  |  [application/x-vrml](http://vocab.fairdatacollective.org/gdmt/application-x-vrml)  |  [application/x-wais-source](http://vocab.fairdatacollective.org/gdmt/application-x-wais-source)  |  [application/x-winhelp](http://vocab.fairdatacollective.org/gdmt/application-x-winhelp)  |  [application/x-wintalk](http://vocab.fairdatacollective.org/gdmt/application-x-wintalk)  |  [application/x-world](http://vocab.fairdatacollective.org/gdmt/application-x-world)  |  [application/x-wpwin](http://vocab.fairdatacollective.org/gdmt/application-x-wpwin)  |  [application/x-wri](http://vocab.fairdatacollective.org/gdmt/application-x-wri)  |  [application/x-x509-ca-cert](http://vocab.fairdatacollective.org/gdmt/application-x-x509-ca-cert)  |  [application/x-x509-user-cert](http://vocab.fairdatacollective.org/gdmt/application-x-x509-user-cert)  |  [application/xhtml+xml](http://vocab.fairdatacollective.org/gdmt/application-xhtml+xml)  |  [application/xml](http://vocab.fairdatacollective.org/gdmt/application-xml)  |  [application/zip](http://vocab.fairdatacollective.org/gdmt/application-zip)  |  [audio/aac](http://vocab.fairdatacollective.org/gdmt/audio-aac)  |  [audio/aiff](http://vocab.fairdatacollective.org/gdmt/audio-aiff)  |  [audio/basic](http://vocab.fairdatacollective.org/gdmt/audio-basic)  |  [audio/it](http://vocab.fairdatacollective.org/gdmt/audio-it)  |  [audio/make.my.funk](http://vocab.fairdatacollective.org/gdmt/audio-make.my.funk)  |  [audio/make](http://vocab.fairdatacollective.org/gdmt/audio-make)  |  [audio/mid](http://vocab.fairdatacollective.org/gdmt/audio-mid)  |  [audio/midi](http://vocab.fairdatacollective.org/gdmt/audio-midi)  |  [audio/mod](http://vocab.fairdatacollective.org/gdmt/audio-mod)  |  [audio/mp3](http://vocab.fairdatacollective.org/gdmt/audio-mp3)  |  [audio/mpeg](http://vocab.fairdatacollective.org/gdmt/audio-mpeg)  |  [audio/nspaudio](http://vocab.fairdatacollective.org/gdmt/audio-nspaudio)  |  [audio/ogg](http://vocab.fairdatacollective.org/gdmt/audio-ogg)  |  [audio/s3m](http://vocab.fairdatacollective.org/gdmt/audio-s3m)  |  [audio/tsp-audio](http://vocab.fairdatacollective.org/gdmt/audio-tsp-audio)  |  [audio/tsplayer](http://vocab.fairdatacollective.org/gdmt/audio-tsplayer)  |  [audio/vnd.qcelp](http://vocab.fairdatacollective.org/gdmt/audio-vnd.qcelp)  |  [audio/voc](http://vocab.fairdatacollective.org/gdmt/audio-voc)  |  [audio/voxware](http://vocab.fairdatacollective.org/gdmt/audio-voxware)  |  [audio/wav](http://vocab.fairdatacollective.org/gdmt/audio-wav)  |  [audio/webm](http://vocab.fairdatacollective.org/gdmt/audio-webm)  |  [audio/x-adpcm](http://vocab.fairdatacollective.org/gdmt/audio-x-adpcm)  |  [audio/x-aiff](http://vocab.fairdatacollective.org/gdmt/audio-x-aiff)  |  [audio/x-au](http://vocab.fairdatacollective.org/gdmt/audio-x-au)  |  [audio/x-gsm](http://vocab.fairdatacollective.org/gdmt/audio-x-gsm)  |  [audio/x-jam](http://vocab.fairdatacollective.org/gdmt/audio-x-jam)  |  [audio/x-liveaudio](http://vocab.fairdatacollective.org/gdmt/audio-x-liveaudio)  |  [audio/x-mid](http://vocab.fairdatacollective.org/gdmt/audio-x-mid)  |  [audio/x-midi](http://vocab.fairdatacollective.org/gdmt/audio-x-midi)  |  [audio/x-mod](http://vocab.fairdatacollective.org/gdmt/audio-x-mod)  |  [audio/x-mpeg](http://vocab.fairdatacollective.org/gdmt/audio-x-mpeg)  |  [audio/x-mpequrl](http://vocab.fairdatacollective.org/gdmt/audio-x-mpequrl)  |  [audio/x-nspaudio](http://vocab.fairdatacollective.org/gdmt/audio-x-nspaudio)  |  [audio/x-pn-realaudio-plugin](http://vocab.fairdatacollective.org/gdmt/audio-x-pn-realaudio-plugin)  |  [audio/x-pn-realaudio](http://vocab.fairdatacollective.org/gdmt/audio-x-pn-realaudio)  |  [audio/x-psid](http://vocab.fairdatacollective.org/gdmt/audio-x-psid)  |  [audio/x-realaudio](http://vocab.fairdatacollective.org/gdmt/audio-x-realaudio)  |  [audio/x-twinvq-plugin](http://vocab.fairdatacollective.org/gdmt/audio-x-twinvq-plugin)  |  [audio/x-twinvq](http://vocab.fairdatacollective.org/gdmt/audio-x-twinvq)  |  [audio/x-vnd.audioexplosion.mjuicemediafile](http://vocab.fairdatacollective.org/gdmt/audio-x-vnd.audioexplosion.mjuicemediafile)  |  [audio/x-voc](http://vocab.fairdatacollective.org/gdmt/audio-x-voc)  |  [audio/x-wav](http://vocab.fairdatacollective.org/gdmt/audio-x-wav)  |  [audio/xm](http://vocab.fairdatacollective.org/gdmt/audio-xm)  |  [chemical/x-pdb](http://vocab.fairdatacollective.org/gdmt/chemical-x-pdb)  |  [drawing/x-dwf (old)](http://vocab.fairdatacollective.org/gdmt/drawing-x-dwf(old))  |  [font/otf](http://vocab.fairdatacollective.org/gdmt/font-otf)  |  [font/ttf](http://vocab.fairdatacollective.org/gdmt/font-ttf)  |  [font/woff2](http://vocab.fairdatacollective.org/gdmt/font-woff2)  |  [font/woff](http://vocab.fairdatacollective.org/gdmt/font-woff)  |  [i-world/i-vrml](http://vocab.fairdatacollective.org/gdmt/i-world-i-vrml)  |  [image/bmp](http://vocab.fairdatacollective.org/gdmt/image-bmp)  |  [image/cmu-raster](http://vocab.fairdatacollective.org/gdmt/image-cmu-raster)  |  [image/fif](http://vocab.fairdatacollective.org/gdmt/image-fif)  |  [image/florian](http://vocab.fairdatacollective.org/gdmt/image-florian)  |  [image/g3fax](http://vocab.fairdatacollective.org/gdmt/image-g3fax)  |  [image/gif](http://vocab.fairdatacollective.org/gdmt/image-gif)  |  [image/ief](http://vocab.fairdatacollective.org/gdmt/image-ief)  |  [image/jpeg](http://vocab.fairdatacollective.org/gdmt/image-jpeg)  |  [image/jutvision](http://vocab.fairdatacollective.org/gdmt/image-jutvision)  |  [image/naplps](http://vocab.fairdatacollective.org/gdmt/image-naplps)  |  [image/pict](http://vocab.fairdatacollective.org/gdmt/image-pict)  |  [image/pjpeg](http://vocab.fairdatacollective.org/gdmt/image-pjpeg)  |  [image/png](http://vocab.fairdatacollective.org/gdmt/image-png)  |  [image/svg+xml](http://vocab.fairdatacollective.org/gdmt/image-svg+xml)  |  [image/tiff](http://vocab.fairdatacollective.org/gdmt/image-tiff)  |  [image/vasa](http://vocab.fairdatacollective.org/gdmt/image-vasa)  |  [image/vnd.djvu](http://vocab.fairdatacollective.org/gdmt/image-vnd.djvu)  |  [image/vnd.dwg](http://vocab.fairdatacollective.org/gdmt/image-vnd.dwg)  |  [image/vnd.fpx](http://vocab.fairdatacollective.org/gdmt/image-vnd.fpx)  |  [image/vnd.microsoft.icon](http://vocab.fairdatacollective.org/gdmt/image-vnd.microsoft.icon)  |  [image/vnd.net-fpx](http://vocab.fairdatacollective.org/gdmt/image-vnd.net-fpx)  |  [image/vnd.rn-realflash](http://vocab.fairdatacollective.org/gdmt/image-vnd.rn-realflash)  |  [image/vnd.rn-realpix](http://vocab.fairdatacollective.org/gdmt/image-vnd.rn-realpix)  |  [image/vnd.wap.wbmp](http://vocab.fairdatacollective.org/gdmt/image-vnd.wap.wbmp)  |  [image/vnd.xiff](http://vocab.fairdatacollective.org/gdmt/image-vnd.xiff)  |  [image/webp](http://vocab.fairdatacollective.org/gdmt/image-webp)  |  [image/x-cmu-raster](http://vocab.fairdatacollective.org/gdmt/image-x-cmu-raster)  |  [image/x-dwg](http://vocab.fairdatacollective.org/gdmt/image-x-dwg)  |  [image/x-icon](http://vocab.fairdatacollective.org/gdmt/image-x-icon)  |  [image/x-jg](http://vocab.fairdatacollective.org/gdmt/image-x-jg)  |  [image/x-jps](http://vocab.fairdatacollective.org/gdmt/image-x-jps)  |  [image/x-niff](http://vocab.fairdatacollective.org/gdmt/image-x-niff)  |  [image/x-pcx](http://vocab.fairdatacollective.org/gdmt/image-x-pcx)  |  [image/x-pict](http://vocab.fairdatacollective.org/gdmt/image-x-pict)  |  [image/x-portable-anymap](http://vocab.fairdatacollective.org/gdmt/image-x-portable-anymap)  |  [image/x-portable-bitmap](http://vocab.fairdatacollective.org/gdmt/image-x-portable-bitmap)  |  [image/x-portable-graymap](http://vocab.fairdatacollective.org/gdmt/image-x-portable-graymap)  |  [image/x-portable-greymap](http://vocab.fairdatacollective.org/gdmt/image-x-portable-greymap)  |  [image/x-portable-pixmap](http://vocab.fairdatacollective.org/gdmt/image-x-portable-pixmap)  |  [image/x-quicktime](http://vocab.fairdatacollective.org/gdmt/image-x-quicktime)  |  [image/x-rgb](http://vocab.fairdatacollective.org/gdmt/image-x-rgb)  |  [image/x-tiff](http://vocab.fairdatacollective.org/gdmt/image-x-tiff)  |  [image/x-windows-bmp](http://vocab.fairdatacollective.org/gdmt/image-x-windows-bmp)  |  [image/x-xbitmap](http://vocab.fairdatacollective.org/gdmt/image-x-xbitmap)  |  [image/x-xbm](http://vocab.fairdatacollective.org/gdmt/image-x-xbm)  |  [image/x-xpixmap](http://vocab.fairdatacollective.org/gdmt/image-x-xpixmap)  |  [image/x-xwd](http://vocab.fairdatacollective.org/gdmt/image-x-xwd)  |  [image/x-xwindowdump](http://vocab.fairdatacollective.org/gdmt/image-x-xwindowdump)  |  [image/xbm](http://vocab.fairdatacollective.org/gdmt/image-xbm)  |  [image/xpm](http://vocab.fairdatacollective.org/gdmt/image-xpm)  |  [message/rfc822](http://vocab.fairdatacollective.org/gdmt/message-rfc822)  |  [model/iges](http://vocab.fairdatacollective.org/gdmt/model-iges)  |  [model/vnd.dwf](http://vocab.fairdatacollective.org/gdmt/model-vnd.dwf)  |  [model/vrml](http://vocab.fairdatacollective.org/gdmt/model-vrml)  |  [model/x-pov](http://vocab.fairdatacollective.org/gdmt/model-x-pov)  |  [multipart/x-gzip](http://vocab.fairdatacollective.org/gdmt/multipart-x-gzip)  |  [multipart/x-ustar](http://vocab.fairdatacollective.org/gdmt/multipart-x-ustar)  |  [music/crescendo](http://vocab.fairdatacollective.org/gdmt/music-crescendo)  |  [music/x-karaoke](http://vocab.fairdatacollective.org/gdmt/music-x-karaoke)  |  [paleovu/x-pv](http://vocab.fairdatacollective.org/gdmt/paleovu-x-pv)  |  [text/asp](http://vocab.fairdatacollective.org/gdmt/text-asp)  |  [text/calendar](http://vocab.fairdatacollective.org/gdmt/text-calendar)  |  [text/css](http://vocab.fairdatacollective.org/gdmt/text-css)  |  [text/csv](http://vocab.fairdatacollective.org/gdmt/text-csv)  |  [text/ecmascript](http://vocab.fairdatacollective.org/gdmt/text-ecmascript)  |  [text/fb2](http://vocab.fairdatacollective.org/gdmt/text-fb2)  |  [text/html](http://vocab.fairdatacollective.org/gdmt/text-html)  |  [text/javascript](http://vocab.fairdatacollective.org/gdmt/text-javascript)  |  [text/mcf](http://vocab.fairdatacollective.org/gdmt/text-mcf)  |  [text/pascal](http://vocab.fairdatacollective.org/gdmt/text-pascal)  |  [text/plain](http://vocab.fairdatacollective.org/gdmt/text-plain)  |  [text/richtext](http://vocab.fairdatacollective.org/gdmt/text-richtext)  |  [text/scriplet](http://vocab.fairdatacollective.org/gdmt/text-scriplet)  |  [text/sgml](http://vocab.fairdatacollective.org/gdmt/text-sgml)  |  [text/tab-separated-values](http://vocab.fairdatacollective.org/gdmt/text-tab-separated-values)  |  [text/uri-list](http://vocab.fairdatacollective.org/gdmt/text-uri-list)  |  [text/vnd.abc](http://vocab.fairdatacollective.org/gdmt/text-vnd.abc)  |  [text/vnd.fmi.flexstor](http://vocab.fairdatacollective.org/gdmt/text-vnd.fmi.flexstor)  |  [text/vnd.rn-realtext](http://vocab.fairdatacollective.org/gdmt/text-vnd.rn-realtext)  |  [text/vnd.wap.wml](http://vocab.fairdatacollective.org/gdmt/text-vnd.wap.wml)  |  [text/vnd.wap.wmlscript](http://vocab.fairdatacollective.org/gdmt/text-vnd.wap.wmlscript)  |  [text/webviewhtml](http://vocab.fairdatacollective.org/gdmt/text-webviewhtml)  |  [text/x-asm](http://vocab.fairdatacollective.org/gdmt/text-x-asm)  |  [text/x-audiosoft-intra](http://vocab.fairdatacollective.org/gdmt/text-x-audiosoft-intra)  |  [text/x-c](http://vocab.fairdatacollective.org/gdmt/text-x-c)  |  [text/x-component](http://vocab.fairdatacollective.org/gdmt/text-x-component)  |  [text/x-fortran](http://vocab.fairdatacollective.org/gdmt/text-x-fortran)  |  [text/x-h](http://vocab.fairdatacollective.org/gdmt/text-x-h)  |  [text/x-java-source](http://vocab.fairdatacollective.org/gdmt/text-x-java-source)  |  [text/x-la-asf](http://vocab.fairdatacollective.org/gdmt/text-x-la-asf)  |  [text/x-m](http://vocab.fairdatacollective.org/gdmt/text-x-m)  |  [text/x-pascal](http://vocab.fairdatacollective.org/gdmt/text-x-pascal)  |  [text/x-script.csh](http://vocab.fairdatacollective.org/gdmt/text-x-script.csh)  |  [text/x-script.elisp](http://vocab.fairdatacollective.org/gdmt/text-x-script.elisp)  |  [text/x-script.guile](http://vocab.fairdatacollective.org/gdmt/text-x-script.guile)  |  [text/x-script.ksh](http://vocab.fairdatacollective.org/gdmt/text-x-script.ksh)  |  [text/x-script.lisp](http://vocab.fairdatacollective.org/gdmt/text-x-script.lisp)  |  [text/x-script.perl-module](http://vocab.fairdatacollective.org/gdmt/text-x-script.perl-module)  |  [text/x-script.perl](http://vocab.fairdatacollective.org/gdmt/text-x-script.perl)  |  [text/x-script.phyton](http://vocab.fairdatacollective.org/gdmt/text-x-script.phyton)  |  [text/x-script.rexx](http://vocab.fairdatacollective.org/gdmt/text-x-script.rexx)  |  [text/x-script.scheme](http://vocab.fairdatacollective.org/gdmt/text-x-script.scheme)  |  [text/x-script.sh](http://vocab.fairdatacollective.org/gdmt/text-x-script.sh)  |  [text/x-script.tcl](http://vocab.fairdatacollective.org/gdmt/text-x-script.tcl)  |  [text/x-script.tcsh](http://vocab.fairdatacollective.org/gdmt/text-x-script.tcsh)  |  [text/x-script.zsh](http://vocab.fairdatacollective.org/gdmt/text-x-script.zsh)  |  [text/x-script](http://vocab.fairdatacollective.org/gdmt/text-x-script)  |  [text/x-server-parsed-html](http://vocab.fairdatacollective.org/gdmt/text-x-server-parsed-html)  |  [text/x-setext](http://vocab.fairdatacollective.org/gdmt/text-x-setext)  |  [text/x-sgml](http://vocab.fairdatacollective.org/gdmt/text-x-sgml)  |  [text/x-speech](http://vocab.fairdatacollective.org/gdmt/text-x-speech)  |  [text/x-uil](http://vocab.fairdatacollective.org/gdmt/text-x-uil)  |  [text/x-uuencode](http://vocab.fairdatacollective.org/gdmt/text-x-uuencode)  |  [text/x-vcalendar](http://vocab.fairdatacollective.org/gdmt/text-x-vcalendar)  |  [text/xml](http://vocab.fairdatacollective.org/gdmt/text-xml)  |  [video/3gpp2](http://vocab.fairdatacollective.org/gdmt/video-3gpp2)  |  [video/3gpp](http://vocab.fairdatacollective.org/gdmt/video-3gpp)  |  [video/animaflex](http://vocab.fairdatacollective.org/gdmt/video-animaflex)  |  [video/avi](http://vocab.fairdatacollective.org/gdmt/video-avi)  |  [video/avs-video](http://vocab.fairdatacollective.org/gdmt/video-avs-video)  |  [video/dl](http://vocab.fairdatacollective.org/gdmt/video-dl)  |  [video/fli](http://vocab.fairdatacollective.org/gdmt/video-fli)  |  [video/gl](http://vocab.fairdatacollective.org/gdmt/video-gl)  |  [video/mp2t](http://vocab.fairdatacollective.org/gdmt/video-mp2t)  |  [video/mp4](http://vocab.fairdatacollective.org/gdmt/video-mp4)  |  [video/mpeg](http://vocab.fairdatacollective.org/gdmt/video-mpeg)  |  [video/msvideo](http://vocab.fairdatacollective.org/gdmt/video-msvideo)  |  [video/ogg](http://vocab.fairdatacollective.org/gdmt/video-ogg)  |  [video/quicktime](http://vocab.fairdatacollective.org/gdmt/video-quicktime)  |  [video/vdo](http://vocab.fairdatacollective.org/gdmt/video-vdo)  |  [video/vivo](http://vocab.fairdatacollective.org/gdmt/video-vivo)  |  [video/vnd.rn-realvideo](http://vocab.fairdatacollective.org/gdmt/video-vnd.rn-realvideo)  |  [video/vnd.vivo](http://vocab.fairdatacollective.org/gdmt/video-vnd.vivo)  |  [video/vosaic](http://vocab.fairdatacollective.org/gdmt/video-vosaic)  |  [video/webm](http://vocab.fairdatacollective.org/gdmt/video-webm)  |  [video/x-amt-demorun](http://vocab.fairdatacollective.org/gdmt/video-x-amt-demorun)  |  [video/x-amt-showrun](http://vocab.fairdatacollective.org/gdmt/video-x-amt-showrun)  |  [video/x-atomic3d-feature](http://vocab.fairdatacollective.org/gdmt/video-x-atomic3d-feature)  |  [video/x-dl](http://vocab.fairdatacollective.org/gdmt/video-x-dl)  |  [video/x-dv](http://vocab.fairdatacollective.org/gdmt/video-x-dv)  |  [video/x-fli](http://vocab.fairdatacollective.org/gdmt/video-x-fli)  |  [video/x-gl](http://vocab.fairdatacollective.org/gdmt/video-x-gl)  |  [video/x-isvideo](http://vocab.fairdatacollective.org/gdmt/video-x-isvideo)  |  [video/x-motion-jpeg](http://vocab.fairdatacollective.org/gdmt/video-x-motion-jpeg)  |  [video/x-mpeg](http://vocab.fairdatacollective.org/gdmt/video-x-mpeg)  |  [video/x-mpeq2a](http://vocab.fairdatacollective.org/gdmt/video-x-mpeq2a)  |  [video/x-ms-asf-plugin](http://vocab.fairdatacollective.org/gdmt/video-x-ms-asf-plugin)  |  [video/x-ms-asf](http://vocab.fairdatacollective.org/gdmt/video-x-ms-asf)  |  [video/x-msvideo](http://vocab.fairdatacollective.org/gdmt/video-x-msvideo)  |  [video/x-qtc](http://vocab.fairdatacollective.org/gdmt/video-x-qtc)  |  [video/x-scm](http://vocab.fairdatacollective.org/gdmt/video-x-scm)  |  [video/x-sgi-movie](http://vocab.fairdatacollective.org/gdmt/video-x-sgi-movie)  |  [windows/metafile](http://vocab.fairdatacollective.org/gdmt/windows-metafile)  |  [www/mime](http://vocab.fairdatacollective.org/gdmt/www-mime)  |  [x-conference/x-cooltalk](http://vocab.fairdatacollective.org/gdmt/x-conference-x-cooltalk)  |  [x-music/x-midi](http://vocab.fairdatacollective.org/gdmt/x-music-x-midi)  |  [x-world/x-3dmf](http://vocab.fairdatacollective.org/gdmt/x-world-x-3dmf)  |  [x-world/x-svr](http://vocab.fairdatacollective.org/gdmt/x-world-x-svr)  |  [x-world/x-vrml](http://vocab.fairdatacollective.org/gdmt/x-world-x-vrml)  |  [x-world/x-vrt](http://vocab.fairdatacollective.org/gdmt/x-world-x-vrt)  |  [xgl/drawing](http://vocab.fairdatacollective.org/gdmt/xgl-drawing)  |  [xgl/movie](http://vocab.fairdatacollective.org/gdmt/xgl-movie)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Media Type" : "http://purl.org/radx-terms/metadata-terms/distributionMediaType"
+  },
+  "Distribution Media Type" : { }
+}
+```
+
+</div>
 ### Distribution Size
 <span class="badge badge--optional">Optional</span>
 
 Total size of data file distribution (in bytes).
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Size" : "http://purl.org/radx-terms/metadata-terms/distributionSizeInBytes"
+  },
+  "Distribution Size" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Access Protocol
 <span class="badge badge--optional">Optional</span>
 
 The protocol used to access the data file distribution.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Access Protocol" : "http://purl.org/radx-terms/metadata-terms/distributionAccessProtocol"
+  },
+  "Distribution Access Protocol" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Access Configuration
 <span class="badge badge--optional">Optional</span>
 
 The access protocol configuration for querying the data file distribution.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Access Configuration" : "http://purl.org/radx-terms/metadata-terms/distributionAccessConfiguration"
+  },
+  "Distribution Access Configuration" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Distribution Query Statement
 <span class="badge badge--optional">Optional</span>
 
 Technical statement(s) for querying the data file distribution.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Distribution Query Statement" : "http://purl.org/radx-terms/metadata-terms/distributionQueryStatement"
+  },
+  "Distribution Query Statement" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ## Data File Publication Date
 
 Publication date of this distribution the data file.
@@ -980,6 +2417,21 @@ Publication date of this distribution the data file.
 
 Date on which this distribution of the data file was published
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Publication Date" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDate"
+  },
+  "Data File Publication Date" : {
+    "@type" : "xsd:dateTime",
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Publication Date Type
 <span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span>
@@ -988,8 +2440,113 @@ The value of this field is a fixed type and is automatically inserted.  This fie
 
 Type of the date ('Published') with respect to the data file.  The value of this field is always [Published](http://vocab.fairdatacollective.org/gdmt/Published).
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Publication Date Type" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDateType"
+  },
+  "Publication Date Type" : {
+    "@value" : "http://vocab.fairdatacollective.org/gdmt/Published"
+  }
+}
+```
+
+</div>
 
 
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Publication Date" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDescriptor"
+  },
+  "Data File Publication Date" : {
+    "@context" : {
+      "Data File Publication Date" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDate",
+      "Publication Date Type" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDateType"
+    },
+    "Data File Publication Date" : {
+      "@type" : "xsd:dateTime",
+      "@value" : null
+    },
+    "Publication Date Type" : {
+      "@value" : "http://vocab.fairdatacollective.org/gdmt/Published"
+    }
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Distributions" : "http://purl.org/radx-terms/metadata-terms/distributionDescriptor"
+  },
+  "Data File Distributions" : [ {
+    "@context" : {
+      "Distribution Publisher" : "http://purl.org/radx-terms/metadata-terms/distributionPublisher",
+      "Distribution Publisher Identifier" : "http://purl.org/radx-terms/metadata-terms/distributionPublisherIdentifier",
+      "Distribution Publisher Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/distributionPublisherIdentifierScheme",
+      "Distribution Identifier" : "http://purl.org/radx-terms/metadata-terms/distributionIdentifier",
+      "Distribution Identifier Type" : "http://purl.org/radx-terms/metadata-terms/distributionIdentifierType",
+      "Distribution Format" : "http://purl.org/radx-terms/metadata-terms/distributionFormat",
+      "Distribution Media Type" : "http://purl.org/radx-terms/metadata-terms/distributionMediaType",
+      "Distribution Size" : "http://purl.org/radx-terms/metadata-terms/distributionSizeInBytes",
+      "Distribution Access Protocol" : "http://purl.org/radx-terms/metadata-terms/distributionAccessProtocol",
+      "Distribution Access Configuration" : "http://purl.org/radx-terms/metadata-terms/distributionAccessConfiguration",
+      "Distribution Query Statement" : "http://purl.org/radx-terms/metadata-terms/distributionQueryStatement",
+      "Data File Publication Date" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDescriptor"
+    },
+    "Distribution Publisher" : {
+      "@value" : null
+    },
+    "Distribution Publisher Identifier" : { },
+    "Distribution Publisher Identifier Scheme" : { },
+    "Distribution Identifier" : {
+      "@value" : null
+    },
+    "Distribution Identifier Type" : { },
+    "Distribution Format" : {
+      "@value" : null
+    },
+    "Distribution Media Type" : { },
+    "Distribution Size" : {
+      "@value" : null
+    },
+    "Distribution Access Protocol" : {
+      "@value" : null
+    },
+    "Distribution Access Configuration" : {
+      "@value" : null
+    },
+    "Distribution Query Statement" : {
+      "@value" : null
+    },
+    "Data File Publication Date" : {
+      "@context" : {
+        "Data File Publication Date" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDate",
+        "Publication Date Type" : "http://purl.org/radx-terms/metadata-terms/distributionPublicationDateType"
+      },
+      "Data File Publication Date" : {
+        "@type" : "xsd:dateTime",
+        "@value" : null
+      },
+      "Publication Date Type" : {
+        "@value" : "http://vocab.fairdatacollective.org/gdmt/Published"
+      }
+    }
+  } ]
+}
+```
+
+</div>
 ## Data Characteristics Summary
 
 Characteristics of the data within the data file, particularly of the cohorts in the data file. This section provides multiple ways to enter such information; it is only necessary to enter the information in one of these formats.
@@ -999,23 +2556,107 @@ Characteristics of the data within the data file, particularly of the cohorts in
 
 Formatted HTML code for a table of summary statistics.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Characteristics Table in HTML" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInHtml"
+  },
+  "Data Characteristics Table in HTML" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Characteristics Table in CSV
 <span class="badge badge--optional">Optional</span>
 
 Enter comma-separated values containing summary statistics characterizing this data file.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Characteristics Table in CSV" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInCsv"
+  },
+  "Data Characteristics Table in CSV" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Characteristics Table in TSV
 <span class="badge badge--optional">Optional</span>
 
 Enter tab-separated values containing summary statistics characterizing this data file.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Characteristics Table in TSV" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInTsv"
+  },
+  "Data Characteristics Table in TSV" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Characteristics Table in Key-Value Pairs
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
 Enter the name of the characteristic being described in the first (key) field, and the value for that characteristic in the second (value) field. Note this is a repeating field and so can support multiple key-value pairs.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Data Characteristics Table in Key-Value Pairs" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInKeyValuePairs"
+  },
+  "Data Characteristics Table in Key-Value Pairs" : [ "" ]
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Characteristics Summary" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsDescriptor"
+  },
+  "Data Characteristics Summary" : {
+    "@context" : {
+      "Data Characteristics Table in HTML" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInHtml",
+      "Data Characteristics Table in CSV" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInCsv",
+      "Data Characteristics Table in TSV" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInTsv",
+      "Data Characteristics Table in Key-Value Pairs" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInKeyValuePairs"
+    },
+    "Data Characteristics Table in HTML" : {
+      "@value" : null
+    },
+    "Data Characteristics Table in CSV" : {
+      "@value" : null
+    },
+    "Data Characteristics Table in TSV" : {
+      "@value" : null
+    },
+    "Data Characteristics Table in Key-Value Pairs" : [ "" ]
+  }
+}
+```
+
+</div>
 ## Data Sources
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1026,11 +2667,39 @@ A list of physical or conceptual entities (agents) that create the data streams 
 
 Human readable name of data source from which the variable(s) in the data stream(s) originate.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Source Name" : "http://purl.org/radx-terms/metadata-terms/dataSourceName"
+  },
+  "Data Source Name" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Source Identifier
 <span class="badge badge--optional">Optional</span>
 
 Globally unique string that identifies the data source (e.g., PID of an instrument). This is a required field if you plan to describe the original source of a given Data Stream.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Source Identifier" : "http://purl.org/radx-terms/metadata-terms/dataSourceIdentifier"
+  },
+  "Data Source Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Source Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -1039,7 +2708,45 @@ The name of the scheme or authority used for the Data Source Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Data Source Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/dataSourceIdentifierScheme"
+  },
+  "Data Source Identifier Scheme" : { }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Sources" : "http://purl.org/radx-terms/metadata-terms/dataSourceDescriptor"
+  },
+  "Data Sources" : [ {
+    "@context" : {
+      "Data Source Name" : "http://purl.org/radx-terms/metadata-terms/dataSourceName",
+      "Data Source Identifier" : "http://purl.org/radx-terms/metadata-terms/dataSourceIdentifier",
+      "Data Source Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/dataSourceIdentifierScheme"
+    },
+    "Data Source Name" : {
+      "@value" : null
+    },
+    "Data Source Identifier" : {
+      "@value" : null
+    },
+    "Data Source Identifier Scheme" : { }
+  } ]
+}
+```
+
+</div>
 ## Data Streams
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1050,11 +2757,39 @@ A list of one or more variable records that contribute to this data file. Each d
 
 Human readable name of collection of records coming from a data source. A data stream is a collection of one or more variable records originating from a single data source (e.g., sensor, process, or person). A data stream can grow over time.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Stream Name" : "http://purl.org/radx-terms/metadata-terms/dataStreamName"
+  },
+  "Data Stream Name" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Stream Identifier
 <span class="badge badge--optional">Optional</span>
 
 Globally unique string that identifies the collection of records coming from a data source.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Stream Identifier" : "http://purl.org/radx-terms/metadata-terms/dataStreamIdentifier"
+  },
+  "Data Stream Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Data Stream Identifier Scheme
 <span class="badge badge--optional">Optional</span>
 
@@ -1063,18 +2798,92 @@ The name of the scheme or authority used for the Data Stream Identifier.
 Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPortal to search for values for this field](https://bioportal.bioontology.org/ontologies/FDC-GDMT/?p=classes&conceptid=http://vocab.fairdatacollective.org/gdmt/IdentifierType).
 
 [ARK](http://vocab.fairdatacollective.org/gdmt/ARK)  |  [arXiv](http://vocab.fairdatacollective.org/gdmt/arXiv)  |  [bibcode](http://vocab.fairdatacollective.org/gdmt/bibcode)  |  [DOI](http://vocab.fairdatacollective.org/gdmt/DOI)  |  [EAN13](http://vocab.fairdatacollective.org/gdmt/EAN13)  |  [EISSN](http://vocab.fairdatacollective.org/gdmt/EISSN)  |  [Handle](http://vocab.fairdatacollective.org/gdmt/Handle)  |  [IGSN](http://vocab.fairdatacollective.org/gdmt/IGSN)  |  [IRI](http://vocab.fairdatacollective.org/gdmt/IRI)  |  [ISBN](http://vocab.fairdatacollective.org/gdmt/ISBN)  |  [ISSN](http://vocab.fairdatacollective.org/gdmt/ISSN)  |  [ISTC](http://vocab.fairdatacollective.org/gdmt/ISTC)  |  [LISSN](http://vocab.fairdatacollective.org/gdmt/LISSN)  |  [LSID](http://vocab.fairdatacollective.org/gdmt/LSID)  |  [PMID](http://vocab.fairdatacollective.org/gdmt/PMID)  |  [PURL](http://vocab.fairdatacollective.org/gdmt/PURL)  |  [UPC](http://vocab.fairdatacollective.org/gdmt/UPC)  |  [URI](http://vocab.fairdatacollective.org/gdmt/URI)  |  [URL](http://vocab.fairdatacollective.org/gdmt/URL)  |  [URN](http://vocab.fairdatacollective.org/gdmt/URN)  |  [w3id](http://vocab.fairdatacollective.org/gdmt/w3id)
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Stream Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/dataStreamIdentifierScheme"
+  },
+  "Data Stream Identifier Scheme" : { }
+}
+```
+
+</div>
 ### Data Stream Variable Names
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
 The local names of variables contained in the data stream.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Stream Variable Names" : "http://purl.org/radx-terms/metadata-terms/dataStreamVariableName"
+  },
+  "Data Stream Variable Names" : [ {
+    "@value" : null
+  } ]
+}
+```
+
+</div>
 ### Data Stream Data Source Identifier
 <span class="badge badge--optional">Optional</span>
 
 Globally unique string that identifies the data source (e.g., PID of an instrument) that generated this Data Stream.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Data Stream Data Source Identifier" : "http://purl.org/radx-terms/metadata-terms/dataStreamDataSourceIdentifier"
+  },
+  "Data Stream Data Source Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data Streams" : "http://purl.org/radx-terms/metadata-terms/dataStreamDescriptor"
+  },
+  "Data Streams" : [ {
+    "@context" : {
+      "Data Stream Name" : "http://purl.org/radx-terms/metadata-terms/dataStreamName",
+      "Data Stream Identifier" : "http://purl.org/radx-terms/metadata-terms/dataStreamIdentifier",
+      "Data Stream Identifier Scheme" : "http://purl.org/radx-terms/metadata-terms/dataStreamIdentifierScheme",
+      "Data Stream Variable Names" : "http://purl.org/radx-terms/metadata-terms/dataStreamVariableName",
+      "Data Stream Data Source Identifier" : "http://purl.org/radx-terms/metadata-terms/dataStreamDataSourceIdentifier"
+    },
+    "Data Stream Name" : {
+      "@value" : null
+    },
+    "Data Stream Identifier" : {
+      "@value" : null
+    },
+    "Data Stream Identifier Scheme" : { },
+    "Data Stream Variable Names" : [ {
+      "@value" : null
+    } ],
+    "Data Stream Data Source Identifier" : {
+      "@value" : null
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Creation Processes
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1085,16 +2894,58 @@ A list of processes (activities) used to make the data file.
 
 Full name of the process that operates to make the data file or product.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Process Name" : "http://purl.org/radx-terms/metadata-terms/creationProcessName"
+  },
+  "Process Name" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Process IRI
 <span class="badge badge--optional">Optional</span>
 
 Unique identifier (IRI) for the process used to make the data file or product (preferably a resolvable and persistent identifier). 
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Process IRI" : "http://purl.org/radx-terms/metadata-terms/creationProcessIri"
+  },
+  "Process IRI" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Process Version
 <span class="badge badge--optional">Optional</span>
 
 Version of the process used to make this data file, typically a string (e.g., '3.0.3'). It may be a software release tag, e.g., in GitHub.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Process Version" : "http://purl.org/radx-terms/metadata-terms/creationProcessVersion"
+  },
+  "Process Version" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
 ### Process Execution Identifier
 <span class="badge badge--optional">Optional</span>
 
@@ -1102,7 +2953,53 @@ Identification of the particular run of the process used to make this data file.
 
 This is a deterministic string; in software, typically it is either a timestamp combined with the machine on which the software was executed; or a unique identifier generated by the controlling software for each run of the process.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Process Execution Identifier" : "http://purl.org/radx-terms/metadata-terms/creationProcessExecutionIdentifier"
+  },
+  "Process Execution Identifier" : {
+    "@value" : null
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Creation Processes" : "http://purl.org/radx-terms/metadata-terms/dataFileCreationProcessDescriptor"
+  },
+  "Data File Creation Processes" : [ {
+    "@context" : {
+      "Process Name" : "http://purl.org/radx-terms/metadata-terms/creationProcessName",
+      "Process IRI" : "http://purl.org/radx-terms/metadata-terms/creationProcessIri",
+      "Process Version" : "http://purl.org/radx-terms/metadata-terms/creationProcessVersion",
+      "Process Execution Identifier" : "http://purl.org/radx-terms/metadata-terms/creationProcessExecutionIdentifier"
+    },
+    "Process Name" : {
+      "@value" : null
+    },
+    "Process IRI" : {
+      "@value" : null
+    },
+    "Process Version" : {
+      "@value" : null
+    },
+    "Process Execution Identifier" : {
+      "@value" : null
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Temporal Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1125,6 +3022,21 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Temporal Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/temporalExtentMinimumValue"
+  },
+  "Temporal Extent Minimum Value" : {
+    "@type" : "xsd:dateTime",
+    "@value" : "2022-06-01"
+  }
+}
+```
+
+</div>
 ### Temporal Extent Maximum Value
 <span class="badge badge--optional">Optional</span>
 
@@ -1142,6 +3054,21 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Temporal Extent Maximum Value" : "http://purl.org/radx-terms/metadata-terms/temporalExtentMaximumValue"
+  },
+  "Temporal Extent Maximum Value" : {
+    "@type" : "xsd:dateTime",
+    "@value" : "2022-06-29"
+  }
+}
+```
+
+</div>
 ### Temporal Resolution
 <span class="badge badge--optional">Optional</span>
 
@@ -1155,6 +3082,20 @@ Most repeating measurement processes have some variation in the interval between
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Temporal Resolution" : "http://purl.org/radx-terms/metadata-terms/temporalResolution"
+  },
+  "Temporal Resolution" : {
+    "@value" : "3600"
+  }
+}
+```
+
+</div>
 ### Duration
 <span class="badge badge--derived">Derived</span>
 <span class="badge badge--optional">Optional</span>
@@ -1181,7 +3122,55 @@ The duration format must begin with P, and include at least one designator and v
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Duration" : "http://purl.org/radx-terms/metadata-terms/temporalCoverageDuration"
+  },
+  "Duration" : {
+    "@value" : "P8DT1.5H"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Temporal Coverage" : "http://purl.org/radx-terms/metadata-terms/temporalCoverageDescriptor"
+  },
+  "Data File Temporal Coverage" : [ {
+    "@context" : {
+      "Temporal Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/temporalExtentMinimumValue",
+      "Temporal Extent Maximum Value" : "http://purl.org/radx-terms/metadata-terms/temporalExtentMaximumValue",
+      "Temporal Resolution" : "http://purl.org/radx-terms/metadata-terms/temporalResolution",
+      "Duration" : "http://purl.org/radx-terms/metadata-terms/temporalCoverageDuration"
+    },
+    "Temporal Extent Minimum Value" : {
+      "@type" : "xsd:dateTime",
+      "@value" : "2022-06-01"
+    },
+    "Temporal Extent Maximum Value" : {
+      "@type" : "xsd:dateTime",
+      "@value" : "2022-06-29"
+    },
+    "Temporal Resolution" : {
+      "@value" : "3600"
+    },
+    "Duration" : {
+      "@value" : "P8DT1.5H"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Spatial Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1207,6 +3196,20 @@ Location of the maximum, or northernmost, data point in this data file, expresse
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Maximum Latitude" : "http://purl.org/radx-terms/metadata-terms/maxLatitude"
+  },
+  "Maximum Latitude" : {
+    "@value" : "-121.208178"
+  }
+}
+```
+
+</div>
 ### Minimum Latitude
 <span class="badge badge--optional">Optional</span>
 
@@ -1222,6 +3225,20 @@ Location of the minimum, or southernmost, data point in this data file, expresse
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Minimum Latitude" : "http://purl.org/radx-terms/metadata-terms/minLatitude"
+  },
+  "Minimum Latitude" : {
+    "@value" : "-122.202653"
+  }
+}
+```
+
+</div>
 ### Minimum Longitude
 <span class="badge badge--optional">Optional</span>
 
@@ -1237,6 +3254,20 @@ Location of the minimum, or westernmost, data point in this data file, expressed
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Minimum Longitude" : "http://purl.org/radx-terms/metadata-terms/minLongitude"
+  },
+  "Minimum Longitude" : {
+    "@value" : "36.892976"
+  }
+}
+```
+
+</div>
 ### Maximum Longitude
 <span class="badge badge--optional">Optional</span>
 
@@ -1252,7 +3283,53 @@ Location of the maximum, or easternmost, data point in this data file, expressed
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Maximum Longitude" : "http://purl.org/radx-terms/metadata-terms/maxLongitude"
+  },
+  "Maximum Longitude" : {
+    "@value" : "37.484637"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Bounding Boxes" : "http://purl.org/radx-terms/metadata-terms/boundingBoxDescriptor"
+  },
+  "Bounding Boxes" : [ {
+    "@context" : {
+      "Maximum Latitude" : "http://purl.org/radx-terms/metadata-terms/maxLatitude",
+      "Minimum Latitude" : "http://purl.org/radx-terms/metadata-terms/minLatitude",
+      "Minimum Longitude" : "http://purl.org/radx-terms/metadata-terms/minLongitude",
+      "Maximum Longitude" : "http://purl.org/radx-terms/metadata-terms/maxLongitude"
+    },
+    "Maximum Latitude" : {
+      "@value" : "-121.208178"
+    },
+    "Minimum Latitude" : {
+      "@value" : "-122.202653"
+    },
+    "Minimum Longitude" : {
+      "@value" : "36.892976"
+    },
+    "Maximum Longitude" : {
+      "@value" : "37.484637"
+    }
+  } ]
+}
+```
+
+</div>
 ## Bounding Shapes
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1269,6 +3346,21 @@ Monotonically increasing identifier of the point in the shape being defined (def
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Point Number" : "http://purl.org/radx-terms/metadata-terms/pointNumber"
+  },
+  "Point Number" : {
+    "@type" : "xsd:decimal",
+    "@value" : "1"
+  }
+}
+```
+
+</div>
 ### Latitude
 <span class="badge badge--optional">Optional</span>
 
@@ -1284,6 +3376,21 @@ Location of this point in north latitude decimal degrees (southern latitudes are
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Latitude" : "http://purl.org/radx-terms/metadata-terms/latitude"
+  },
+  "Latitude" : {
+    "@type" : "xsd:decimal",
+    "@value" : "10"
+  }
+}
+```
+
+</div>
 ### Longitude
 <span class="badge badge--optional">Optional</span>
 
@@ -1299,7 +3406,53 @@ Location of this point in east longitude decimal degrees (western longitudes are
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Longitude" : "http://purl.org/radx-terms/metadata-terms/longitude"
+  },
+  "Longitude" : {
+    "@type" : "xsd:decimal",
+    "@value" : "150"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Bounding Shapes" : "http://purl.org/radx-terms/metadata-terms/boundingShapeDescriptor"
+  },
+  "Bounding Shapes" : [ {
+    "@context" : {
+      "Point Number" : "http://purl.org/radx-terms/metadata-terms/pointNumber",
+      "Latitude" : "http://purl.org/radx-terms/metadata-terms/latitude",
+      "Longitude" : "http://purl.org/radx-terms/metadata-terms/longitude"
+    },
+    "Point Number" : {
+      "@type" : "xsd:decimal",
+      "@value" : "1"
+    },
+    "Latitude" : {
+      "@type" : "xsd:decimal",
+      "@value" : "10"
+    },
+    "Longitude" : {
+      "@type" : "xsd:decimal",
+      "@value" : "150"
+    }
+  } ]
+}
+```
+
+</div>
 ## Data File Geopolitical Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1317,8 +3470,108 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+  },
+  "Geopolitical region " : [ {
+    "@value" : "[New York City](https://www.geonames.org/5128581)"
+  } ]
+}
+```
+
+</div>
 
 
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Geopolitical Coverage" : "http://purl.org/radx-terms/metadata-terms/geopoliticalCoverageDescriptor"
+  },
+  "Data File Geopolitical Coverage" : [ {
+    "@context" : {
+      "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+    },
+    "Geopolitical region " : [ {
+      "@value" : "[New York City](https://www.geonames.org/5128581)"
+    } ]
+  } ]
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Spatial Coverage" : "http://purl.org/radx-terms/metadata-terms/spatialCoverageDescriptor"
+  },
+  "Data File Spatial Coverage" : [ {
+    "@context" : {
+      "Bounding Boxes" : "http://purl.org/radx-terms/metadata-terms/boundingBoxDescriptor",
+      "Bounding Shapes" : "http://purl.org/radx-terms/metadata-terms/boundingShapeDescriptor",
+      "Data File Geopolitical Coverage" : "http://purl.org/radx-terms/metadata-terms/geopoliticalCoverageDescriptor"
+    },
+    "Bounding Boxes" : [ {
+      "@context" : {
+        "Maximum Latitude" : "http://purl.org/radx-terms/metadata-terms/maxLatitude",
+        "Minimum Latitude" : "http://purl.org/radx-terms/metadata-terms/minLatitude",
+        "Minimum Longitude" : "http://purl.org/radx-terms/metadata-terms/minLongitude",
+        "Maximum Longitude" : "http://purl.org/radx-terms/metadata-terms/maxLongitude"
+      },
+      "Maximum Latitude" : {
+        "@value" : "-121.208178"
+      },
+      "Minimum Latitude" : {
+        "@value" : "-122.202653"
+      },
+      "Minimum Longitude" : {
+        "@value" : "36.892976"
+      },
+      "Maximum Longitude" : {
+        "@value" : "37.484637"
+      }
+    } ],
+    "Bounding Shapes" : [ {
+      "@context" : {
+        "Point Number" : "http://purl.org/radx-terms/metadata-terms/pointNumber",
+        "Latitude" : "http://purl.org/radx-terms/metadata-terms/latitude",
+        "Longitude" : "http://purl.org/radx-terms/metadata-terms/longitude"
+      },
+      "Point Number" : {
+        "@type" : "xsd:decimal",
+        "@value" : "1"
+      },
+      "Latitude" : {
+        "@type" : "xsd:decimal",
+        "@value" : "10"
+      },
+      "Longitude" : {
+        "@type" : "xsd:decimal",
+        "@value" : "150"
+      }
+    } ],
+    "Data File Geopolitical Coverage" : [ {
+      "@context" : {
+        "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+      },
+      "Geopolitical region " : [ {
+        "@value" : "[New York City](https://www.geonames.org/5128581)"
+      } ]
+    } ]
+  } ]
+}
+```
+
+</div>
 ## Data File Elevation Coverage
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -1337,6 +3590,21 @@ In case of depth, this is the maximum depth of data file collection (that is, it
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Vertical Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/minElevation"
+  },
+  "Vertical Extent Minimum Value" : {
+    "@type" : "xsd:decimal",
+    "@value" : "-1223"
+  }
+}
+```
+
+</div>
 ### Vertical Extent Maximum Value
 <span class="badge badge--optional">Optional</span>
 
@@ -1350,6 +3618,21 @@ In case of depth, this is the minimum depth of data file collection (that is, it
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Vertical Extent Maximum Value" : "http://purl.org/radx-terms/metadata-terms/maxElevation"
+  },
+  "Vertical Extent Maximum Value" : {
+    "@type" : "xsd:decimal",
+    "@value" : "-2.5"
+  }
+}
+```
+
+</div>
 ### Vertical Extent Datum
 <span class="badge badge--optional">Optional</span>
 
@@ -1361,6 +3644,20 @@ The name of the Datum (reference frame) used for the Vertical Extent values.
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Vertical Extent Datum" : "http://purl.org/radx-terms/metadata-terms/elevationReferenceFrame"
+  },
+  "Vertical Extent Datum" : {
+    "@value" : "WGS84"
+  }
+}
+```
+
+</div>
 ### Vertical Extent Datum IRI
 <span class="badge badge--optional">Optional</span>
 
@@ -1372,7 +3669,55 @@ The IRI (Internationalized Resource Identifier) of the Datum (reference frame) u
 
 </div>
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Vertical Extent Datum IRI" : "http://purl.org/radx-terms/metadata-terms/elevationReferenceFrameIri"
+  },
+  "Vertical Extent Datum IRI" : {
+    "@id" : "https://epsg.io/4326"
+  }
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Elevation Coverage" : "http://purl.org/radx-terms/metadata-terms/elevationCoverageDescriptor"
+  },
+  "Data File Elevation Coverage" : [ {
+    "@context" : {
+      "Vertical Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/minElevation",
+      "Vertical Extent Maximum Value" : "http://purl.org/radx-terms/metadata-terms/maxElevation",
+      "Vertical Extent Datum" : "http://purl.org/radx-terms/metadata-terms/elevationReferenceFrame",
+      "Vertical Extent Datum IRI" : "http://purl.org/radx-terms/metadata-terms/elevationReferenceFrameIri"
+    },
+    "Vertical Extent Minimum Value" : {
+      "@type" : "xsd:decimal",
+      "@value" : "-1223"
+    },
+    "Vertical Extent Maximum Value" : {
+      "@type" : "xsd:decimal",
+      "@value" : "-2.5"
+    },
+    "Vertical Extent Datum" : {
+      "@value" : "WGS84"
+    },
+    "Vertical Extent Datum IRI" : {
+      "@id" : "https://epsg.io/4326"
+    }
+  } ]
+}
+```
+
+</div>
 ## Auxiliary Metadata
 
 Information about the data file or metadata submission that does not fit into the other categories
@@ -1383,10 +3728,58 @@ Information about the data file or metadata submission that does not fit into th
 
 This field supports entry of both the metadata attribute name (in the first field), and the value for that attribute (in the second field). Note this is a repeating field and so can support multiple key-value pairs.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Data File Descriptive Key-Value Pairs" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataKeyValuePair"
+  },
+  "Data File Descriptive Key-Value Pairs" : [ "" ]
+}
+```
+
+</div>
 ### Additional Commentary
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
 This text field can contain additional information about the data file or provided metadata. Multiple Additional Commentary fields may be filled out to address different topics.
 
+<div class="example jsonld-example jsonld-example--field"><div class="example-heading">Example in RADx Metadata Model JSON-LD</div>
 
+```json
+{
+  "@context" : {
+    "Additional Commentary" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataCommentary"
+  },
+  "Additional Commentary" : [ {
+    "@value" : null
+  } ]
+}
+```
+
+</div>
+
+
+<div class="example jsonld-example jsonld-example--element"><div class="example-heading">Example element in RADx Metadata Model JSON-LD</div>
+
+```json
+{
+  "@context" : {
+    "Auxiliary Metadata" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataDescriptor"
+  },
+  "Auxiliary Metadata" : {
+    "@context" : {
+      "Data File Descriptive Key-Value Pairs" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataKeyValuePair",
+      "Additional Commentary" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataCommentary"
+    },
+    "Data File Descriptive Key-Value Pairs" : [ "" ],
+    "Additional Commentary" : [ {
+      "@value" : null
+    } ]
+  }
+}
+```
+
+</div>

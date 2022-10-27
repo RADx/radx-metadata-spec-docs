@@ -10,5 +10,12 @@ nav:
     - About: about.md
     - RADx DCC-Specific Mappings:
         - RADx-rad: radx-rad-mapping.md
+        - RADx-DHT:
+            - Intro: radx-dht-intro.md
+            - RADx-DHT Field Mappings : radx-dht-mapping.md
 
 theme: readthedocs
+
+extra_javascript:
+    - jquery-3.6.1.min.js
+    - specification.js
