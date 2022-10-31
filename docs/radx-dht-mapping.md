@@ -177,6 +177,9 @@ The RADx Metadata Specification uses the Medical Subject Headings Thesaurus (MeS
 }
 ```
 
+For subjects that cannot be mapped into MeSH, the [keywords](specification.md#keywords) free text field should be used.
+
+
 ## contributors
 
 The value of the compound `contributors` field should be encoded in a [Data File Cobtributors](specification.md#data-file-contributors) element.  The fields inside this element directly parallel the fields used in the RADx-DHT specification.  
