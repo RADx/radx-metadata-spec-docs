@@ -395,7 +395,7 @@ This field may be encoded using the [Data File Related Resources](specification.
 }
 ```
 
-This field is not directly supported in the RADx Metadata Specfification.  You may encode it using the [Auxiliary Metadata](specification.md##auxiliary-metadata) element.
+This field is not applicable to the RADx Metadata Specification.  You may however encode it using the [Auxiliary Metadata](specification.md##auxiliary-metadata) element.
 
 ## providerId
 
