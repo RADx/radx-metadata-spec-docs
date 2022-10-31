@@ -138,7 +138,7 @@ RADx-DHT object fields should be mapped as follows:
 [Title](specification.md#title) | `titles.title` 
 [Language](specification.md#language) | `titles.lang`
 
-The `titles.titleType` is not supported in the RADx Metadata.
+The `titles.titleType` is not supported in the RADx Metadata.  If this needs to be recorded then the [Auxiliary Metadata](specification.md#auxiliary-metadata) element should be used.
 
 
 ## publisher
