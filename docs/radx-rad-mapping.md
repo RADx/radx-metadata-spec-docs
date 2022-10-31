@@ -127,7 +127,7 @@ This item is not applicable to RADx per-file Metadata.
 
 ## file description
 
-The value of this field should be entered in the [descripton](specification.md#description) field of the the [Data File Descriptions](specification.md#data-file-descriptions) element.
+The value of this field should be entered in the [description](specification.md#description) field of the the [Data File Descriptions](specification.md#data-file-descriptions) element.
 
 <!-- 
 
