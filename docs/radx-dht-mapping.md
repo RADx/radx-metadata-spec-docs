@@ -9,7 +9,7 @@
 
 This page explains how to take pre-existing RADx-DHT metadata and convert it into RADx Metadata.  
 
-## id
+## id/doi
 
 ```json
 {
@@ -17,33 +17,12 @@ This page explains how to take pre-existing RADx-DHT metadata and convert it int
 }
 ```
 
-If the `doi` field is present then the value of the `id` field may be ignored since we prefer DOIs for identifying the data file.  If the value of the `doi` field is not present but the value of the `id` field is present then set the [Identifier](specification.md#identifier) field to the value of the `id` field.  
-
-- If the value of the `id` field is a DOI, set the [Identifier Type](specification.md#identifier-type) field to `http://vocab.fairdatacollective.org/gdmt/DOI`.  
-- If the value of the `id` field is not a DOI then choose another appropriate value.
+The RADx-DHT `id`/`doi` field represents the same information formatted in different ways.  We chose to map the value of the `id` field to the RADx Metadata Specification [Identifier](specification.md#identifier) field in the [Data File Identity](specification.md#data-file-identity) element.
 
 | RADx Metadata Field | Value |
 |-----------------------|---------------------|
 [Identifier](specification.md#identifier) | Value of `$.id` prefixed with `"https://doi.org/"`.<br>For example, `"https://doi.org/10.57895/ME7R-VP06"`.
 [Identifier Type](specification.md#identifier-type) | `"http://vocab.fairdatacollective.org/gdmt/DOI"`
-
-
-
-## doi
-
-```json
-{
-  "doi": "10.57895/ME7R-VP06"
-}
-```
-
-This value of the RADx-DHT `doi` field should be encoded in a [Data File Identity](specification.md#data-file-identity) element.
-
-| RADx Metadata Field | Value |
-|-----------------------|---------------------|
-[Identifier](specification.md#identifier) | Value of `$.doi` prefixed with `"https://doi.org/"`.<br>For example, `"https://doi.org/10.57895/ME7R-VP06"`.
-[Identifier Type](specification.md#identifier-type) | `"http://vocab.fairdatacollective.org/gdmt/DOI"`
-
 
 ## url
 
