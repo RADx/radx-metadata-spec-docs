@@ -313,7 +313,7 @@ Assuming that the RADx-DHT `version` field describes a version of the data file,
 
 ##  rightsList
 
-The [Data File Rights](specification.md#data-file-rights) element should be used to encode rights for the datafile.  We prefer that an identifier for the license is chosen and entered into the [License Name](specification.md#license-name) field.
+The [Data File Rights](specification.md#data-file-rights) element should be used to encode rights for the datafile.  We recommend that an identifier for the license is chosen and entered into the [License Name](specification.md#license-name) field.
 
 
 ## descriptions
@@ -372,7 +372,7 @@ The JSON below shows a RADx-DHT example of a funding element.
 [Award Page URL](specification.md#award-page-url) | Value of `fundingReferences[0].awardUri`
 [Funder Name](specification.md#funder-name) | Value of `fundingReferences[0].funderName`
 [Award Local Identifier](specification.md#award-local-identifier) | `fundingReferences[0].awardNumber`
-[Funder Identifier](specification.md#funder-identifier) | `fundingReferences[0].funderIdentifier`.  We prefer a Research Organization Registry identifier, if possible.
+[Funder Identifier](specification.md#funder-identifier) | `fundingReferences[0].funderIdentifier`.  We recommend that a Research Organization Registry identifier is used, if possible.
 [Funder Identifier Scheme](specification.md#funder-identifier-scheme) | Choose one of the available values
 
 ## relatedIdentifiers
