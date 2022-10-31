@@ -39,7 +39,7 @@ The `project_title` field should be specified as the [Study Name](specification.
 
 ## NIH_project_ID 	
 
-The `project_title` field should be specified as the [Study Identifier](specification.md#study-identifier) field in the [Data File Parent Studies](specification.md#data-file-parent-studies) element.  
+The `NIH_project_ID` field should be specified as the [Study Identifier](specification.md#study-identifier) field in the [Data File Parent Studies](specification.md#data-file-parent-studies) element.  
 
 The [Study Identifier Scheme](specification.md#study-identifier-scheme) is related to this element and should be set appropriately.  We recommend that the resolvable URL form of NIH project identifier is set, which means this field should be set to [http://vocab.fairdatacollective.org/gdmt/URL](http://vocab.fairdatacollective.org/gdmt/URL).
 
