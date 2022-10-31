@@ -115,7 +115,7 @@ There is no direct equivalent of this field in the RADx Metadata Specification. 
 
 ## method_of_data_analysis
 
-There is no direct equivalent of this field in the RADx Metadata Specification. However, this item may be inserted in the [Auxiliary Metadata](specification.md#auxiliary-metadata) element.	
+There is no direct equivalent of this field in the RADx Metadata Specification. However, this item may be inserted in the [Auxiliary Metadata](specification.md#auxiliary-metadata) element.  Alternatively, it is possible that information from this field could be encoded a [Data File Creation Processes](specification.md#data-file-creation-processes) element.
 
 ## number_of_datafiles_in_this_package
 
