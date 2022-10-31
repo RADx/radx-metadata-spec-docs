@@ -241,7 +241,7 @@ If the contributor is an organization:
 
 ## dates
 
-The RADx-DHT `dates` field should be encoded in a [Data File Dates](specification.md#data-file-dates) element.  There must be exactly _one_ date per element.  Dates represent events related to the data file itself.  Dates of events related to the funded program should be encoded elsewhere.
+The RADx-DHT `dates` field should be encoded in a [Data File Dates](specification.md#data-file-dates) element, except for publication date, which should be encoded in the [Data File Publication Date](specification.md#data-file-publication-date) element.  There must be exactly _one_ date per element.  Dates represent events related to the data file itself.  Dates of events related to the funded program should be encoded elsewhere.
 
 ## publicationYear
 
