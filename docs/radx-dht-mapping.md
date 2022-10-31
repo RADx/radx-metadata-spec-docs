@@ -125,7 +125,7 @@ The JSON below shows a RADx-DHT example of a `titles` JSON object.
         {
             "lang": "en",
             "title": "Covidseeker and COVID-19 Citizen Science",
-            "titleType": null``
+            "titleType": null
         }
     ]
 }
