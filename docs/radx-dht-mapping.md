@@ -315,6 +315,8 @@ Assuming that the RADx-DHT `version` field describes a version of the data file,
 
 The [Data File Rights](specification.md#data-file-rights) element should be used to encode rights for the datafile.  We recommend that an identifier for the license is chosen and entered into the [License Name](specification.md#license-name) field.
 
+If a standardized license is not used or if a license has been customized then the rights/license should be entered into the [License Text](specification.md#license-text) field.
+
 
 ## descriptions
 
