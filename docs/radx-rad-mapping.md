@@ -74,7 +74,7 @@ The `dbGaP_study_ID` field should be specified as the [PHS Identifier](specifica
 
 ## description_of_project
 
-There is no direct equivalent of this field in the RADx Metadata Specification.  If the project description is more or less applicable to the actual data file contents then this description may be inserted in the [description](specification.md#description) field for the data file.  If the project description is not appropriate for the data file then the project description may be inserted in the [Additional Commentary](specification.md#additional-commentary) field of the the [Auxiliary Metdata](specification.md#auxiliary-metadata) element.
+There is no direct equivalent of this field in the RADx Metadata Specification.  If the project description is applicable to the actual data file contents then this description may be inserted in the [description](specification.md#description) field for the data file.  If the project description is not appropriate for the data file then the project description may be inserted in the [Additional Commentary](specification.md#additional-commentary) field of the the [Auxiliary Metdata](specification.md#auxiliary-metadata) element.
 
 ## keywords
 
