@@ -82,7 +82,7 @@ Data file `keywords` should be specified in terms from the [Medical Subject Head
 
 ## vocabularyORthesaurus_used
 
-This field is not applicable in the RADx Metadata Specification, which uses MeSH terms for keywords.  The value of this field may however be preserved using the [Auxiliary Metadata](specification.md#auxiliary-metadata) element, if desired.
+This field is not applicable in the RADx Metadata Specification.  The value of this field may however be preserved using the [Auxiliary Metadata](specification.md#auxiliary-metadata) element, if desired.
 
 ## publication_url
 
