@@ -12,9 +12,9 @@ The [Contributor Type](specification.md#contributor-type) field should be set to
 
 The [Contributor Name](specification.md#contributor-name) field should be set to the name of the PI.  Set the [Contributor Given Name](specification.md#contributor-given-name) and [Contributor Family Name](specification.md#contributor-family-name) the the given and family name of the PI as appropriate.  
 
-The [Contributor Identifier](specification.md#contributor-identifier) field should be set to the identifier for the PI.  We prefer an identifier from the [ORCID](https://orcid.org).  In this case the value of the contributor field should be set to [https://orcid.org](https://orcid.org).  
+The [Contributor Identifier](specification.md#contributor-identifier) field should be set to the identifier for the PI.  We recommend an identifier from the [ORCID](https://orcid.org).  In this case the value of the contributor field should be set to [https://orcid.org](https://orcid.org).  
 
-Set the [Contributor Affiliation](specification.md#contributor-affiliation) to the name of the institution that the PI belongs to.  The [Contributor Affiliation Identifier](specification.md#contributor-affiliation-identifier) should be set to the identifier for the insitution.  We prefer the value to be an identifier from the [Research Organization Registry](https://ror.org).  Set the [Contributor Affliation Identifier Scheme](specification.md#contributor-affiliation-identifier-scheme) to the name of the scheme for the identifier.
+Set the [Contributor Affiliation](specification.md#contributor-affiliation) to the name of the institution that the PI belongs to.  The [Contributor Affiliation Identifier](specification.md#contributor-affiliation-identifier) should be set to the identifier for the insitution.  We recommend the value to be an identifier from the [Research Organization Registry](https://ror.org).  Set the [Contributor Affliation Identifier Scheme](specification.md#contributor-affiliation-identifier-scheme) to the name of the scheme for the identifier.
 
 The [Contributor Email](specification.md#contributor-email) field should be set to the email address of the PI.
 
@@ -29,7 +29,7 @@ The [Contributor Type](specification.md#contributor-type) field should be set to
 
 The [Contributor Name](specification.md#contributor-name) field should be set to the name of the organization.  
 
-The [Contributor Identifier](specification.md#contributor-identifier) field should be set to the identifier for the organization.  We prefer an identifier from the [Research Organization Registry](https://ror.org).  In this case the value of the contributor field should be set to [https://ror.org](https://ror.org).  
+The [Contributor Identifier](specification.md#contributor-identifier) field should be set to the identifier for the organization.  We recommend an identifier from the [Research Organization Registry](https://ror.org).  In this case the value of the contributor field should be set to [https://ror.org](https://ror.org).  
 
 All other fields in the [Data File Contributors](specification.md#data-file-contributors) element should not be specified.
 
@@ -57,9 +57,9 @@ The [Creator Type](specification.md#creator-type) field should be set to [http:/
 
 The [Creator Name](specification.md#creator-name) field should be set to the name of the person who created the file.  Set the [Creator Given Name](specification.md#creator-given-name) and [Creator Family Name](specification.md#creator-family-name) to the given and family name of the creator as appropriate.
 
-The [Creator Identifier](specification.md#creator-identifier) field should be set to the identifier for the person.  We prefer an identifier from the [ORCID](https://orcid.org).  In this case the value of the [Creator Identifier Scheme](specification.md#creator-identifier-scheme) should be set to [https://orcid.org](https://orcid.org).  Other identifier schemes should set the identifier scheme field as appropriate.
+The [Creator Identifier](specification.md#creator-identifier) field should be set to the identifier for the person.  We recommend an identifier from the [ORCID](https://orcid.org).  In this case the value of the [Creator Identifier Scheme](specification.md#creator-identifier-scheme) should be set to [https://orcid.org](https://orcid.org).  Other identifier schemes should set the identifier scheme field as appropriate.
 
-Set the [Creator Affiliation](specification.md#creator-affiliation) to the name of the institution that the PI belongs to.  The [Creator Affiliation Identifier](specification.md#creator-affiliation-identifier) should be set to the identifier for the insitution.  We prefer the value to be an identifier from the [Research Organization Registry](https://ror.org).  Set the [Creator Affliation Identifier Scheme](specification.md#creator-affiliation-identifier-scheme) to the name of the scheme for the identifier.
+Set the [Creator Affiliation](specification.md#creator-affiliation) to the name of the institution that the PI belongs to.  The [Creator Affiliation Identifier](specification.md#creator-affiliation-identifier) should be set to the identifier for the insitution.  We recommend the value to be an identifier from the [Research Organization Registry](https://ror.org).  Set the [Creator Affliation Identifier Scheme](specification.md#creator-affiliation-identifier-scheme) to the name of the scheme for the identifier.
 
 The [Creator Email](specification.md#creator-email) field should be set to the email address of the PI.
 
