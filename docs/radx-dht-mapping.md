@@ -344,7 +344,7 @@ The RADx-DHT `descriptions` field should be encoded using a [Data File Descripti
 
 The RADx-DHT `geoLocations` field should be encoded using the [Data File Spatial Coverage](specification.md#data-file-spatial-coverage) element.  This element makes it possible to encode locations using bounded boxes/shapes that are described with lat/lon coordinates.  
 
-If place names are used to specify locations then the [Geopolitical region](specification.md#geopolitical-region) field that is contained with in a [Data File Geopolitical Coverage](specification.md#data-file-geopolitical-coverage) element  should be used to provide an identifier for a place.
+If place names are used to specify locations then the [Geopolitical Region](specification.md#geopolitical-region) field that is contained with in a [Data File Geopolitical Coverage](specification.md#data-file-geopolitical-coverage) element  should be used to provide an identifier for a place.
 
 ## funding references
 
