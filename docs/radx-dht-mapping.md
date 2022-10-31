@@ -245,7 +245,7 @@ The RADx-DHT `dates` field should be encoded in a [Data File Dates](specificatio
 
 ## publicationYear
 
-The RADx-DHT `publicationYear` field should be encoded in a [Data File Publication Date](specification.md#data-file-publication-date) field inside a [Data File Publication Date](specification.md#data-file-publication-date).  This field can accept precise publication dates, which are preferred over "publication year".
+The RADx-DHT `publicationYear` field should be encoded in a [Data File Publication Date](specification.md#data-file-publication-date) field inside a [Data File Publication Date](specification.md#data-file-publication-date).  This field can accept precise publication dates, which are preferred over "publication year", however if publication year is the only available metadata then please enter the publication year in yyyy format.
   
 ## language
 
