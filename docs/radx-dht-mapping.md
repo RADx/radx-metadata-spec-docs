@@ -284,7 +284,7 @@ Since the RADx Metadata Specification applies to single files the "33 Files" val
   
 ## formats
 
-The RADx-DHT `formats` field should be encoded using fields from the [Distribution Format](specification.md#distribution-format) element.  Values for this field should be merged with the values from the [publisher](#publisher) field and [sizes](#sizes) field.
+The RADx-DHT `formats` field should be encoded using a field from the [Distribution Format](specification.md#distribution-format) element.  Values for this field should be merged with the values from the [publisher](#publisher) field and [sizes](#sizes) field.
 
 ```json
 {
@@ -300,12 +300,10 @@ The RADx-DHT `formats` field should be encoded using fields from the [Distributi
 | RADx Metadata Field | Value |
 |---------------------|-------|
 [Distribution Format](specification.md#distribution-size) |  A value from the `formats` list, for example, `"csv"`.
-[Distribution Identifier](specification.md#distribution-identifier) | The DOI for the data file
-[Distribution Identifier Type](specification.md#distribution-identifier-type) | `"http://vocab.fairdatacollective.org/gdmt/DOI"`
   
 ##  version
 
-The RADx-DHT `version` field should be encoded in the [Version](specification.md#version) field in the [Data File Identity](specification.md#data-file-identity) element.
+Assuming that the RADx-DHT `version` field describes a version of the data file, it should be encoded in the [Version](specification.md#version) field in the [Data File Identity](specification.md#data-file-identity) element.  If the `version` field describes the version of something other than the data file then it should be encoded using the [Auxiliary Metadata](specification.md#auxiliary-metadata) element.
 
 ```json
 {
