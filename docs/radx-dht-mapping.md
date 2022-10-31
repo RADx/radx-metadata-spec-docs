@@ -263,7 +263,7 @@ Please consult with the Stanford Team.  These identifiers may be enocded as [Aux
 
 ## sizes
 
-The RADx-DHT `sizes` field should be encoded using fields from the [Data File Distributions](specification.md#data-file-distributions) element.  Values for this field should be merged with the values from the [publisher](#publisher) field and [formats](#formats) field.
+The RADx-DHT `sizes` field should be encoded using fields from the [Data File Distributions](specification.md#data-file-distributions) element.  Values for this field should be merged with the values from the [publisher](#publisher) field and [formats](#formats) field.  Since RADx metadata pertains to a single file only the size related array element should be encoded.
 
   
 ```json
@@ -279,8 +279,6 @@ The RADx-DHT `sizes` field should be encoded using fields from the [Data File Di
 | RADx Metadata Field | Value |
 |---------------------|-------|
 [Distribution Size](specification.md#distribution-size) |  The distribution size _in bytes_.  To convert Megabytes to bytes multiply by 1,048,576.  For example, 6MB is `6291456` bytes.
-[Distribution Identifier](specification.md#distribution-identifier) | The DOI for the data file
-[Distribution Identifier Type](specification.md#distribution-identifier-type) | `"http://vocab.fairdatacollective.org/gdmt/DOI"`
 
 Since the RADx Metadata Specification applies to single files the "33 Files" value (or any other value) that indicates the number of files is not applicable here.
   
