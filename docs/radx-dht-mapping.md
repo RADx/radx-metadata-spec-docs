@@ -259,6 +259,8 @@ The RADx-DHT `language` field should be encoded in the [Primary Language](specif
 }
 ```
 
+Please consult with the Stanford Team.  These identifiers may be enocded as [Auxiliary Metadata](specification.md#auxiliary-metadata).
+
 ## sizes
 
 The RADx-DHT `sizes` field should be encoded using fields from the [Data File Distributions](specification.md#data-file-distributions) element.  Values for this field should be merged with the values from the [publisher](#publisher) field and [formats](#formats) field.
