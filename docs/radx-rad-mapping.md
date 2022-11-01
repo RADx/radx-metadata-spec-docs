@@ -1,7 +1,5 @@
 # RADx-rad Metadata Mapping
 
-This page explains how to take pre-existing RADx-rad metadata and convert it into RADx Metadata.  It should be noted that the pre-existing RADx-rad metadata specification is for study-level metadata but the RADx Metadata Specification is for data-file-level metadata.  Despite this, the majority of study-level fields can be mapped into the data-file-level fields described in this metadata specification.
-
 ## contact_PI
 
 The `contact_PI` field should be mapped into a [Data File Contributors](specification.md#data-file-contributors) element.

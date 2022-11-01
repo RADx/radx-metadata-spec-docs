@@ -9,9 +9,11 @@ nav:
     - Language Codes: language-codes.md
     - About: about.md
     - RADx DCC-Specific Mappings:
-        - RADx-rad: radx-rad-mapping.md
+        - RADx-rad:
+            - Introduction: radx-rad-intro.md
+            - RADx-rad Field Mappings: radx-rad-mapping.md
         - RADx-DHT:
-            - Intro: radx-dht-intro.md
+            - Introduction: radx-dht-intro.md
             - RADx-DHT Field Mappings : radx-dht-mapping.md
 
 theme: readthedocs
