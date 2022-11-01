@@ -1,13 +1,13 @@
+# RADx-DHT Metadata Mapping
+
+This page explains how to take pre-existing RADx-DHT metadata and convert it into RADx Metadata.  
+
 <style>
 
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
 }
 </style>
-
-# RADx-DHT Metadata Mapping
-
-This page explains how to take pre-existing RADx-DHT metadata and convert it into RADx Metadata.  
 
 ## id/doi
 
