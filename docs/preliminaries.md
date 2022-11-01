@@ -138,6 +138,42 @@ An example of the template description of the "Creator Identifier" field that wa
 
 A *field* is the most basic descriptive unit of a metadata template.  The key aspects of a field are that is has a name (for example "Creator Identifier"), a description (or help text).  Fields are either directly or indirectly embedded into template to form a complate metadata description.
 
+Field values can either by _literals_, which are essentially strings, or they can be Internationalized Resource Identifiers (IRI).  IRIs are typically resolvable, which means they can be opened in a Web browser.
+
+#### Literal Field Values
+
+In JSON-LD literals are represented with JSON objects that have a `@value` field.  For example, to represent the string literal "Stanford University" the following JSON-LD would be used.
+
+```json
+{
+    "@value" : "Stanford University"
+}
+```
+
+
+#### IRI Field Values
+
+In JSON-LD Internationalized Resource Identifiers (IRIs) are represented with JSON object that have an `@id` field.  For example, to represent the IRI [https://ror.org/00f54p054](https://ror.org/00f54p054), which is the Research Organization Registry (ROR) identifier for Stanford University, we would write,
+
+```json
+{
+    "@id" : "https://ror.org/00f54p054"
+}
+```
+
+Note that you can visit [https://ror.org/00f54p054](https://ror.org/00f54p054) to read, or programmatically access, more details about Stanford University.
+
+As can be seen, the raw Research Organization Registry IRI that we used for Stanford University doesn't provide any clue about its meaning.  In some cases we therefore attach a human-friendly label to the IRI using an `rdfs:label` field, for example,
+
+```json
+{
+    "@id" : "https://ror.org/00f54p054",
+    "rdfs:label" : "Stanford University"
+}
+```
+
+Labels like make JSON-LD metadata easier to read but they are not required.  Tools such as [CEDAR](https://cedar.metadatacenter.org) will automatically insert labels.
+
 ### Elements
 
 An *element* is an ordered collection of fields and other nested elements.  For example, we may have a "Creator" element that comprises the "Creator Identifier", "First Name" and "Last Name" fields.  Like fields, elements have a name and a description, amongst other attributes.  The artifacts contained in an element may have multiplicities assigned to them.  Thus, we can say that a field in an element is required (min 1) and/or single valued (max 1).
