@@ -3,19 +3,17 @@ site_url: https://radx.github.io/radx-metadata-specification-docs/
 
 nav:
     - Home: index.md
-    - RADx Metadata Specification:
-        - Preliminaries: preliminaries.md
-        - Specification: specification.md
-        - Creating Metadata: creating-metadata.md
-        - Language Codes: language-codes.md
-        - About: about.md
-    - RADx DCC-Specific Mappings:
-        - RADx-rad:
-            - Introduction: radx-rad-intro.md
-            - RADx-rad Field Mappings: radx-rad-mapping.md
-        - RADx-DHT:
-            - Introduction: radx-dht-intro.md
-            - RADx-DHT Field Mappings : radx-dht-mapping.md
+    - Preliminaries: preliminaries.md
+    - Specification: specification.md
+    - Creating Metadata: creating-metadata.md
+    - Language Codes: language-codes.md
+    - About: about.md
+    - RADx-rad:
+        - Introduction: radx-rad-intro.md
+        - RADx-rad Field Mappings: radx-rad-mapping.md
+    - RADx-DHT:
+        - Introduction: radx-dht-intro.md
+        - RADx-DHT Field Mappings : radx-dht-mapping.md
 
 theme: readthedocs
 
