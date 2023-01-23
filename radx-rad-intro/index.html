@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://radx.github.io/radx-metadata-specification-docs/radx-rad-intro/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introduction - RADx Metadata Specification</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction";
+        var mkdocs_page_input_path = "radx-rad-intro.md";
+        var mkdocs_page_url = "/radx-metadata-specification-docs/radx-rad-intro/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> RADx Metadata Specification
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preliminaries/">Preliminaries</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../specification/">Specification</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../creating-metadata/">Creating Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../language-codes/">Language Codes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-rad</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#radx-rad-metadata-template">RADx-rad Metadata Template</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-rad-mapping/">RADx-rad Field Mappings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-DHT</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-dht-intro/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-dht-mapping/">RADx-DHT Field Mappings</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">RADx Metadata Specification</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>RADx-rad &raquo;</li>
+      <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="radx-rad-mapping-introduction">RADx-rad Mapping Introduction</h1>
+<p>This documentation explains how to take pre-existing RADx-rad metadata and convert it into RADx Metadata.  It should be noted that the pre-existing RADx-rad metadata specification is for study-level metadata but the RADx Metadata Specification is for data-file-level metadata.  Despite this, the majority of study-level fields can be mapped into the data-file-level fields described in this metadata specification.</p>
+<h2 id="radx-rad-metadata-template">RADx-rad Metadata Template</h2>
+<p>The RADx-rad metadata template is defined in a spreadsheet (CSV file) shown below.  Our mapping is based on the content of this spreadsheet.</p>
+<table>
+<thead>
+<tr>
+<th>Field Label</th>
+<th>Choices</th>
+<th>Descriptions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contact_PI</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>source_organization</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>project_title</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>NIH_project_ID</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>project_research_area</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>creatorORaccountable_for_data_files</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>completed_registration_with_dbGaP</td>
+<td>Yes &#124; No</td>
+<td></td>
+</tr>
+<tr>
+<td>dbGaP_study_ID - not_NIH_project_ID</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>description_of_project</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>vocabularyORthesaurus_used - if_applicable</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>publication_url - if_applicable</td>
+<td>text</td>
+<td></td>
+</tr>
+<tr>
+<td>study_include_prospective_or_retrospective_human_samples - effective_Feb_2021</td>
+<td>prospective &#124; retrospective &#124; N/A</td>
+<td></td>
+</tr>
+<tr>
+<td>collected_NIH_Minimum_CDEs_for_all_datasets</td>
+<td>Yes &#124; No</td>
+<td></td>
+</tr>
+<tr>
+<td>NIH_PO_approved_waiver_for_Minimum_CDE</td>
+<td>Yes &#124; No</td>
+<td></td>
+</tr>
+<tr>
+<td>data_dictionary_for_all_datafiles</td>
+<td>Yes &#124; No</td>
+<td></td>
+</tr>
+<tr>
+<td>name_of_data_dictionary_file</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>type_of_sample_used - blood_breath_wastewater_ etc</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>method_of_data_analysis - software_statistical_approach</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>number_of_datafiles_in_this_package</td>
+<td>enter your text here</td>
+<td></td>
+</tr>
+<tr>
+<td>datafile_names - add_additional_rows_as_needed</td>
+<td>enter file name here</td>
+<td>enter file description (free text format)</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../about/" class="btn btn-neutral float-left" title="About"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../radx-rad-mapping/" class="btn btn-neutral float-right" title="RADx-rad Field Mappings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../about/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../radx-rad-mapping/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../jquery-3.6.1.min.js" defer></script>
+      <script src="../specification.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://radx.github.io/radx-metadata-specification-docs/radx-dht-mapping/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>RADx-DHT Field Mappings - RADx Metadata Specification</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "RADx-DHT Field Mappings";
+        var mkdocs_page_input_path = "radx-dht-mapping.md";
+        var mkdocs_page_url = "/radx-metadata-specification-docs/radx-dht-mapping/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> RADx Metadata Specification
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preliminaries/">Preliminaries</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../specification/">Specification</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../creating-metadata/">Creating Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../language-codes/">Language Codes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-rad</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-rad-intro/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-rad-mapping/">RADx-rad Field Mappings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-DHT</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-dht-intro/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">RADx-DHT Field Mappings</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#iddoi">id/doi</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#url">url</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#types">types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#creators">creators</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#titles">titles</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#publisher">publisher</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#subjects">subjects</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contributors">contributors</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dates">dates</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#publicationyear">publicationYear</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#language">language</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#identifiers">identifiers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sizes">sizes</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formats">formats</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#version">version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rightslist">rightsList</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#descriptions">descriptions</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#geolocations">geoLocations</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funding-references">funding references</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#relatedidentifiers">relatedIdentifiers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#schemaversion">schemaVersion</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#providerid">providerId</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clientid">clientId</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#agency">agency</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#state">state</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">RADx Metadata Specification</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>RADx-DHT &raquo;</li>
+      <li>RADx-DHT Field Mappings</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="radx-dht-metadata-mapping">RADx-DHT Metadata Mapping</h1>
+<p>This page explains how to take pre-existing RADx-DHT metadata and convert it into RADx Metadata.  </p>
+<style>
+
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+</style>
+
+<h2 id="iddoi">id/doi</h2>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;https://doi.org/10.57895/me7r-vp06&quot;
+}
+</code></pre>
+<p>The RADx-DHT <code>id</code>/<code>doi</code> field represents the same information formatted in different ways.  We chose to map the value of the <code>id</code> field to the RADx Metadata Specification <a href="../specification/#identifier">Identifier</a> field in the <a href="../specification/#data-file-identity">Data File Identity</a> element.</p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#identifier">Identifier</a></td>
+<td>Value of <code>$.id</code> prefixed with <code>"https://doi.org/"</code>.<br>For example, <code>"https://doi.org/10.57895/ME7R-VP06"</code>.</td>
+</tr>
+<tr>
+<td><a href="../specification/#identifier-type">Identifier Type</a></td>
+<td><code>"http://vocab.fairdatacollective.org/gdmt/DOI"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="url">url</h2>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://rapids.ll.mit.edu/10.57895/me7r-vp06&quot;
+}
+</code></pre>
+<p>The value of the RADx-DHT <code>url</code> field should be encoded in a <a href="../specification/#data-file-related-resources">Data File Related Resources</a> element.  </p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#related-resource-identifier">Related Resource Identifier</a></td>
+<td>Value of <code>$.url</code>.</td>
+</tr>
+<tr>
+<td><a href="../specification/#related-resource-identifier-type">Related Resource Identifier Type</a></td>
+<td><code>"http://vocab.fairdatacollective.org/gdmt/URL"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="types">types</h2>
+<pre><code class="language-json">{
+  &quot;types&quot;: {
+    &quot;ris&quot;: &quot;DATA&quot;,
+    &quot;bibtex&quot;: &quot;misc&quot;,
+    &quot;citeproc&quot;: &quot;dataset&quot;,
+    &quot;schemaOrg&quot;: &quot;Dataset&quot;,
+    &quot;resourceType&quot;: &quot;Survey&quot;,
+    &quot;resourceTypeGeneral&quot;: &quot;Dataset&quot;
+  }
+}
+</code></pre>
+<p>There is no direct equivalent of this field.  Types in the RADx-DHT may be recorded in the <a href="../specification/">Auxiliary Metadata</a> element.</p>
+<h2 id="creators">creators</h2>
+<p>The value of the compound <code>creators</code> field should be encoded in a <a href="../specification/#data-file-creators">Data File Creators</a> element.  The fields inside this element directly parallel the fields used in the RADx-DHT specification.  </p>
+<p>Multiple <a href="../specification/#data-file-creators">Data File Creators</a> elements may be specified.  Use one element per creator.  </p>
+<p>The JSON below shows a RADx-DHT example of a <code>creators</code> JSON object.</p>
+<pre><code class="language-json">{
+    &quot;creators&quot;: [
+        {
+            &quot;name&quot;: &quot;Marcus, Gregory&quot;,
+            &quot;nameType&quot;: &quot;Personal&quot;,
+            &quot;givenName&quot;: &quot;Gregory&quot;,
+            &quot;familyName&quot;: &quot;Marcus&quot;,
+            &quot;affiliation&quot;: [
+                {
+                    &quot;name&quot;: &quot;University of California, San Francisco&quot;,
+                    &quot;schemeUri&quot;: &quot;https://ror.org&quot;,
+                    &quot;affiliationIdentifier&quot;: &quot;https://ror.org/043mz5j54&quot;,
+                    &quot;affiliationIdentifierScheme&quot;: &quot;ROR&quot;
+                }
+            ],
+            &quot;nameIdentifiers&quot;: [
+                {
+                    &quot;schemeUri&quot;: &quot;https://orcid.org&quot;,
+                    &quot;nameIdentifier&quot;: &quot;https://orcid.org/0000-0001-5197-7696&quot;,
+                    &quot;nameIdentifierScheme&quot;: &quot;ORCID&quot;
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<p>Fields in a RADx-DHT <code>creators</code> object should be mapped as follows.  Note that,</p>
+<ul>
+<li>the RADx metadata specification only supports <em>one</em> creator affiliation per <a href="../specification/#data-file-creators">Data File Creators</a> element.</li>
+<li>the RADx metadata specification only supports <em>one</em> creator identifier per <a href="../specification/#data-file-creators">Data File Creators</a>.</li>
+</ul>
+<p>Set the value of the <a href="../specification/#creator-identifier-scheme">Creator Identifier Scheme</a> field to one of the allowable options.  If an ORCID has been used to identify the creator then <code>https://orcid.org</code> as the value for the <a href="../specification/#creator-identifier-scheme">Creator Identifier Scheme</a> field.</p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#creator-name">Creator Name</a></td>
+<td><code>creators[0].name</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-type">Creator Type</a></td>
+<td>Use <code>http://vocab.fairdatacollective.org/gdmt/Person</code> for <code>Personal</code>, <br><br> Use <code>http://vocab.fairdatacollective.org/gdmt/Organization</code> for <code>Organizational</code>.</td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-given-name">Creator Given Name</a></td>
+<td><code>creators[0].givenName</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-family-name">Creator Family Name</a></td>
+<td><code>creators[0].familyName</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-affiliation">Creator Affiliation</a></td>
+<td><code>creators[0].affiliation[0].name</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-affiliation-identifier">Creator Affiliation Identifier</a></td>
+<td><code>creators[0].affiliation[0].affiliationIdentifier</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-affiliation-identifier-scheme">Creator Affiliation Identifier Scheme</a></td>
+<td><code>creators[0].affiliation[0].schemeUri</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-identifier-scheme">Creator Identifier Scheme</a></td>
+<td><code>creators[0].nameIdentifiers[0].schemeUri</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#creator-identifier">Creator Identifier</a></td>
+<td><code>creators[0].nameIdentifiers[0].nameIdentifier</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="titles">titles</h2>
+<p>A RADx-DHT <code>titles</code> JSON object should be encoded as a <a href="../specification/#data-file-titles">Data File Titles</a> element.  Multiple <a href="../specification/#data-file-titles">Data File Titles</a> elements may be specified. Use one element per title.  </p>
+<p>The JSON below shows a RADx-DHT example of a <code>titles</code> JSON object.</p>
+<pre><code class="language-json">{
+    &quot;titles&quot; : [
+        {
+            &quot;lang&quot;: &quot;en&quot;,
+            &quot;title&quot;: &quot;Covidseeker and COVID-19 Citizen Science&quot;,
+            &quot;titleType&quot;: null
+        }
+    ]
+}
+</code></pre>
+<p>RADx-DHT object fields should be mapped as follows:</p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#title">Title</a></td>
+<td><code>titles.title</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#language">Language</a></td>
+<td><code>titles.lang</code></td>
+</tr>
+</tbody>
+</table>
+<p>The <code>titles.titleType</code> is not supported in the RADx Metadata.  If this needs to be recorded then the <a href="../specification/#auxiliary-metadata">Auxiliary Metadata</a> element should be used.</p>
+<h2 id="publisher">publisher</h2>
+<p>The RADx-DHT <code>publisher</code> field should be encoded using fields from the <a href="../specification/#data-file-distributions">Data File Distributions</a> element.</p>
+<pre><code class="language-json">{
+  &quot;publisher&quot;: &quot;RAPIDS – Rapid AI Platform for Innovating Data Science &quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#distribution-publisher">Distribution Publisher</a></td>
+<td><code>"MIT Lincoln Laboratory"</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#distribution-publisher-identifier">Distribution Publisher Identifier</a></td>
+<td>We suggest that this is set to <code>"https://ror.org/022z6jk58"</code>, which identifies MIT Lincoln Laboratory.</td>
+</tr>
+<tr>
+<td><a href="../specification/#distribution-publisher-identifier-scheme">Distribution Publisher Identifier Scheme</a></td>
+<td><code>"https://ror.org"</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#distribution-identifier">Distribution Identifier</a></td>
+<td>The DOI for the data file</td>
+</tr>
+<tr>
+<td><a href="../specification/#distribution-identifier-type">Distribution Identifier Type</a></td>
+<td><code>"http://vocab.fairdatacollective.org/gdmt/DOI"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="subjects">subjects</h2>
+<p>The RADx Metadata Specification uses the Medical Subject Headings Thesaurus (MeSH) for specifying the subjects for a data file.  We possible subjects should be translated into MeSH terms.  See the <a href="../specification/#data-file-subjects">Data File Subjects</a> element for documentation on encoding subjects.</p>
+<pre><code class="language-json">{
+    &quot;subjects&quot;: [
+        {
+            &quot;subject&quot;: &quot;FOS: Medical and health sciences&quot;,
+            &quot;valueUri&quot;: &quot;http://www.oecd.org/science/inno/38235147.pdf&quot;,
+            &quot;schemeUri&quot;: &quot;http://www.oecd.org/science/inno&quot;,
+            &quot;subjectScheme&quot;: &quot;Fields of Science and Technology (FOS)&quot;
+        }
+    ]
+}
+</code></pre>
+<p>For subjects that cannot be mapped into MeSH, the <a href="../specification/#keywords">keywords</a> free text field should be used.</p>
+<h2 id="contributors">contributors</h2>
+<p>The value of the compound <code>contributors</code> field should be encoded in a <a href="../specification/#data-file-contributors">Data File Contributors</a> element.  The fields inside this element directly parallel the fields used in the RADx-DHT specification.  </p>
+<p>Multiple <a href="../specification/#data-file-contributors">Data File Contributors</a> elements may be specified.  Use one element per contributor.  </p>
+<p>The JSON below shows a RADx-DHT example of a <code>contributors</code> JSON object.</p>
+<pre><code class="language-json">&quot;contributors&quot;: [
+    {
+      &quot;name&quot;: &quot;MIT Lincoln Laboratory&quot;,
+      &quot;nameType&quot;: &quot;Organizational&quot;,
+      &quot;givenName&quot;: null,
+      &quot;familyName&quot;: null,
+      &quot;affiliation&quot;: [],
+      &quot;contributorType&quot;: &quot;DataCurator&quot;,
+      &quot;nameIdentifiers&quot;: [
+        {
+          &quot;schemeUri&quot;: &quot;https://ror.org&quot;,
+          &quot;nameIdentifier&quot;: &quot;https://ror.org/022z6jk58&quot;,
+          &quot;nameIdentifierScheme&quot;: &quot;ROR&quot;
+        }
+      ]
+    }
+  ]
+</code></pre>
+<p>Fields in a RADx-DHT <code>contributors</code> object should be mapped as follows.  Note that,</p>
+<ul>
+<li>the RADx metadata specification only supports <em>one</em> contributor affiliation per <a href="../specification/#data-file-contributors">Data File Contributor</a> element.</li>
+<li>the RADx metadata specification only supports <em>one</em> contributor identifier per <a href="../specification/#data-file-contributors">Data File Contributor</a> element.</li>
+</ul>
+<p>If the contributor is a person:</p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#contributor-name">Contributor Name</a></td>
+<td><code>contributors[0].name</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-type">Contributor Type</a></td>
+<td><code>"http://vocab.fairdatacollective.org/gdmt/Person"</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-given-name">Contributor Given Name</a></td>
+<td><code>contributors[0].givenName</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-family-name">Contributor Family Name</a></td>
+<td><code>contributors[0].familyName</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-affiliation">Contributor Affiliation</a></td>
+<td><code>contributors[0].affiliation[0].name</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-affiliation-identifier-scheme">Contributor Affiliation Identifier Scheme</a></td>
+<td><code>contributors[0].affiliation[0].schemeUri</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-affiliation-identifier">Contributor Affiliation Identifier</a></td>
+<td><code>contributors[0].affiliation[0].affiliationIdentifier</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-identifier">Contributor Identifier</a></td>
+<td><code>contributors[0].nameIdentifiers[0].nameIdentifier</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-identifier-scheme">Contributor Identifier Scheme</a></td>
+<td><code>contributors[0].nameIdentifiers[0].schemeUri</code><br><br>If an ORCID has been used to identify the contributor then the value should be <code>"https://orcid.org"</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>If the contributor is an organization:</p>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#contributor-name">Contributor Name</a></td>
+<td><code>contributors[0].name</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-type">Contributor Type</a></td>
+<td><code>"http://vocab.fairdatacollective.org/gdmt/Organization"</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-identifier">Contributor Identifier</a></td>
+<td><code>contributors[0].nameIdentifiers[0].nameIdentifier</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#contributor-identifier-scheme">Contributor Identifier Scheme</a></td>
+<td><code>contributors[0].nameIdentifiers[0].schemeUri</code><br><br>If a Research Organization Registry (ROR) Id has been used to identify the contributing organization then the value should be <code>"https://ror.org"</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dates">dates</h2>
+<p>The RADx-DHT <code>dates</code> field should be encoded in a <a href="../specification/#data-file-dates">Data File Dates</a> element, except for publication date, which should be encoded in the <a href="../specification/#data-file-publication-date">Data File Publication Date</a> element.  There must be exactly <em>one</em> date per element.  Dates represent events related to the data file itself.  Dates of events related to the funded program should be encoded elsewhere.</p>
+<h2 id="publicationyear">publicationYear</h2>
+<p>The RADx-DHT <code>publicationYear</code> field should be encoded in a <a href="../specification/#data-file-publication-date">Data File Publication Date</a> field inside a <a href="../specification/#data-file-publication-date">Data File Publication Date</a>.  This field can accept precise publication dates, which are preferred over "publication year", however if publication year is the only available metadata then please enter the publication year in yyyy format.</p>
+<h2 id="language">language</h2>
+<p>The RADx-DHT <code>language</code> field should be encoded in the <a href="../specification/#primary-language">Primary Language</a> field contained in a <a href="../specification/#data-file-language">Data File Language</a> element.  The encoding of languages uses standard <a href="../language-codes/">language codes</a>.  These codes are directly mappable from the RADx-DHT specification.</p>
+<h2 id="identifiers">identifiers</h2>
+<pre><code class="language-json">{
+  &quot;identifiers&quot;: []
+}
+</code></pre>
+<p>Please consult with the Stanford Team.  These identifiers may be enocded as <a href="../specification/#auxiliary-metadata">Auxiliary Metadata</a>.</p>
+<h2 id="sizes">sizes</h2>
+<p>The RADx-DHT <code>sizes</code> field should be encoded using fields from the <a href="../specification/#data-file-distributions">Data File Distributions</a> element.  Values for this field should be merged with the values from the <a href="#publisher">publisher</a> field and <a href="#formats">formats</a> field.  Since RADx metadata pertains to a single file only the size related array element should be encoded.</p>
+<pre><code class="language-json">{
+  &quot;sizes&quot;: [
+    &quot;6 MB&quot;,
+    &quot;33 Files&quot;
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#distribution-size">Distribution Size</a></td>
+<td>The distribution size <em>in bytes</em>.  To convert Megabytes to bytes multiply by 1,048,576.  For example, 6MB is <code>6291456</code> bytes.</td>
+</tr>
+</tbody>
+</table>
+<p>Since the RADx Metadata Specification applies to single files the "33 Files" value (or any other value) that indicates the number of files is not applicable here.</p>
+<h2 id="formats">formats</h2>
+<p>The RADx-DHT <code>formats</code> field should be encoded using a field from the <a href="../specification/#distribution-format">Distribution Format</a> element.  Values for this field should be merged with the values from the <a href="#publisher">publisher</a> field and <a href="#sizes">sizes</a> field.</p>
+<pre><code class="language-json">{
+  &quot;formats&quot;: [
+    &quot;csv&quot;,
+    &quot;html&quot;,
+    &quot;pdf&quot;,
+    &quot;xlsx&quot;
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#distribution-size">Distribution Format</a></td>
+<td>A value from the <code>formats</code> list, for example, <code>"csv"</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="version">version</h2>
+<p>Assuming that the RADx-DHT <code>version</code> field describes a version of the data file, it should be encoded in the <a href="../specification/#version">Version</a> field in the <a href="../specification/#data-file-identity">Data File Identity</a> element.  If the <code>version</code> field describes the version of something other than the data file then it should be encoded using the <a href="../specification/#auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+<pre><code class="language-json">{
+  &quot;version&quot;: &quot;1.0&quot;
+}
+</code></pre>
+<h2 id="rightslist">rightsList</h2>
+<p>The <a href="../specification/#data-file-rights">Data File Rights</a> element should be used to encode rights for the datafile.  We recommend that an identifier for the license is chosen and entered into the <a href="../specification/#license-name">License Name</a> field.</p>
+<p>If a standardized license is not used or if a license has been customized then the rights/license should be entered into the <a href="../specification/#license-text">License Text</a> field.</p>
+<h2 id="descriptions">descriptions</h2>
+<p>The RADx-DHT <code>descriptions</code> field should be encoded using a <a href="../specification/#data-file-descriptions">Data File Descriptions</a> element.  One element should encode exactly one description.</p>
+<pre><code class="language-json">{
+    &quot;descriptions&quot;: [
+        {
+            &quot;lang&quot;: &quot;en&quot;,
+            &quot;description&quot;: &quot;This study integrated Covidseeker, a tool for real-tine geospatial temporal mobile data for digital contact tracing and COVID-19 hotspotting, into a customized version of the COVID-19 Citizen Science Study. &quot;,
+            &quot;descriptionType&quot;: &quot;Abstract&quot;
+        }
+    ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#description">Description</a></td>
+<td>Value of <code>descriptions[0].description</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#description-language">Description Language</a></td>
+<td>Value of <code>descriptions[0].lang</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="geolocations">geoLocations</h2>
+<p>The RADx-DHT <code>geoLocations</code> field should be encoded using the <a href="../specification/#data-file-spatial-coverage">Data File Spatial Coverage</a> element.  This element makes it possible to encode locations using bounded boxes/shapes that are described with lat/lon coordinates.  Multiple locations can be specified.</p>
+<p>If place names are used to specify locations then the <a href="../specification/#geopolitical-region">Geopolitical Region</a> field that is contained with in a <a href="../specification/#data-file-geopolitical-coverage">Data File Geopolitical Coverage</a> element  should be used to provide an identifier for a place.</p>
+<h2 id="funding-references">funding references</h2>
+<p>The RADx-DHT <code>funding references</code> field should be encoded using a <a href="../specification/#data-file-funding-sources">Data File Funding Sources</a> element.</p>
+<p>The JSON below shows a RADx-DHT example of a funding element.</p>
+<pre><code class="language-json">{
+  &quot;fundingReferences&quot;: [
+    {
+      &quot;awardUri&quot;: &quot;https://reporter.nih.gov/project-details/10274151&quot;,
+      &quot;awardTitle&quot;: &quot;DIGITAL HEALTH SOLUTIONS FOR COVID-19: COVIDSEEKER AND COVID-19 CITIZEN SCIENCE&quot;,
+      &quot;funderName&quot;: &quot;National Institutes of Health&quot;,
+      &quot;awardNumber&quot;: &quot;75N91020C00039&quot;,
+      &quot;funderIdentifier&quot;: &quot;https://doi.org/10.13039/100000002&quot;,
+      &quot;funderIdentifierType&quot;: &quot;Crossref Funder ID&quot;
+    }
+  ]
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>RADx Metadata Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../specification/#award-title">Award Title</a></td>
+<td>Value of <code>fundingReferences[0].awardTitle</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#award-page-url">Award Page URL</a></td>
+<td>Value of <code>fundingReferences[0].awardUri</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#funder-name">Funder Name</a></td>
+<td>Value of <code>fundingReferences[0].funderName</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#award-local-identifier">Award Local Identifier</a></td>
+<td><code>fundingReferences[0].awardNumber</code></td>
+</tr>
+<tr>
+<td><a href="../specification/#funder-identifier">Funder Identifier</a></td>
+<td><code>fundingReferences[0].funderIdentifier</code>.  We recommend that a Research Organization Registry identifier is used, if possible.</td>
+</tr>
+<tr>
+<td><a href="../specification/#funder-identifier-scheme">Funder Identifier Scheme</a></td>
+<td>Choose one of the available values</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relatedidentifiers">relatedIdentifiers</h2>
+<pre><code class="language-json">{
+  &quot;relatedIdentifiers&quot;: []
+}
+</code></pre>
+<p>This field may be encoded using the <a href="../specification/#data-file-related-resources">Data File Related Resources</a> element.  One element per related identifier should be used. For a given identifier, the <a href="../specification/#related-resource-identifier">Related Resource Identifier</a> field should be used to encode the identifier and the other fields should be used to describe the type of identifier.</p>
+<h2 id="schemaversion">schemaVersion</h2>
+<pre><code class="language-json">{
+  &quot;schemaVersion&quot;: &quot;http://datacite.org/schema/kernel-4&quot;
+}
+</code></pre>
+<p>This field is not applicable to the RADx Metadata Specification.  You may however encode it using the <a href="../specification/##auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+<h2 id="providerid">providerId</h2>
+<pre><code class="language-json">{
+  &quot;providerId&quot;: &quot;mit&quot;
+}
+</code></pre>
+<p>This field is not directly supported in the RADx Metadata Specfification.  You may encode it using the <a href="../specification/##auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+<h2 id="clientid">clientId</h2>
+<pre><code class="language-json">{
+  &quot;clientId&quot;: &quot;mit.rapids&quot;
+}
+</code></pre>
+<p>This field is not directly supported in the RADx Metadata Specfification.  You may encode it using the <a href="../specification/##auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+<h2 id="agency">agency</h2>
+<pre><code class="language-json">{
+  &quot;agency&quot;: &quot;datacite&quot;
+}
+</code></pre>
+<p>This field is not directly supported in the RADx Metadata Specfification.  You may encode it using the <a href="../specification/##auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+<h2 id="state">state</h2>
+<pre><code class="language-json">{
+  &quot;state&quot;: &quot;draft&quot;
+}
+</code></pre>
+<p>This field is not directly supported in the RADx Metadata Specfification.  You may encode it using the <a href="../specification/##auxiliary-metadata">Auxiliary Metadata</a> element.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../radx-dht-intro/" class="btn btn-neutral float-left" title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../radx-dht-intro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../jquery-3.6.1.min.js" defer></script>
+      <script src="../specification.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

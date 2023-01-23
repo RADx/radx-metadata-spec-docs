@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://radx.github.io/radx-metadata-specification-docs/radx-dht-intro/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Introduction - RADx Metadata Specification</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Introduction";
+        var mkdocs_page_input_path = "radx-dht-intro.md";
+        var mkdocs_page_url = "/radx-metadata-specification-docs/radx-dht-intro/";
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> RADx Metadata Specification
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preliminaries/">Preliminaries</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../specification/">Specification</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../creating-metadata/">Creating Metadata</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../language-codes/">Language Codes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../about/">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-rad</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-rad-intro/">Introduction</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-rad-mapping/">RADx-rad Field Mappings</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">RADx-DHT</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Introduction</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#important-differences">Important Differences</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#example-metadata">Example Metadata</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../radx-dht-mapping/">RADx-DHT Field Mappings</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">RADx Metadata Specification</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>RADx-DHT &raquo;</li>
+      <li>Introduction</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="radx-dht-mapping-introduction">RADx-DHT Mapping Introduction</h1>
+<p>RADx-DHT uses the <a href="https://schema.datacite.org">Datacite Metadata Schema</a> as its metadata specification.  While not exactly the same, the RADx Metadata Specification is influenced by Datacite and many fields in the RADx Metadata Template have a one-to-one correspondance with metadata fields in the Datacite metadata schema.</p>
+<h2 id="important-differences">Important Differences</h2>
+<ol>
+<li>The RADx Metadata Specification is designed for <em>per-file</em> metadata.  In otherwords, each RADx metadata instance describes a specific file.  Pre-existing RADx-DHT metata on the other hand is <em>per-study</em> metadata and thus describes multiple files.  When looking at the <a href="../radx-dht-mapping/">RADx-DHT to RADx Metadata specification mapping</a> users should keep this in mind.</li>
+<li>The RADx-Metadata Specification uses Internationalized Resource Identifiers (IRIs) for the values of fields that are controlled terms.  Consider this example, which illustrates the differences between the two specifications.  The value of the RADx-DHT <code>creators[0].nameType</code> field can be <code>"Personal"</code> or <code>"Organizational"</code>.  In the RADx-Metadata Specification these values are the IRIs <code>"http://vocab.fairdatacollective.org/gdmt/Person"</code> (see <a href="http://vocab.fairdatacollective.org/gdmt/Person">Person</a>) and <code>"http://vocab.fairdatacollective.org/gdmt/Organization"</code> (see <a href="http://vocab.fairdatacollective.org/gdmt/Person">Organization</a>).  Both of these IRIs can be resolved to structured data or human readable resources that explain the meanings of them.  Where possible we indicate the direct mappings.</li>
+</ol>
+<h2 id="example-metadata">Example Metadata</h2>
+<p>We use the example metadata below, which is metadata for a RADx-DHT study.  For each top-level field we provide a mapping description.</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;https://doi.org/10.57895/me7r-vp06&quot;,
+    &quot;doi&quot;: &quot;10.57895/ME7R-VP06&quot;,
+    &quot;url&quot;: &quot;https://rapids.ll.mit.edu/10.57895/me7r-vp06&quot;,
+    &quot;types&quot;: {
+        &quot;ris&quot;: &quot;DATA&quot;,
+        &quot;bibtex&quot;: &quot;misc&quot;,
+        &quot;citeproc&quot;: &quot;dataset&quot;,
+        &quot;schemaOrg&quot;: &quot;Dataset&quot;,
+        &quot;resourceType&quot;: &quot;Survey&quot;,
+        &quot;resourceTypeGeneral&quot;: &quot;Dataset&quot;
+    },
+    &quot;creators&quot;: [
+        {
+            &quot;name&quot;: &quot;Marcus, Gregory&quot;,
+            &quot;nameType&quot;: &quot;Personal&quot;,
+            &quot;givenName&quot;: &quot;Gregory&quot;,
+            &quot;familyName&quot;: &quot;Marcus&quot;,
+            &quot;affiliation&quot;: [
+                {
+                    &quot;name&quot;: &quot;University of California, San Francisco&quot;,
+                    &quot;schemeUri&quot;: &quot;https://ror.org&quot;,
+                    &quot;affiliationIdentifier&quot;: &quot;https://ror.org/043mz5j54&quot;,
+                    &quot;affiliationIdentifierScheme&quot;: &quot;ROR&quot;
+                }
+            ],
+            &quot;nameIdentifiers&quot;: [
+                {
+                    &quot;schemeUri&quot;: &quot;https://orcid.org&quot;,
+                    &quot;nameIdentifier&quot;: &quot;https://orcid.org/0000-0001-5197-7696&quot;,
+                    &quot;nameIdentifierScheme&quot;: &quot;ORCID&quot;
+                }
+            ]
+        },
+        {
+            &quot;name&quot;: &quot;Hswen, Yulin&quot;,
+            &quot;nameType&quot;: &quot;Personal&quot;,
+            &quot;givenName&quot;: &quot;Yulin&quot;,
+            &quot;familyName&quot;: &quot;Hswen&quot;,
+            &quot;affiliation&quot;: [
+                {
+                    &quot;name&quot;: &quot;University of California, San Francisco&quot;,
+                    &quot;schemeUri&quot;: &quot;https://ror.org&quot;,
+                    &quot;affiliationIdentifier&quot;: &quot;https://ror.org/043mz5j54&quot;,
+                    &quot;affiliationIdentifierScheme&quot;: &quot;ROR&quot;
+                }
+            ],
+            &quot;nameIdentifiers&quot;: [
+                {
+                    &quot;schemeUri&quot;: &quot;https://orcid.org&quot;,
+                    &quot;nameIdentifier&quot;: &quot;https://orcid.org/0000-0003-3203-1322&quot;,
+                    &quot;nameIdentifierScheme&quot;: &quot;ORCID&quot;
+                }
+            ]
+        }
+    ],
+    &quot;titles&quot;: [
+        {
+            &quot;lang&quot;: &quot;en&quot;,
+            &quot;title&quot;: &quot;Covidseeker and COVID-19 Citizen Science&quot;,
+            &quot;titleType&quot;: null
+        }
+    ],
+    &quot;publisher&quot;: &quot;RAPIDS – Rapid AI Platform for Innovating Data Science &quot;,
+    &quot;subjects&quot;: [
+        {
+            &quot;subject&quot;: &quot;FOS: Medical and health sciences&quot;,
+            &quot;valueUri&quot;: &quot;http://www.oecd.org/science/inno/38235147.pdf&quot;,
+            &quot;schemeUri&quot;: &quot;http://www.oecd.org/science/inno&quot;,
+            &quot;subjectScheme&quot;: &quot;Fields of Science and Technology (FOS)&quot;
+        }
+    ],
+    &quot;contributors&quot;: [
+        {
+            &quot;name&quot;: &quot;MIT Lincoln Laboratory&quot;,
+            &quot;nameType&quot;: &quot;Organizational&quot;,
+            &quot;givenName&quot;: null,
+            &quot;familyName&quot;: null,
+            &quot;affiliation&quot;: [],
+            &quot;contributorType&quot;: &quot;DataCurator&quot;,
+            &quot;nameIdentifiers&quot;: [
+                {
+                    &quot;schemeUri&quot;: &quot;https://ror.org&quot;,
+                    &quot;nameIdentifier&quot;: &quot;https://ror.org/022z6jk58&quot;,
+                    &quot;nameIdentifierScheme&quot;: &quot;ROR&quot;
+                }
+            ]
+        }
+    ],
+    &quot;dates&quot;: [
+        {
+            &quot;date&quot;: &quot; 2020-09-14/2021-03-15&quot;,
+            &quot;dateType&quot;: &quot;Other&quot;,
+            &quot;dateInformation&quot;: &quot;Contract start and end dates&quot;
+        }
+    ],
+    &quot;publicationYear&quot;: 2022,
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;identifiers&quot;: [],
+    &quot;sizes&quot;: [
+        &quot;6 MB&quot;,
+        &quot;33 Files&quot;
+    ],
+    &quot;formats&quot;: [
+        &quot;csv&quot;,
+        &quot;html&quot;,
+        &quot;pdf&quot;,
+        &quot;xlsx&quot;
+    ],
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;rightsList&quot;: [],
+    &quot;descriptions&quot;: [
+        {
+            &quot;lang&quot;: &quot;en&quot;,
+            &quot;description&quot;: &quot;This study integrated Covidseeker, a tool for real-tine geospatial temporal mobile data for digital contact tracing and COVID-19 hotspotting, into a customized version of the COVID-19 Citizen Science Study. &quot;,
+            &quot;descriptionType&quot;: &quot;Abstract&quot;
+        }
+    ],
+    &quot;geoLocations&quot;: [
+        {
+            &quot;geoLocationPlace&quot;: &quot;Multiple&quot;
+        }
+    ],
+    &quot;fundingReferences&quot;: [
+        {
+            &quot;awardUri&quot;: &quot;https://reporter.nih.gov/project-details/10274151&quot;,
+            &quot;awardTitle&quot;: &quot;DIGITAL HEALTH SOLUTIONS FOR COVID-19: COVIDSEEKER AND COVID-19 CITIZEN SCIENCE&quot;,
+            &quot;funderName&quot;: &quot;National Institutes of Health&quot;,
+            &quot;awardNumber&quot;: &quot;75N91020C00039&quot;,
+            &quot;funderIdentifier&quot;: &quot;https://doi.org/10.13039/100000002&quot;,
+            &quot;funderIdentifierType&quot;: &quot;Crossref Funder ID&quot;
+        }
+    ],
+    &quot;relatedIdentifiers&quot;: [],
+    &quot;schemaVersion&quot;: &quot;http://datacite.org/schema/kernel-4&quot;,
+    &quot;providerId&quot;: &quot;mit&quot;,
+    &quot;clientId&quot;: &quot;mit.rapids&quot;,
+    &quot;agency&quot;: &quot;datacite&quot;,
+    &quot;state&quot;: &quot;draft&quot;
+}
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../radx-rad-mapping/" class="btn btn-neutral float-left" title="RADx-rad Field Mappings"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../radx-dht-mapping/" class="btn btn-neutral float-right" title="RADx-DHT Field Mappings">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../radx-rad-mapping/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../radx-dht-mapping/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../jquery-3.6.1.min.js" defer></script>
+      <script src="../specification.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
