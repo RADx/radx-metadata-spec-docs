@@ -5,7 +5,7 @@
 
 # Specification
 
-<div class="controls"><button id="jsonld-example-visibility-toggle">JSON-LD Examples</button></div>
+<div class="controls"><button id="jsonld-example-visibility-toggle">Hide JSON-LD Examples</button></div>
 
 
 <h2 plain>Required fields</h2>
@@ -19,7 +19,7 @@ The following fields are recommended fields.  These fields SHOULD be filled out 
 
 [Data File Identity](#data-file-identity)  >>  [Identifier](#identifier)
 
-[Data File Identity](#data-file-identity)  >>  [File Name ](#file-name-)
+[Data File Identity](#data-file-identity)  >>  [File Name](#file-name)
 
 [Data File Identity](#data-file-identity)  >>  [Version](#version)
 
@@ -125,6 +125,7 @@ The value of this field is a language code.  See the [language code table](langu
   "@context" : {
     "Data File Titles" : "http://purl.org/radx-terms/metadata-terms/titleDescriptor"
   },
+  "@id" : "",
   "Data File Titles" : [ {
     "@context" : {
       "Title" : "http://purl.org/radx-terms/metadata-terms/title",
@@ -205,7 +206,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
 ```
 
 </div>
-### File Name 
+### File Name
 <span class="badge badge--recommended">Recommended</span>
 
 The local name of the resource (for example, in a file-based operating system or web service).
@@ -221,9 +222,9 @@ The local name of the resource (for example, in a file-based operating system or
 ```json
 {
   "@context" : {
-    "File Name " : "http://purl.org/radx-terms/metadata-terms/fileName"
+    "File Name" : "http://purl.org/radx-terms/metadata-terms/fileName"
   },
-  "File Name " : {
+  "File Name" : {
     "@value" : "COVID-19_Booster_Shot_June_2022_Responses.csv"
   }
 }
@@ -299,11 +300,12 @@ shasum -a 256 /path/to/file
   "@context" : {
     "Data File Identity" : "http://purl.org/radx-terms/metadata-terms/identityDescriptor"
   },
+  "@id" : "",
   "Data File Identity" : {
     "@context" : {
       "Identifier" : "http://purl.org/radx-terms/metadata-terms/identifier",
       "Identifier Type" : "http://purl.org/radx-terms/metadata-terms/identifierType",
-      "File Name " : "http://purl.org/radx-terms/metadata-terms/fileName",
+      "File Name" : "http://purl.org/radx-terms/metadata-terms/fileName",
       "Version" : "http://purl.org/radx-terms/metadata-terms/version",
       "SHA256 digest" : "https://purl.org/radx-terms/sha256"
     },
@@ -313,7 +315,7 @@ shasum -a 256 /path/to/file
     "Identifier Type" : {
       "@id" : "http://vocab.fairdatacollective.org/gdmt/DOI"
     },
-    "File Name " : {
+    "File Name" : {
       "@value" : "COVID-19_Booster_Shot_June_2022_Responses.csv"
     },
     "Version" : {
@@ -395,6 +397,7 @@ The value of this field is a language code.  See the [language code table](langu
   "@context" : {
     "Data File Language" : "http://purl.org/radx-terms/metadata-terms/languageDescriptor"
   },
+  "@id" : "",
   "Data File Language" : {
     "@context" : {
       "Primary Language" : "http://purl.org/radx-terms/metadata-terms/primaryLanguage",
@@ -500,6 +503,7 @@ Free text subject, keyword, classification code, or key phrase describing the da
   "@context" : {
     "Data File Subjects" : "http://purl.org/radx-terms/metadata-terms/subjectsAndKeywordsDescriptor"
   },
+  "@id" : "",
   "Data File Subjects" : [ {
     "@context" : {
       "Subject Identifier" : "http://purl.org/radx-terms/metadata-terms/subjectIdentifier",
@@ -615,6 +619,7 @@ This is the type of digital object being described, which for RADx Data Files is
   "@context" : {
     "Data File Descriptions" : "http://purl.org/radx-terms/metadata-terms/descriptionDescriptor"
   },
+  "@id" : "",
   "Data File Descriptions" : [ {
     "@context" : {
       "Description" : "http://purl.org/radx-terms/metadata-terms/description",
@@ -675,6 +680,7 @@ Each Data File submitted should have its own data dictionary. For example, surve
   "@context" : {
     "Data File Data Dictionary" : "http://purl.org/radx-terms/metadata-terms/dataDictionaryDescriptor"
   },
+  "@id" : "",
   "Data File Data Dictionary" : {
     "@context" : {
       "Data Dictionary File Name" : "http://purl.org/radx-terms/metadata-terms/dataDictionaryFileName"
@@ -1002,6 +1008,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
   "@context" : {
     "Data File Creators" : "http://purl.org/radx-terms/metadata-terms/creatorDescriptor"
   },
+  "@id" : "",
   "Data File Creators" : [ {
     "@context" : {
       "Creator Type" : "http://purl.org/radx-terms/metadata-terms/creatorType",
@@ -1180,6 +1187,7 @@ Description of the relationship of the related resource to the Data File being d
   "@context" : {
     "Data File Related Resources" : "http://purl.org/radx-terms/metadata-terms/relatedResourceDescriptor"
   },
+  "@id" : "",
   "Data File Related Resources" : [ {
     "@context" : {
       "Related Resource Identifier" : "http://purl.org/radx-terms/metadata-terms/relatedResourceIdentifier",
@@ -1521,6 +1529,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
   "@context" : {
     "Data File Contributors" : "http://purl.org/radx-terms/metadata-terms/contributorDescriptor"
   },
+  "@id" : "",
   "Data File Contributors" : [ {
     "@context" : {
       "Contributor Type" : "http://purl.org/radx-terms/metadata-terms/contributorType",
@@ -1637,6 +1646,7 @@ If a uniquely identiable license is named above, it is not necessary to repeat t
   "@context" : {
     "Data File Rights" : "http://purl.org/radx-terms/metadata-terms/rightsDescriptor"
   },
+  "@id" : "",
   "Data File Rights" : [ {
     "@context" : {
       "License Name" : "http://purl.org/radx-terms/metadata-terms/licenseName",
@@ -1730,6 +1740,7 @@ The date 2022-09-23 specifies September 23, 2022 (without a time stamp). Dates a
   "@context" : {
     "Data File Dates" : "http://purl.org/radx-terms/metadata-terms/eventsDescriptor"
   },
+  "@id" : "",
   "Data File Dates" : [ {
     "@context" : {
       "Event Type" : "http://purl.org/radx-terms/metadata-terms/eventType",
@@ -1923,6 +1934,7 @@ This field is considered auxiliary information to the initially registered Study
   "@context" : {
     "Data File Parent Studies" : "http://purl.org/radx-terms/metadata-terms/parentStudyDescriptor"
   },
+  "@id" : "",
   "Data File Parent Studies" : [ {
     "@context" : {
       "PHS Identifier" : "http://purl.org/radx-terms/metadata-terms/parentStudyPhsIdentifier",
@@ -2158,6 +2170,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
   "@context" : {
     "Data File Funding Sources" : "http://purl.org/radx-terms/metadata-terms/fundingSourceDescriptor"
   },
+  "@id" : "",
   "Data File Funding Sources" : [ {
     "@context" : {
       "Award Title" : "http://purl.org/radx-terms/metadata-terms/awardTitle",
@@ -2489,6 +2502,7 @@ Type of the date ('Published') with respect to the data file.  The value of this
   "@context" : {
     "Data File Distributions" : "http://purl.org/radx-terms/metadata-terms/distributionDescriptor"
   },
+  "@id" : "",
   "Data File Distributions" : [ {
     "@context" : {
       "Distribution Publisher" : "http://purl.org/radx-terms/metadata-terms/distributionPublisher",
@@ -2635,6 +2649,7 @@ Enter the name of the characteristic being described in the first (key) field, a
   "@context" : {
     "Data Characteristics Summary" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsDescriptor"
   },
+  "@id" : "",
   "Data Characteristics Summary" : {
     "@context" : {
       "Data Characteristics Table in HTML" : "http://purl.org/radx-terms/metadata-terms/dataCharacteristicsTableInHtml",
@@ -2729,6 +2744,7 @@ Values for this field are taken from the FDC-GDMT ontology.  You may [use BioPor
   "@context" : {
     "Data Sources" : "http://purl.org/radx-terms/metadata-terms/dataSourceDescriptor"
   },
+  "@id" : "",
   "Data Sources" : [ {
     "@context" : {
       "Data Source Name" : "http://purl.org/radx-terms/metadata-terms/dataSourceName",
@@ -2858,6 +2874,7 @@ Globally unique string that identifies the data source (e.g., PID of an instrume
   "@context" : {
     "Data Streams" : "http://purl.org/radx-terms/metadata-terms/dataStreamDescriptor"
   },
+  "@id" : "",
   "Data Streams" : [ {
     "@context" : {
       "Data Stream Name" : "http://purl.org/radx-terms/metadata-terms/dataStreamName",
@@ -2976,6 +2993,7 @@ This is a deterministic string; in software, typically it is either a timestamp 
   "@context" : {
     "Data File Creation Processes" : "http://purl.org/radx-terms/metadata-terms/dataFileCreationProcessDescriptor"
   },
+  "@id" : "",
   "Data File Creation Processes" : [ {
     "@context" : {
       "Process Name" : "http://purl.org/radx-terms/metadata-terms/creationProcessName",
@@ -3145,6 +3163,7 @@ The duration format must begin with P, and include at least one designator and v
   "@context" : {
     "Data File Temporal Coverage" : "http://purl.org/radx-terms/metadata-terms/temporalCoverageDescriptor"
   },
+  "@id" : "",
   "Data File Temporal Coverage" : [ {
     "@context" : {
       "Temporal Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/temporalExtentMinimumValue",
@@ -3458,7 +3477,7 @@ Location of this point in east longitude decimal degrees (western longitudes are
 
 A list of regions specified by the totality of one or more place names
 
-### Geopolitical region 
+### Geopolitical region
 <span class="badge badge--optional">Optional</span>
 <span class="badge badge--multi">Multi-valued</span>
 
@@ -3475,9 +3494,9 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
 ```json
 {
   "@context" : {
-    "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+    "Geopolitical region" : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
   },
-  "Geopolitical region " : [ {
+  "Geopolitical region" : [ {
     "@value" : "[New York City](https://www.geonames.org/5128581)"
   } ]
 }
@@ -3495,9 +3514,9 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
   },
   "Data File Geopolitical Coverage" : [ {
     "@context" : {
-      "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+      "Geopolitical region" : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
     },
-    "Geopolitical region " : [ {
+    "Geopolitical region" : [ {
       "@value" : "[New York City](https://www.geonames.org/5128581)"
     } ]
   } ]
@@ -3514,6 +3533,7 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
   "@context" : {
     "Data File Spatial Coverage" : "http://purl.org/radx-terms/metadata-terms/spatialCoverageDescriptor"
   },
+  "@id" : "",
   "Data File Spatial Coverage" : [ {
     "@context" : {
       "Bounding Boxes" : "http://purl.org/radx-terms/metadata-terms/boundingBoxDescriptor",
@@ -3561,9 +3581,9 @@ Place name depicting a geopolitical region. Recommended practice is to use [Geon
     } ],
     "Data File Geopolitical Coverage" : [ {
       "@context" : {
-        "Geopolitical region " : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
+        "Geopolitical region" : "http://purl.org/radx-terms/metadata-terms/geographicalPlaceName"
       },
-      "Geopolitical region " : [ {
+      "Geopolitical region" : [ {
         "@value" : "[New York City](https://www.geonames.org/5128581)"
       } ]
     } ]
@@ -3692,6 +3712,7 @@ The IRI (Internationalized Resource Identifier) of the Datum (reference frame) u
   "@context" : {
     "Data File Elevation Coverage" : "http://purl.org/radx-terms/metadata-terms/elevationCoverageDescriptor"
   },
+  "@id" : "",
   "Data File Elevation Coverage" : [ {
     "@context" : {
       "Vertical Extent Minimum Value" : "http://purl.org/radx-terms/metadata-terms/minElevation",
@@ -3769,6 +3790,7 @@ This text field can contain additional information about the data file or provid
   "@context" : {
     "Auxiliary Metadata" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataDescriptor"
   },
+  "@id" : "",
   "Auxiliary Metadata" : {
     "@context" : {
       "Data File Descriptive Key-Value Pairs" : "http://purl.org/radx-terms/metadata-terms/auxiliaryMetadataKeyValuePair",
